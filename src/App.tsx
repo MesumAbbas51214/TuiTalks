@@ -6,6 +6,7 @@ import { InterviewsCanvas } from "./components/InterviewsCanvas";
 import type { Interview } from "./types/content";
 import { DailyProphetModal } from "./components/DailyProphetModal";
 import { useSectionSnap } from "./hooks/useSectionSnap";
+import { AuthorsChoiceSection } from "./sections/AuthorsChoiceSection";
 
 
 export default function App(){
@@ -16,7 +17,7 @@ export default function App(){
       document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
-  const goToInterview = (_id: string) => { onNav("interviews"); };
+  const goToInterview = () => { onNav("interviews"); };
 
   const [open, setOpen] = useState(false);
   const [current, setCurrent] = useState<Interview | null>(null);
@@ -37,13 +38,8 @@ export default function App(){
         </div>
       </Section>
 
-      {/* AUTHORS */}
-      <Section id="authors">
-        <div className="container-edge">
-          <h2 style={{ fontSize: "1.75rem", fontWeight: 800 }}>Author's Choice</h2>
-          <div className="card" style={{ marginTop: 16 }}>Coming soon…</div>
-        </div>
-      </Section>
+      {/* AUTHORS / CAMPUS PULSE */}
+      <AuthorsChoiceSection onOpen={(i) => { setCurrent(i); setOpen(true); }} />
 
       {/* ABOUT */}
       <Section id="about">
