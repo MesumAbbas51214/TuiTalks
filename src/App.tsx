@@ -7,6 +7,7 @@ import type { Interview } from "./types/content";
 import { DailyProphetModal } from "./components/DailyProphetModal";
 import { useSectionSnap } from "./hooks/useSectionSnap";
 import { AuthorsChoiceSection } from "./sections/AuthorsChoiceSection";
+import { AboutSection } from "./sections/AboutSection";
 
 
 export default function App(){
@@ -42,12 +43,7 @@ export default function App(){
       <AuthorsChoiceSection onOpen={(i) => { setCurrent(i); setOpen(true); }} />
 
       {/* ABOUT */}
-      <Section id="about">
-        <div className="container-edge">
-          <h2 style={{ fontSize: "1.75rem", fontWeight: 800 }}>About Us</h2>
-          <p className="text-muted" style={{ marginTop: 8 }}>TUITALKS is a single-page campus blog built with React + TypeScript and CSS Modules.</p>
-        </div>
-      </Section>
+      <AboutSection />
 
       {/* CONTACT */}
       <Section id="contact">
