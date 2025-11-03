@@ -14,14 +14,19 @@ export function InterviewsCanvas({ onOpen }: { onOpen?: (i: Interview) => void }
     <div>
       <div className={styles.headerRow}>
         <div>
+          <span className={styles.eyebrow}>Spotlight series</span>
           <h2 className={styles.title}>Interviews</h2>
-          <p className={styles.subtitle}>People, ideas, and stories shaping campus life.</p>
+          <p className={styles.subtitle}>
+            These are the conversations we&apos;ve captured with the people building the future of TUITalks—dive in and
+            discover what&apos;s inspiring them next.
+          </p>
         </div>
+        <p className={styles.helper}>Fresh voices every week</p>
       </div>
 
       <div className={styles.grid}>
         {items.map(item => (
-          <div key={item.id} className="hover-pop">
+          <div key={item.id} className={styles.item}>
             <InterviewCard item={item} onOpen={onOpen} />
           </div>
         ))}
