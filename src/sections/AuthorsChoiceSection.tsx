@@ -17,6 +17,7 @@ const TAB_CONFIG: Record<
     label: string;
     caption: string;
     note: string;
+    vibe: string;
     badge: string;
     ids: string[];
   }
