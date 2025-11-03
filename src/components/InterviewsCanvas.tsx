@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { INTERVIEWS } from "../types/content";
 import type { Interview } from "../types/content";
 

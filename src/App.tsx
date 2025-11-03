@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Header } from "./components/Header";
 import { Section } from "./sections/Section";
 import { HeroSlider } from "./sections/HeroSlider";
 import { InterviewsCanvas } from "./components/InterviewsCanvas";
 import type { Interview } from "./types/content";
-import { InterviewModalDP } from "./components/InterviewModalDP";
 import { DailyProphetModal } from "./components/DailyProphetModal";
 
 
@@ -12,7 +11,7 @@ export default function App(){
   const onNav = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
-  const goToInterview = (id: string) => { onNav("interviews"); };
+  const goToInterview = (_id: string) => { onNav("interviews"); };
 
   const [open, setOpen] = useState(false);
   const [current, setCurrent] = useState<Interview | null>(null);

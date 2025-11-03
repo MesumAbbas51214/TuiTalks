@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import type { Interview } from "../types/content";
 import styles from "./DailyProphetModal.module.css";
 import { useBodyLock } from "../hooks/useBodyLock";
