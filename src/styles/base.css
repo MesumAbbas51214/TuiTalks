@@ -16,9 +16,26 @@ html { scroll-behavior: smooth; }
 /* Layout helpers */
 .container-edge { max-width: var(--container); margin-inline: auto; padding-inline: 1rem; }
 .container-wide { max-width: 92rem; margin-inline: auto; padding-inline: 1rem; }
-.page { height: 100dvh; overflow-y: auto; scroll-snap-type: y mandatory; background: #ffffff; }
-.section { min-height: 100dvh; scroll-snap-align: start; padding: calc(var(--header-h) + 24px) 1rem 2rem; }
-.section { scroll-margin-top: calc(var(--header-h) + 12px); }
+.page {
+  height: 100dvh;
+  overflow-y: auto;
+  scroll-snap-type: y proximity;
+  background: #ffffff;
+  scroll-padding-top: var(--header-h);
+}
+
+@media (min-width: 768px) {
+  .page {
+    scroll-snap-type: y mandatory;
+  }
+}
+
+.section {
+  min-height: 100dvh;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  padding: calc(var(--header-h) + 24px) 1rem 2rem;
+}
 .section--flush { padding-top: 0; padding-bottom: 0; }
 .section--canvas { min-height: 100dvh; display: grid; align-content: start; }
 .section--center { align-content: center; }

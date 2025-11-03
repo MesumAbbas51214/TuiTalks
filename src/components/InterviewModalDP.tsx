@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./InterviewModalDP.module.css";
 import type { Interview } from "../types/content";
 import { useBodyLock } from "../hooks/useBodyLock";

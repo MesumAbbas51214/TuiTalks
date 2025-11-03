@@ -1,4 +1,3 @@
-import React from "react";
 import type { Interview } from "../types/content";
 import styles from "./InterviewCard.module.css";
 
