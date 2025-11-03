@@ -1,0 +1,82 @@
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: #111827; background:#ffffff; }
+html { scroll-behavior: smooth; }
+
+
+:root {
+--border: rgba(0,0,0,.12);
+--shadow: 0 1px 2px rgba(0,0,0,.06), 0 6px 12px rgba(0,0,0,.08);
+--radius: 16px;
+--container: 72rem; /* 1152px */
+--header-h: 84px; /* header height */
+}
+
+
+/* Layout helpers */
+.container-edge { max-width: var(--container); margin-inline: auto; padding-inline: 1rem; }
+.container-wide { max-width: 92rem; margin-inline: auto; padding-inline: 1rem; }
+.page { height: 100dvh; overflow-y: auto; scroll-snap-type: y mandatory; background: #ffffff; }
+.section { min-height: 100dvh; scroll-snap-align: start; padding: calc(var(--header-h) + 24px) 1rem 2rem; }
+.section { scroll-margin-top: calc(var(--header-h) + 12px); }
+.section--flush { padding-top: 0; padding-bottom: 0; }
+.section--canvas { min-height: 100dvh; display: grid; align-content: start; }
+.section--center { align-content: center; }
+
+
+/* Hero sizing */
+.hero--contained { height: calc(100dvh - var(--header-h)); }
+.hero--full { height: 100dvh; }
+
+
+/* Card helper */
+.card { background:#fff; border:1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1rem; }
+.text-muted { color: #6b7280; }
+
+
+/* Swiper should fill parent height */
+.swiper, .swiper-wrapper, .swiper-slide { height: 100%; }
+.swiper-slide { background: transparent; }
+
+
+/* Nice hover */
+.hover-pop { transition: transform .18s ease, box-shadow .18s ease; }
+.hover-pop:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,.16); }
+
+
+/* Optional pulse focus */
+@keyframes pulseRing { 0%{ box-shadow: 0 0 0 0 rgba(37,99,235,.35);} 100%{ box-shadow: 0 0 0 12px rgba(37,99,235,0);} }
+._pulse { animation: pulseRing 1.2s ease-out; outline: 2px solid #2563eb; }
+
+/* Full viewport minus fixed header (no overlap) */
+.section--vhMinusHeader {
+  min-height: calc(100dvh - var(--header-h));
+  padding: 24px 1rem 2rem; /* comfy top padding since header isn't overlapping */
+}
+
+
+/* Add air inside sections (works great with vhMinusHeader) */
+.section--airy {
+  padding-top: calc(var(--header-h) + 56px);
+  padding-bottom: 56px;
+}
+
+/* Wider container on big screens + comfier side padding */
+.container-wide {
+  max-width: 96rem;            /* was 92rem */
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 3vw, 2rem);
+}
+
+/* ultra-wide container for big gallery feel */
+.container-ultra {
+  max-width: 110rem;                    /* wider than before */
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 3vw, 2.5rem);
+}
+
+/* extra-airy preset (use with vhMinusHeader) */
+.section--airyXL {
+  padding-top: calc(var(--header-h) + 72px);
+  padding-bottom: 72px;
+}

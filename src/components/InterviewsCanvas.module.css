@@ -1,0 +1,49 @@
+/* (Optional) legacy controls — not used now. Safe to delete. */
+.controls { display: none; }
+.input { padding:10px 12px; border:1px solid #e5e7eb; border-radius:12px; min-width:220px; }
+.select { padding:10px 12px; border:1px solid #e5e7eb; border-radius:12px; background:#fff; }
+
+/* GRID — more breathing room + sensible column steps */
+.grid {
+  margin-top: 22px;                 /* was 16px */
+  display: grid;
+  gap: 22px;                        /* was 12px */
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+
+/* ≥560px */
+@media (min-width: 560px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ≥900px */
+@media (min-width: 900px) {
+  .grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* ≥1200px */
+@media (min-width: 1200px) {
+  .grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+
+/* ≥1600px */
+@media (min-width: 1600px) {
+  .grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}
+
+/* Load more spacing + button style */
+.loadMoreWrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 26px;                 /* was 16px */
+}
+
+.btn {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: .8rem 1.1rem;            /* was .6rem 1rem */
+  font-weight: 800;                 /* was 700 */
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+}

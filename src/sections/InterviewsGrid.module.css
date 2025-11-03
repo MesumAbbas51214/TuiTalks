@@ -1,0 +1,48 @@
+/* // File: src/sections/InterviewsGrid.module.css */
+
+
+.card { position:relative; overflow:hidden; border:1px solid rgba(0,0,0,.12);
+     border-radius: 16px; background:#fff; 
+     box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 1px 3px rgba(0,0,0,.1);
+      outline: none; }
+.thumb { aspect-ratio: 4/3; width:100%; background:#f3f4f6; overflow:hidden; }
+.thumb img { width:100%; height:100%; object-fit:cover; transition: transform .4s ease; }
+.card:hover .thumb img { transform: scale(1.04); }
+.content { padding: 1rem; }
+.title { font-weight:700; }
+.teaser { color: #6b7280; font-size:.95rem; margin-top:.25rem; }
+
+/* Grid wrapper with explicit column counts by breakpoint */
+.grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(1, minmax(0, 1fr)); /* default mobile */
+}
+
+/* ≥560px (small) */
+@media (min-width: 560px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ≥768px (tablet) */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* ≥1100px (large) */
+@media (min-width: 1100px) {
+  .grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+/* ≥1400px (xl/desktop widescreen) → 7 across */
+@media (min-width: 1400px) {
+  .grid {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+}
