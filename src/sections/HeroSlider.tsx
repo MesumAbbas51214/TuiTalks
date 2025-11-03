@@ -23,6 +23,8 @@ export function HeroSlider({
   const [activeIndex, setActiveIndex] = useState(0);
   const describedByPrefix = useId();
 
+  const totalSlides = INTERVIEWS.length;
+
   return (
     <div className={wrapperClass}>
       <Swiper
@@ -42,16 +44,23 @@ export function HeroSlider({
       >
         {INTERVIEWS.map((item, index) => {
           const panelId = `${describedByPrefix}-${item.id}`;
+          const srId = `${panelId}-sr`;
+          const slideNumber = index + 1;
           const isActive = activeIndex === index;
 
           return (
-            <SwiperSlide key={item.id}>
+            <SwiperSlide
+              key={item.id}
+              role="group"
+              aria-roledescription="slide"
+              aria-label={`Slide ${slideNumber} of ${totalSlides}`}
+            >
               <button
                 type="button"
                 className={styles.slideBtn}
                 onClick={() => onPick(item.id)}
-                aria-label={`Open interview: ${item.person}`}
-                aria-describedby={panelId}
+                aria-label={`Open interview ${slideNumber} of ${totalSlides}: ${item.person}`}
+                aria-describedby={`${panelId} ${srId}`}
                 aria-current={isActive ? "true" : undefined}
               >
                 <img src={item.image} alt={item.person} className={styles.bg} loading="lazy" />
@@ -69,7 +78,9 @@ export function HeroSlider({
                   </div>
                   <span className={styles.cta}>Read interview</span>
                 </div>
-                <span className={styles.srOnly}>Tap to open interview details</span>
+                <span id={srId} className={styles.srOnly}>
+                  Slide {slideNumber} of {totalSlides}. Tap to open interview details.
+                </span>
               </button>
             </SwiperSlide>
           );
