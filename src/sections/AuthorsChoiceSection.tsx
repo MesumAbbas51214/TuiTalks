@@ -26,7 +26,6 @@ const TAB_CONFIG: Record<
     label: "Spotlight",
     caption: "Editor’s picks",
     note: "Hand-selected for the week’s reading club agenda",
-    vibe: "A quick pulse of marquee conversations to open your week.",
     badge: "Editor’s Spotlight",
     ids: FEATURED_IDS,
   },
@@ -34,7 +33,6 @@ const TAB_CONFIG: Record<
     label: "Common Room",
     caption: "Most discussed",
     note: "Stories our community is currently debating",
-    vibe: "Tune into the chatter you’ll overhear between classes.",
     badge: "Campus Favourite",
     ids: TRENDING_IDS,
   },
@@ -42,16 +40,15 @@ const TAB_CONFIG: Record<
     label: "Fresh Off The Press",
     caption: "Just in",
     note: "Arrived within the past seven days",
-    vibe: "Fresh reporting that just hit the newsroom desk.",
     badge: "New Arrival",
     ids: NEW_IDS,
   },
 };
 
 const INSIGHTS = [
-  "🎙️ Weekly sit-downs with campus voices",
-  "📰 Save a feature to revisit in the Daily Prophet",
-  "☕ Perfect queue for a coffee break read",
+  "✨ Updated every Thursday morning",
+  "📚 Tap a card to bookmark it to the Daily Prophet",
+  "☕ Pair today’s read with your favourite study nook",
 ];
 
 function pickByIds(ids: string[]): Interview[] {
@@ -79,36 +76,22 @@ export function AuthorsChoiceSection({
       className={`section section--vhMinusHeader ${styles.wrap}`}
       aria-labelledby={`${tabPrefix}-title`}
     >
+      <div className={styles.texture} aria-hidden />
       <div className="container-ultra">
         <div className={styles.inner}>
-          <div className={styles.topline}>
-            <header className={styles.head}>
-              <span className={styles.kicker}>Campus Conversations</span>
-              <h2 id={`${tabPrefix}-title`} className={styles.title}>
-                Interview highlights to keep your feed buzzing
-              </h2>
-              <p className={styles.sub}>
-                Swipe through rotating interviews curated by our editors—from marquee spotlights to the stories everyone is
-                discussing in the quad.
-              </p>
-
-              <ul className={styles.insights}>
-                {INSIGHTS.map(insight => (
-                  <li key={insight}>{insight}</li>
-                ))}
-              </ul>
-            </header>
-
-            <aside className={styles.memo} aria-live="polite">
-              <span className={styles.memoLabel}>{active.caption}</span>
-              <h3 className={styles.memoTitle}>{active.label}</h3>
-              <p className={styles.memoNote}>{active.note}</p>
-              <p className={styles.memoVibe}>{active.vibe}</p>
-            </aside>
-          </div>
+          <header className={styles.head}>
+            <span className={styles.kicker}>Editorial Suite</span>
+            <h2 id={`${tabPrefix}-title`} className={styles.title}>
+              A calm corner for this week’s essential campus reads
+            </h2>
+            <p className={styles.sub}>
+              Drift between our spotlight features, the conversations echoing through the halls, and the latest arrivals from
+              the newsroom. Every selection keeps the magazine’s warm, lively tone intact.
+            </p>
+          </header>
 
           <div className={styles.controls}>
-            <div className={styles.tabs} role="tablist" aria-label="Campus conversation filters">
+            <div className={styles.tabs} role="tablist" aria-label="Editorial filters">
               {(Object.entries(TAB_CONFIG) as Array<[TabKey, typeof active]>).map(([key, cfg]) => (
                 <button
                   key={key}
@@ -128,33 +111,45 @@ export function AuthorsChoiceSection({
             </div>
           </div>
 
-          <div
-            className={styles.carousel}
-            role="tabpanel"
-            id={activePanelId}
-            aria-labelledby={`${tabPrefix}-${tab}`}
-          >
-            <Swiper
-              modules={[Navigation, FreeMode]}
-              navigation
-              freeMode={{ enabled: true, momentum: true }}
-              grabCursor
-              slidesPerView={1.08}
-              spaceBetween={18}
-              breakpoints={{
-                560: { slidesPerView: 1.5, spaceBetween: 18 },
-                900: { slidesPerView: 2.2, spaceBetween: 20 },
-                1200: { slidesPerView: 3.1, spaceBetween: 22 },
-                1600: { slidesPerView: 4, spaceBetween: 24 },
-              }}
+          <div className={styles.surface}>
+            <div
+              className={styles.carousel}
+              role="tabpanel"
+              id={activePanelId}
+              aria-labelledby={`${tabPrefix}-${tab}`}
             >
-              {data.map(item => (
-                <SwiperSlide key={`${tab}-${item.id}`}>
-                  <FeaturedCard item={item} badge={active.badge} onOpen={onOpen} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
+              <Swiper
+                modules={[Navigation, FreeMode]}
+                navigation
+                freeMode={{ enabled: true, momentum: true }}
+                grabCursor
+                slidesPerView={1.1}
+                spaceBetween={18}
+                breakpoints={{
+                  560: { slidesPerView: 1.6, spaceBetween: 18 },
+                  900: { slidesPerView: 2.4, spaceBetween: 20 },
+                  1200: { slidesPerView: 3.2, spaceBetween: 22 },
+                  1600: { slidesPerView: 4.2, spaceBetween: 24 },
+                }}
+              >
+                {data.map(item => (
+                  <SwiperSlide key={`${tab}-${item.id}`}>
+                    <FeaturedCard item={item} badge={active.badge} onOpen={onOpen} />
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+            <aside className={styles.note}>
+              <span className={styles.noteLabel}>Reading club memo</span>
+              <p className={styles.noteBody}>{active.note}</p>
+            </aside>
           </div>
+
+          <ul className={styles.insights}>
+            {INSIGHTS.map(insight => (
+              <li key={insight}>{insight}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

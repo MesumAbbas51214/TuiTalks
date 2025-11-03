@@ -7,7 +7,7 @@ const [open, setOpen] = useState(false);
 const items: Array<[string,string]> = [
   ["Home","hero"],
   ["Interviews","interviews"],
-  ["Campus Conversations","authors"],
+  ["Editorial Suite","authors"],
   ["About","about"],
   ["Contact","contact"],
 ];
