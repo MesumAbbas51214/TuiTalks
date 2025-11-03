@@ -31,7 +31,7 @@ export default function App(){
       </Section>
 
       {/* INTERVIEWS – FULL PAGE */}
-      <Section id="interviews" className="section--vhMinusHeader section--airyXL">
+      <Section id="interviews" className="section--vhMinusHeader">
         <div className="container-ultra">
           <InterviewsCanvas onOpen={(i) => { setCurrent(i); setOpen(true); }} />
         </div>
