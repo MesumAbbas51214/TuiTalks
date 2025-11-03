@@ -5,11 +5,11 @@ import styles from "./Header.module.css";
 export function Header({ onNav }: { onNav: (id: string) => void }) {
 const [open, setOpen] = useState(false);
 const items: Array<[string,string]> = [
-["Home","hero"],
-["Interviews","interviews"],
-["Author's Choice","authors"],
-["About","about"],
-["Contact","contact"],
+  ["Home","hero"],
+  ["Interviews","interviews"],
+  ["Editorial Suite","authors"],
+  ["About","about"],
+  ["Contact","contact"],
 ];
 
 
