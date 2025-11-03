@@ -1,15 +1,20 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { Header } from "./components/Header";
 import { Section } from "./sections/Section";
 import { HeroSlider } from "./sections/HeroSlider";
 import { InterviewsCanvas } from "./components/InterviewsCanvas";
 import type { Interview } from "./types/content";
 import { DailyProphetModal } from "./components/DailyProphetModal";
+import { useSectionSnap } from "./hooks/useSectionSnap";
 
 
 export default function App(){
+  const pageRef = useRef<HTMLDivElement>(null);
+  const scrollToSection = useSectionSnap(pageRef);
   const onNav = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (!scrollToSection(id)) {
+      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
   const goToInterview = (_id: string) => { onNav("interviews"); };
 
@@ -17,7 +22,7 @@ export default function App(){
   const [current, setCurrent] = useState<Interview | null>(null);
 
   return (
-    <div className="page">
+    <div className="page" ref={pageRef}>
       <Header onNav={onNav} />
 
       {/* HERO – FULL PAGE */}

@@ -1,6 +1,6 @@
 * { box-sizing: border-box; }
 html, body, #root { height: 100%; }
-body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: #111827; background:#ffffff; }
+body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: #111827; background:#ffffff; overflow: hidden; }
 html { scroll-behavior: smooth; }
 
 
@@ -19,15 +19,10 @@ html { scroll-behavior: smooth; }
 .page {
   height: 100dvh;
   overflow-y: auto;
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
   background: #ffffff;
   scroll-padding-top: var(--header-h);
-}
-
-@media (min-width: 768px) {
-  .page {
-    scroll-snap-type: y mandatory;
-  }
+  overscroll-behavior: contain;
 }
 
 .section {
