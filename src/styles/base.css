@@ -63,7 +63,7 @@ html { scroll-behavior: smooth; }
 /* Full viewport minus fixed header (no overlap) */
 .section--vhMinusHeader {
   min-height: calc(100dvh - var(--header-h));
-  padding: 24px 1rem 2rem; /* comfy top padding since header isn't overlapping */
+  padding: clamp(32px, 8vw, 72px) clamp(1rem, 3vw, 2.75rem) clamp(64px, 10vw, 128px);
 }
 
 
