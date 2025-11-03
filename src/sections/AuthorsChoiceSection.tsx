@@ -17,7 +17,6 @@ const TAB_CONFIG: Record<
     label: string;
     caption: string;
     note: string;
-    vibe: string;
     badge: string;
     ids: string[];
   }
@@ -25,31 +24,25 @@ const TAB_CONFIG: Record<
   featured: {
     label: "Spotlight",
     caption: "Editor’s picks",
-    note: "Hand-selected for the week’s reading club agenda",
+    note: "Hand-picked for the week’s campus reading queue",
     badge: "Editor’s Spotlight",
     ids: FEATURED_IDS,
   },
   trending: {
     label: "Common Room",
     caption: "Most discussed",
-    note: "Stories our community is currently debating",
+    note: "Stories sparking the latest common-room debates",
     badge: "Campus Favourite",
     ids: TRENDING_IDS,
   },
   new: {
     label: "Fresh Off The Press",
     caption: "Just in",
-    note: "Arrived within the past seven days",
+    note: "Arrivals from the past seven days",
     badge: "New Arrival",
     ids: NEW_IDS,
   },
 };
-
-const INSIGHTS = [
-  "✨ Updated every Thursday morning",
-  "📚 Tap a card to bookmark it to the Daily Prophet",
-  "☕ Pair today’s read with your favourite study nook",
-];
 
 function pickByIds(ids: string[]): Interview[] {
   const map = new Map(INTERVIEWS.map(i => [i.id, i]));
@@ -80,14 +73,9 @@ export function AuthorsChoiceSection({
       <div className="container-ultra">
         <div className={styles.inner}>
           <header className={styles.head}>
-            <span className={styles.kicker}>Editorial Suite</span>
             <h2 id={`${tabPrefix}-title`} className={styles.title}>
               A calm corner for this week’s essential campus reads
             </h2>
-            <p className={styles.sub}>
-              Drift between our spotlight features, the conversations echoing through the halls, and the latest arrivals from
-              the newsroom. Every selection keeps the magazine’s warm, lively tone intact.
-            </p>
           </header>
 
           <div className={styles.controls}>
@@ -145,11 +133,6 @@ export function AuthorsChoiceSection({
             </aside>
           </div>
 
-          <ul className={styles.insights}>
-            {INSIGHTS.map(insight => (
-              <li key={insight}>{insight}</li>
-            ))}
-          </ul>
         </div>
       </div>
     </section>
