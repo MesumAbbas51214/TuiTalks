@@ -202,3 +202,12 @@
     min-width: unset;
   }
 }
+
+@media (max-width: 1024px) {
+  .wrap {
+    align-content: start;
+    overflow: visible;
+    padding-top: clamp(48px, 12vw, 96px);
+    padding-bottom: clamp(56px, 14vw, 120px);
+  }
+}
