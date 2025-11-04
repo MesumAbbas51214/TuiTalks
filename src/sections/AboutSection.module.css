@@ -4,7 +4,7 @@
   background: radial-gradient(circle at top left, rgba(255, 198, 158, 0.45), transparent 55%),
     radial-gradient(circle at 80% 20%, rgba(255, 220, 190, 0.35), transparent 60%),
     linear-gradient(180deg, #fdf7f0 0%, #f6efe5 100%);
-  overflow: hidden;
+  overflow-x: hidden;
   color: #231a16;
 }
 
