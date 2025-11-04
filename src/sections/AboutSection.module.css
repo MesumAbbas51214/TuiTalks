@@ -12,37 +12,57 @@
 }
 
 .headingCard {
-  padding: clamp(1.75rem, 4vw, 2.5rem);
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.1);
-  backdrop-filter: blur(6px);
   display: grid;
-  gap: clamp(0.65rem, 2vw, 1.1rem);
+  gap: clamp(0.75rem, 2.4vw, 1.25rem);
+  padding: clamp(1.75rem, 4vw, 2.5rem) clamp(2.25rem, 7vw, 4rem);
+  max-width: 640px;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  backdrop-filter: none;
+  border-left: 4px solid rgba(79, 70, 229, 0.45);
+  position: relative;
+  font-family: "Georgia", "Times New Roman", serif;
+  margin-inline: auto;
+  text-align: left;
+  justify-self: start;
+}
+
+.headingCard::after {
+  content: "";
+  position: absolute;
+  left: clamp(2.5rem, 7vw, 4rem);
+  right: clamp(1.2rem, 5vw, 3rem);
+  bottom: clamp(0.85rem, 2.5vw, 1.5rem);
+  height: 2px;
+  background: linear-gradient(90deg, rgba(79,70,229,0.25), rgba(148,163,184,0.35), rgba(79,70,229,0));
 }
 
 .kicker {
-  font-size: 0.85rem;
-  letter-spacing: 0.22em;
+  font-size: 0.78rem;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  font-weight: 700;
-  color: #475569;
+  font-weight: 600;
+  color: rgba(30, 41, 59, 0.55);
 }
 
 .title {
   margin: 0;
-  font-size: clamp(2.35rem, 5vw, 3.1rem);
-  line-height: 1.08;
-  font-weight: 800;
-  letter-spacing: -0.015em;
+  font-size: clamp(2.45rem, 5.2vw, 3.3rem);
+  line-height: 1.05;
+  font-weight: 600;
+  letter-spacing: -0.02em;
   color: #0f172a;
+  text-rendering: optimizeLegibility;
 }
 
 .subtitle {
   margin: 0;
-  font-size: 1.05rem;
-  line-height: 1.6;
-  color: rgba(15, 23, 42, 0.75);
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: rgba(15, 23, 42, 0.72);
+  font-family: "Georgia", "Times New Roman", serif;
+  font-style: italic;
 }
 
 .profileCard {
