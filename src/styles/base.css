@@ -19,7 +19,6 @@ html { scroll-behavior: smooth; }
 .page {
   height: 100dvh;
   overflow-y: auto;
-  scroll-snap-type: y mandatory;
   background: #ffffff;
   scroll-padding-top: var(--header-h);
   overscroll-behavior: contain;
@@ -27,8 +26,6 @@ html { scroll-behavior: smooth; }
 
 .section {
   min-height: 100dvh;
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
   padding: calc(var(--header-h) + 24px) 1rem 2rem;
 }
 .section--flush { padding-top: 0; padding-bottom: 0; }

@@ -1,22 +1,18 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Header } from "./components/Header";
 import { Section } from "./sections/Section";
 import { HeroSlider } from "./sections/HeroSlider";
 import { InterviewsCanvas } from "./components/InterviewsCanvas";
 import type { Interview } from "./types/content";
 import { DailyProphetModal } from "./components/DailyProphetModal";
-import { useSectionSnap } from "./hooks/useSectionSnap";
 import { AuthorsChoiceSection } from "./sections/AuthorsChoiceSection";
 import { AboutSection } from "./sections/AboutSection";
+import { ContactSection } from "./sections/ContactSection";
 
 
 export default function App(){
-  const pageRef = useRef<HTMLDivElement>(null);
-  const scrollToSection = useSectionSnap(pageRef);
   const onNav = (id: string) => {
-    if (!scrollToSection(id)) {
-      document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
   const goToInterview = () => { onNav("interviews"); };
 
@@ -24,7 +20,7 @@ export default function App(){
   const [current, setCurrent] = useState<Interview | null>(null);
 
   return (
-    <div className="page" ref={pageRef}>
+    <div className="page">
       <Header onNav={onNav} />
 
       {/* HERO – FULL PAGE */}
@@ -46,26 +42,7 @@ export default function App(){
       <AboutSection />
 
       {/* CONTACT */}
-      <Section id="contact">
-        <div className="container-edge">
-          <h2 style={{ fontSize: "1.75rem", fontWeight: 800 }}>Contact</h2>
-          <form style={{ marginTop: 16, display: "grid", gap: 12, maxWidth: 720 }}>
-            <label>
-              <div style={{ fontSize: ".9rem", fontWeight: 600 }}>Name</div>
-              <input style={{ width: "100%", padding: "10px 12px", borderRadius: 12, border: "1px solid #e5e7eb" }} placeholder="Your name" />
-            </label>
-            <label>
-              <div style={{ fontSize: ".9rem", fontWeight: 600 }}>Email</div>
-              <input type="email" style={{ width: "100%", padding: "10px 12px", borderRadius: 12, border: "1px solid #e5e7eb" }} placeholder="you@example.com" />
-            </label>
-            <label>
-              <div style={{ fontSize: ".9rem", fontWeight: 600 }}>Message</div>
-              <textarea style={{ width: "100%", minHeight: 120, padding: "10px 12px", borderRadius: 12, border: "1px solid #e5e7eb" }} placeholder="Tell us about your story idea…" />
-            </label>
-            <div><button style={{ border: "1px solid #e5e7eb", borderRadius: 12, padding: ".6rem 1rem", fontWeight: 700, background: "#111", color: "#fff", cursor: "pointer" }}>Send</button></div>
-          </form>
-        </div>
-      </Section>
+      <ContactSection />
 
       <div style={{ height: 24 }} />
 
