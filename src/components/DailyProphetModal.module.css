@@ -8,13 +8,13 @@
   display: grid;
   place-items: center;
   z-index: 1000;
-  padding: clamp(8px, 2vw, 32px);
+  padding: 0;
 }
 .window  {
-  width: min(1440px, 98vw);
-  max-height: 96vh;
+  width: 100vw;
+  height: 100dvh;
   overflow: auto;
-  border-radius: 18px;
+  border-radius: 0;
   box-shadow: 0 22px 55px rgba(15,12,8,.45);
   position: relative;
   scrollbar-width: thin;
