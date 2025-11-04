@@ -15,30 +15,22 @@ const TAB_CONFIG: Record<
   TabKey,
   {
     label: string;
-    caption: string;
-    note: string;
     badge: string;
     ids: string[];
   }
 > = {
   featured: {
     label: "Spotlight",
-    caption: "Editor’s picks",
-    note: "Hand-picked for the week’s campus reading queue",
     badge: "Editor’s Spotlight",
     ids: FEATURED_IDS,
   },
   trending: {
     label: "Common Room",
-    caption: "Most discussed",
-    note: "Stories sparking the latest common-room debates",
     badge: "Campus Favourite",
     ids: TRENDING_IDS,
   },
   new: {
     label: "Fresh Off The Press",
-    caption: "Just in",
-    note: "Arrivals from the past seven days",
     badge: "New Arrival",
     ids: NEW_IDS,
   },
@@ -69,17 +61,22 @@ export function AuthorsChoiceSection({
       className={`section section--vhMinusHeader ${styles.wrap}`}
       aria-labelledby={`${tabPrefix}-title`}
     >
-      <div className={styles.texture} aria-hidden />
       <div className="container-ultra">
         <div className={styles.inner}>
-          <header className={styles.head}>
-            <h2 id={`${tabPrefix}-title`} className={styles.title}>
-              A calm corner for this week’s essential campus reads
-            </h2>
-          </header>
+          <div className={styles.topline}>
+            <header className={styles.head}>
+              <span className={styles.kicker}>Campus Conversations</span>
+              <h2 id={`${tabPrefix}-title`} className={styles.title}>
+                Interview highlights to keep your feed buzzing
+              </h2>
+              <p className={styles.sub}>
+                Browse quick hits from the newsroom—just a handful of editor picks to start your queue.
+              </p>
+            </header>
+          </div>
 
           <div className={styles.controls}>
-            <div className={styles.tabs} role="tablist" aria-label="Editorial filters">
+            <div className={styles.tabs} role="tablist" aria-label="Campus conversation filters">
               {(Object.entries(TAB_CONFIG) as Array<[TabKey, typeof active]>).map(([key, cfg]) => (
                 <button
                   key={key}
@@ -93,46 +90,38 @@ export function AuthorsChoiceSection({
                   onClick={() => setTab(key)}
                 >
                   <span className={styles.tabLabel}>{cfg.label}</span>
-                  <span className={styles.tabCaption}>{cfg.caption}</span>
                 </button>
               ))}
             </div>
           </div>
 
-          <div className={styles.surface}>
-            <div
-              className={styles.carousel}
-              role="tabpanel"
-              id={activePanelId}
-              aria-labelledby={`${tabPrefix}-${tab}`}
+          <div
+            className={styles.carousel}
+            role="tabpanel"
+            id={activePanelId}
+            aria-labelledby={`${tabPrefix}-${tab}`}
+          >
+            <Swiper
+              modules={[Navigation, FreeMode]}
+              navigation
+              freeMode={{ enabled: true, momentum: true }}
+              grabCursor
+              slidesPerView={1.08}
+              spaceBetween={18}
+              breakpoints={{
+                560: { slidesPerView: 1.5, spaceBetween: 18 },
+                900: { slidesPerView: 2.2, spaceBetween: 20 },
+                1200: { slidesPerView: 3.1, spaceBetween: 22 },
+                1600: { slidesPerView: 4, spaceBetween: 24 },
+              }}
             >
-              <Swiper
-                modules={[Navigation, FreeMode]}
-                navigation
-                freeMode={{ enabled: true, momentum: true }}
-                grabCursor
-                slidesPerView={1.1}
-                spaceBetween={18}
-                breakpoints={{
-                  560: { slidesPerView: 1.6, spaceBetween: 18 },
-                  900: { slidesPerView: 2.4, spaceBetween: 20 },
-                  1200: { slidesPerView: 3.2, spaceBetween: 22 },
-                  1600: { slidesPerView: 4.2, spaceBetween: 24 },
-                }}
-              >
-                {data.map(item => (
-                  <SwiperSlide key={`${tab}-${item.id}`}>
-                    <FeaturedCard item={item} badge={active.badge} onOpen={onOpen} />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
-            <aside className={styles.note}>
-              <span className={styles.noteLabel}>Reading club memo</span>
-              <p className={styles.noteBody}>{active.note}</p>
-            </aside>
+              {data.map(item => (
+                <SwiperSlide key={`${tab}-${item.id}`}>
+                  <FeaturedCard item={item} badge={active.badge} onOpen={onOpen} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
-
         </div>
       </div>
     </section>
