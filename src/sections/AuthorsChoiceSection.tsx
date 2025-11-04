@@ -4,7 +4,7 @@ import { Navigation, FreeMode } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import type { Interview } from "../types/content";
-import { INTERVIEWS } from "../types/content";
+import { INTERVIEWS } from "../content/interviews";
 import { FEATURED_IDS, TRENDING_IDS, NEW_IDS } from "../content/featured";
 import { FeaturedCard } from "../components/FeaturedCard";
 import styles from "./AuthorsChoiceSection.module.css";

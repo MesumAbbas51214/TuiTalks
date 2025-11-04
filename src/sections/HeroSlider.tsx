@@ -1,5 +1,5 @@
 import { useId, useState } from "react";
-import { INTERVIEWS } from "../types/content";
+import { INTERVIEWS } from "../content/interviews";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { INTERVIEWS } from "../types/content";
+import { INTERVIEWS } from "../content/interviews";
 import type { Interview } from "../types/content";
 
 import { InterviewCard } from "./InterviewCard";
