@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { InterviewCard } from "./InterviewCard";
 import styles from "./InterviewsSection.module.css";
-import { INTERVIEWS } from "../types/content";
+import { INTERVIEWS } from "../content/interviews";
 import type { Interview } from "../types/content";
 
 

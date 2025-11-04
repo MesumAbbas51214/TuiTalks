@@ -1,4 +1,4 @@
-import { INTERVIEWS } from "../types/content";
+import { INTERVIEWS } from "../content/interviews";
 import styles from "./InterviewsGrid.module.css";
 
 export function InterviewsGrid() {
