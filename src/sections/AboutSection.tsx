@@ -5,7 +5,7 @@ export function AboutSection() {
   return (
     <Section
       id="about"
-      className={`section--vhMinusHeader section--center ${styles.about}`}
+      className={`section--center ${styles.about}`}
     >
       <div className={styles.container}>
         <div className={styles.headingCard} aria-labelledby="about-heading">
