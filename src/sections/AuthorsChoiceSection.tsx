@@ -106,13 +106,13 @@ export function AuthorsChoiceSection({
               navigation
               freeMode={{ enabled: true, momentum: true }}
               grabCursor
-              slidesPerView={1.08}
-              spaceBetween={18}
+              slidesPerView={1.05}
+              spaceBetween={16}
               breakpoints={{
-                560: { slidesPerView: 1.5, spaceBetween: 18 },
-                900: { slidesPerView: 2.2, spaceBetween: 20 },
-                1200: { slidesPerView: 3.1, spaceBetween: 22 },
-                1600: { slidesPerView: 4, spaceBetween: 24 },
+                480: { slidesPerView: 1.4, spaceBetween: 18 },
+                768: { slidesPerView: 2, spaceBetween: 20 },
+                1100: { slidesPerView: 3, spaceBetween: 22 },
+                1440: { slidesPerView: 3.6, spaceBetween: 24 },
               }}
             >
               {data.map(item => (
