@@ -7,6 +7,7 @@
   overflow: hidden;
   display: grid;
   isolation: isolate;
+  min-height: 100%;
 }
 
 .slider {
@@ -40,7 +41,7 @@
   border: 0;
   background: transparent;
   cursor: pointer;
-  padding: clamp(1rem, 4vw, 2.75rem);
+  padding: clamp(1.25rem, 5vw, 3rem) clamp(1rem, 4.5vw, 3rem);
   color: inherit;
 }
 
@@ -150,7 +151,7 @@
 @media (max-width: 768px) {
   .panel {
     border-radius: 16px;
-    padding: 1rem 1.25rem;
+    padding: clamp(0.9rem, 4vw, 1.25rem) clamp(0.9rem, 6vw, 1.4rem);
     background: rgba(255, 255, 255, 0.88);
   }
 
@@ -160,5 +161,43 @@
 
   .cta {
     padding-inline: 0.9rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .root {
+    min-height: clamp(520px, 120vw, 680px);
+  }
+
+  .slideBtn {
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+    padding: clamp(1.5rem, 9vw, 2.75rem) clamp(1.2rem, 6vw, 2rem)
+      calc(clamp(2rem, 8vw, 3rem) + env(safe-area-inset-bottom, 0px));
+  }
+
+  .panel {
+    width: 100%;
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.94);
+  }
+
+  .title {
+    font-size: clamp(1.65rem, 7vw, 2.2rem);
+  }
+
+  .desc {
+    font-size: clamp(0.95rem, 4.2vw, 1.05rem);
+  }
+
+  .slider :global(.swiper-button-prev),
+  .slider :global(.swiper-button-next) {
+    display: none;
+  }
+
+  .slider :global(.swiper-pagination-bullet) {
+    width: 10px;
+    height: 10px;
   }
 }

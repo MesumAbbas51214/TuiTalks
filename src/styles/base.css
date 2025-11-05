@@ -1,6 +1,11 @@
 * { box-sizing: border-box; }
-html, body, #root { height: 100%; }
-body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: #111827; background:#ffffff; overflow: hidden; }
+html, body, #root { min-height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: #111827;
+  background: #ffffff;
+}
 html { scroll-behavior: smooth; }
 
 
@@ -17,16 +22,21 @@ html { scroll-behavior: smooth; }
 .container-edge { max-width: var(--container); margin-inline: auto; padding-inline: 1rem; }
 .container-wide { max-width: 92rem; margin-inline: auto; padding-inline: 1rem; }
 .page {
-  height: 100dvh;
-  overflow-y: auto;
+  min-height: 100dvh;
+  min-height: 100svh;
+  min-height: 100lvh;
+  display: flex;
+  flex-direction: column;
   background: #ffffff;
   scroll-padding-top: var(--header-h);
-  overscroll-behavior: contain;
+  overflow-x: hidden;
 }
 
 .section {
   min-height: 100dvh;
-  padding: calc(var(--header-h) + 24px) 1rem 2rem;
+  min-height: 100svh;
+  min-height: 100lvh;
+  padding: calc(var(--header-h) + 24px) clamp(1rem, 4vw, 2.5rem) clamp(32px, 6vw, 64px);
 }
 .section--flush { padding-top: 0; padding-bottom: 0; }
 .section--canvas { min-height: 100dvh; display: grid; align-content: start; }
@@ -34,8 +44,16 @@ html { scroll-behavior: smooth; }
 
 
 /* Hero sizing */
-.hero--contained { height: calc(100dvh - var(--header-h)); }
-.hero--full { height: 100dvh; }
+.hero--contained {
+  min-height: calc(100dvh - var(--header-h));
+  min-height: calc(100svh - var(--header-h));
+  min-height: calc(100lvh - var(--header-h));
+}
+.hero--full {
+  min-height: 100dvh;
+  min-height: 100svh;
+  min-height: 100lvh;
+}
 
 
 /* Card helper */
@@ -60,7 +78,9 @@ html { scroll-behavior: smooth; }
 /* Full viewport minus fixed header (no overlap) */
 .section--vhMinusHeader {
   min-height: calc(100dvh - var(--header-h));
-  padding: clamp(32px, 8vw, 72px) clamp(1rem, 3vw, 2.75rem) clamp(64px, 10vw, 128px);
+  min-height: calc(100svh - var(--header-h));
+  min-height: calc(100lvh - var(--header-h));
+  padding: clamp(48px, 10vw, 96px) clamp(1rem, 3vw, 2.75rem) clamp(64px, 12vw, 128px);
 }
 
 
