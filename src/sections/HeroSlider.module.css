@@ -1,7 +1,9 @@
 .root {
   position: relative;
   width: 100%;
-  height: 100%;
+  /* Give the slider its own height so it never collapses */
+  min-height: min(92svh, 820px);
+  height: auto;
   overflow: hidden;
   display: grid;
   isolation: isolate;
@@ -9,7 +11,10 @@
 
 .slider {
   height: 100%;
+  /* Inherit the min-height from .root so Swiper always has room */
+  min-height: inherit;
 }
+
 
 .full {
   border: none;

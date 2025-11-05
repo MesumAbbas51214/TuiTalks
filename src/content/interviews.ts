@@ -30,7 +30,7 @@ export const INTERVIEWS: Interview[] = [
     title: "Courage on Campus",
     person: "Harry Potter",
     image:
-      "https://images.unsplash.com/photo-1520975922284-0d12f58fd1a5?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1600&auto=format&fit=crop",
     excerpt: "Facing challenges, balancing studies, and supporting peers.",
     dateISO: "2025-07-22",
     category: "Student Life",
