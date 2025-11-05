@@ -50,8 +50,8 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className={`${styles.wrap}`}>
-      <div className="container-ultra">
+    <section id="contact" className={styles.wrap}>
+      <div className={styles.container}>
         <div className={styles.grid}>
           {/* LEFT: Info */}
           <div className={styles.infoCard}>
