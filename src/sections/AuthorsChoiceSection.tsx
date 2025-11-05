@@ -63,17 +63,11 @@ export function AuthorsChoiceSection({
     >
       <div className="container-ultra">
         <div className={styles.inner}>
-          <div className={styles.topline}>
-            <header className={styles.head}>
-              <span className={styles.kicker}>Campus Conversations</span>
-              <h2 id={`${tabPrefix}-title`} className={styles.title}>
-                Interview highlights to keep your feed buzzing
-              </h2>
-              <p className={styles.sub}>
-                Browse quick hits from the newsroom—just a handful of editor picks to start your queue.
-              </p>
-            </header>
-          </div>
+          <header className={styles.head}>
+            <h2 id={`${tabPrefix}-title`} className={styles.title}>
+              Interview highlights to keep your feed buzzing
+            </h2>
+          </header>
 
           <div className={styles.controls}>
             <div className={styles.tabs} role="tablist" aria-label="Campus conversation filters">
@@ -93,6 +87,7 @@ export function AuthorsChoiceSection({
                 </button>
               ))}
             </div>
+            <span className={styles.badge}>{active.badge}</span>
           </div>
 
           <div
@@ -111,8 +106,8 @@ export function AuthorsChoiceSection({
               breakpoints={{
                 480: { slidesPerView: 1.4, spaceBetween: 18 },
                 768: { slidesPerView: 2, spaceBetween: 20 },
-                1100: { slidesPerView: 3, spaceBetween: 22 },
-                1440: { slidesPerView: 3.6, spaceBetween: 24 },
+                1100: { slidesPerView: 2.6, spaceBetween: 24 },
+                1440: { slidesPerView: 3.4, spaceBetween: 28 },
               }}
             >
               {data.map(item => (
