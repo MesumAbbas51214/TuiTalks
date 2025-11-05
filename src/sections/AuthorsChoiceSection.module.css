@@ -1,5 +1,6 @@
 .wrap {
   color: #111827;
+  overflow: hidden;
 }
 
 .inner {
@@ -90,10 +91,12 @@
 }
 
 .carousel {
+  position: relative;
   padding-block: clamp(10px, 2vw, 20px);
 }
 
 .carousel :global(.swiper) {
+  width: 100%;
   padding-bottom: clamp(1rem, 5vw, 2.5rem);
 }
 
@@ -148,13 +151,14 @@
   }
 
   .tabs {
+    gap: 8px;
     justify-content: center;
     width: 100%;
   }
 
   .tab {
-    flex: 1 1 calc(50% - 10px);
-    min-width: 140px;
+    flex: 1 1 100%;
+    min-width: 0;
     justify-content: center;
   }
 
@@ -169,5 +173,15 @@
   .carousel :global(.swiper-button-prev),
   .carousel :global(.swiper-button-next) {
     display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .carousel {
+    margin-inline: -0.35rem;
+  }
+
+  .carousel :global(.swiper) {
+    padding-inline: clamp(0.35rem, 4vw, 0.75rem);
   }
 }
