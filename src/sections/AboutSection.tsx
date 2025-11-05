@@ -3,45 +3,49 @@ import styles from "./AboutSection.module.css";
 
 export function AboutSection() {
   return (
-    <Section
-      id="about"
-      className={`section--center ${styles.about}`}
-    >
-      <div className={styles.container}>
-        <div className={styles.headingCard} aria-labelledby="about-heading">
-          <span className={styles.kicker}>About TUITALKS</span>
-          <h2 id="about-heading" className={styles.title}>
-            A warm studio for bold campus conversations
-          </h2>
-          <p className={styles.subtitle}>
-            From late-night brainstorms to spotlight interviews, we craft each episode with the care of a
-            studio session and the heart of a dorm-room chat.
-          </p>
-        </div>
-
-        <article className={styles.profileCard}>
-          <div className={styles.photoFrame}>
+    <Section id="about" className={`section--center ${styles.about}`}>
+      <div className={styles.inner}>
+        <figure className={styles.mediaBlock} aria-labelledby="about-media-caption">
+          <div className={styles.mediaFrame}>
             <img
               src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=900&q=80"
-              alt="Melis — Founder of TUITALKS"
+              alt="Portrait of Melis recording a podcast"
               className={styles.photo}
             />
+            <div className={styles.mediaGlow} aria-hidden="true" />
+          </div>
+          <figcaption id="about-media-caption" className={styles.mediaCaption}>
+            <span className={styles.mediaName}>Melis</span>
+            <span className={styles.mediaRole}>Founder · Host</span>
+          </figcaption>
+        </figure>
+
+        <article className={styles.storyBlock} aria-labelledby="about-heading">
+          <span className={styles.kicker}>About TUITALKS</span>
+          <h2 id="about-heading" className={styles.title}>
+            Campus voices, crafted with care
+          </h2>
+          <p className={styles.subtitle}>
+            TUITALKS began as a hallway idea and grew into a studio where every student story is recorded with
+            intention, empathy, and delight.
+          </p>
+
+          <div className={styles.storyBody}>
+            <p>
+              When the campus quiets down, our microphones switch on. Each session is a chance to spotlight the
+              curiosity, courage, and creativity that make TU Ilmenau so electric. We turn thoughtful
+              conversations into audio experiences that feel like gathering around a living room table.
+            </p>
+            <p>
+              From the first hello to the final edit, we design collaborations that are relaxed yet intentional.
+              Expect warm lighting, real talk, and space to explore the ideas that keep you up at night. This is
+              your invitation to bring your story to the studio.
+            </p>
           </div>
 
-          <div className={styles.profileBody}>
-            <div>
-              <h3 className={styles.profileName}>Melis</h3>
-              <p className={styles.profileRole}>Founder · Host · Interaction Designer</p>
-            </div>
-
-            <p className={styles.profileIntro}>
-              I’m here to build collaborations that feel effortless and genuine—always ready to listen, create,
-              and celebrate the voices that make TU Ilmenau pulse.
-            </p>
-
-            <button type="button" className={styles.profileCta}>
-              Let&apos;s collaborate
-            </button>
+          <div className={styles.signature}>
+            <span className={styles.signatureName}>Melis</span>
+            <span className={styles.signatureRole}>Founder, TUITALKS</span>
           </div>
         </article>
       </div>
