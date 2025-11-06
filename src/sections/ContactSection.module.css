@@ -28,14 +28,13 @@
 
 .grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
   gap: clamp(20px, 3vw, 32px);
-  align-items: start;
 }
 
 @media (max-width: 980px) {
   .grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+    align-items: start;
   }
 }
 
@@ -115,7 +114,7 @@
   text-transform: uppercase;
 }
 
-@media (max-width: 980px) {
+@media (max-width: 1080px) {
   .wrap {
     padding-block: clamp(72px, 18vw, 104px);
   }
@@ -124,6 +123,12 @@
   .formCard {
     width: min(620px, 100%);
     margin-inline: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    min-height: auto;
   }
 }
 

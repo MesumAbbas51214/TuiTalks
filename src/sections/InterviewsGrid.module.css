@@ -64,37 +64,66 @@
   line-height: 1.55;
 }
 
-/* Grid wrapper with explicit column counts by breakpoint */
-.grid {
+.thumb {
+  aspect-ratio: 4/3;
+  width: 100%;
+  background: rgba(45, 30, 21, 0.85);
+  overflow: hidden;
+  border-bottom: 1px solid rgba(90, 45, 41, 0.4);
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  filter: sepia(0.28) contrast(1.08);
+}
+
+.card:hover .thumb img {
+  transform: scale(1.06);
+}
+
+.content {
+  padding: 1rem;
   display: grid;
   gap: 16px;
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
-/* ≥560px (small) */
-@media (min-width: 560px) {
+.title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+.teaser {
+  color: var(--color-ink-soft);
+  font-size: 0.95rem;
+  margin-top: 0.1rem;
+  line-height: 1.55;
+}
+
+/* Fluid grid that gracefully collapses on smaller screens */
+.grid {
+  display: grid;
+  gap: clamp(16px, 2vw, 24px);
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+@media (max-width: 600px) {
   .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .content {
+    padding: 0.85rem 0.9rem 1rem;
   }
 }
 
-/* ≥768px (tablet) */
-@media (min-width: 768px) {
-  .grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-/* ≥1100px (large) */
-@media (min-width: 1100px) {
-  .grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
-  }
-}
-
-/* ≥1400px (xl/desktop widescreen) → 7 across */
 @media (min-width: 1400px) {
   .grid {
-    grid-template-columns: repeat(7, minmax(0, 1fr));
+    gap: 28px;
   }
 }
