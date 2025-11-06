@@ -29,6 +29,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   gap: clamp(14px, 3vw, 20px);
+  width: 100%;
 }
 
 .tabs {
@@ -37,6 +38,14 @@
   padding: 0.4rem;
   border-radius: 999px;
   border: 1px solid rgba(15, 23, 42, 0.12);
+  overflow-x: auto;
+  scrollbar-width: thin;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabs::-webkit-scrollbar {
+  display: none;
 }
 
 .tab {
@@ -94,6 +103,7 @@
 .carousel {
   position: relative;
   margin: 0;
+  padding-top: clamp(0px, 1.5vw, 12px);
 }
 
 .carousel :global(.swiper) {
@@ -135,6 +145,50 @@
   opacity: 0.35;
 }
 
+@media (max-width: 1100px) {
+  .controls {
+    align-items: stretch;
+  }
+
+  .badge {
+    order: 3;
+    align-self: flex-start;
+  }
+
+  .carousel :global(.swiper-button-prev) {
+    right: 52px;
+  }
+
+  .carousel :global(.swiper-button-next) {
+    right: -4px;
+  }
+}
+
+@media (max-width: 900px) {
+  .carousel {
+    padding-top: 0;
+  }
+
+  .carousel :global(.swiper) {
+    padding-bottom: clamp(2.4rem, 7vw, 3.4rem);
+  }
+
+  .carousel :global(.swiper-button-prev),
+  .carousel :global(.swiper-button-next) {
+    top: auto;
+    bottom: -6px;
+    transform: translateY(100%);
+  }
+
+  .carousel :global(.swiper-button-prev) {
+    right: 68px;
+  }
+
+  .carousel :global(.swiper-button-next) {
+    right: 12px;
+  }
+}
+
 @media (max-width: 820px) {
   .controls {
     flex-direction: column;
@@ -162,10 +216,11 @@
   .tabs {
     width: 100%;
     flex-wrap: wrap;
+    align-items: stretch;
   }
 
   .tab {
-    flex: 1 1 calc(50% - 8px);
+    flex: 1 1 100%;
     padding-block: 0.65rem;
   }
 
@@ -175,8 +230,3 @@
   }
 }
 
-@media (max-width: 480px) {
-  .tab {
-    flex: 1 1 100%;
-  }
-}
