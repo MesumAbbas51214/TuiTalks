@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import type { Interview } from "../types/content";
 import styles from "./DailyProphetModal.module.css";
 import { useBodyLock } from "../hooks/useBodyLock";
-import { PROPHET_BY_INTERVIEW } from "../content/prophet";
+import { getProphetArticle } from "../content/prophet";
 
 export function DailyProphetModal({
   open,
@@ -27,7 +27,7 @@ export function DailyProphetModal({
   if (!open || !interview) return null;
 
   // Pull article by interview.id; fallback to a sample.
-  const article = PROPHET_BY_INTERVIEW[interview.id];
+  const article = getProphetArticle(interview.id);
 
   return (
     <div className={styles.overlay} onClick={onClose} role="dialog" aria-modal="true">

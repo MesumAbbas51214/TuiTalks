@@ -1,19 +1,16 @@
 // Choose which interviews to surface in Author's Choice.
 // You can change order anytime.
 export const FEATURED_IDS = [
-  "albus-dumbledore",
-  "hermione-granger",
-  "harry-potter",
+  "john-henderson",
+  "sara-elias",
 ];
 
 export const TRENDING_IDS = [
-  "hermione-granger",
-  "harry-potter",
-  "albus-dumbledore",
+  "sara-elias",
+  "john-henderson",
 ];
 
 export const NEW_IDS = [
-  "harry-potter",
-  "albus-dumbledore",
-  "hermione-granger",
+  "john-henderson",
+  "sara-elias",
 ];
