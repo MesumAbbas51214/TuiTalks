@@ -31,7 +31,7 @@
   gap: clamp(20px, 3vw, 32px);
 }
 
-@media (min-width: 1080px) {
+@media (max-width: 980px) {
   .grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
     align-items: start;
