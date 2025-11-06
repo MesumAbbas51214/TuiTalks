@@ -101,48 +101,22 @@
 }
 
 .carousel {
-  position: relative;
   margin: 0;
-  padding-top: clamp(0px, 1.5vw, 12px);
 }
 
-.carousel :global(.swiper) {
-  width: 100%;
-  padding-bottom: clamp(1.25rem, 4vw, 2.8rem);
+.carouselTrack {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: clamp(18px, 3vw, 28px);
 }
 
-.carousel :global(.swiper-slide) {
-  height: auto;
+.carouselItem {
+  display: flex;
 }
 
-.carousel :global(.swiper-button-prev),
-.carousel :global(.swiper-button-next) {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
-  border: 1px solid rgba(15, 23, 42, 0.2);
-  background: #0f172a;
-  color: #f9fafb;
-  top: -60px;
-  left: auto;
-}
-
-.carousel :global(.swiper-button-prev) {
-  right: 60px;
-}
-
-.carousel :global(.swiper-button-next) {
-  right: 4px;
-}
-
-.carousel :global(.swiper-button-prev)::after,
-.carousel :global(.swiper-button-next)::after {
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.carousel :global(.swiper-button-disabled) {
-  opacity: 0.35;
+.carouselItem :global(article) {
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 @media (max-width: 1100px) {
@@ -154,14 +128,6 @@
     order: 3;
     align-self: flex-start;
   }
-
-  .carousel :global(.swiper-button-prev) {
-    right: 52px;
-  }
-
-  .carousel :global(.swiper-button-next) {
-    right: -4px;
-  }
 }
 
 @media (max-width: 900px) {
@@ -169,23 +135,8 @@
     padding-top: 0;
   }
 
-  .carousel :global(.swiper) {
-    padding-bottom: clamp(2.4rem, 7vw, 3.4rem);
-  }
-
-  .carousel :global(.swiper-button-prev),
-  .carousel :global(.swiper-button-next) {
-    top: auto;
-    bottom: -6px;
-    transform: translateY(100%);
-  }
-
-  .carousel :global(.swiper-button-prev) {
-    right: 68px;
-  }
-
-  .carousel :global(.swiper-button-next) {
-    right: 12px;
+  .carouselTrack {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 }
 
@@ -196,7 +147,9 @@
   }
 
   .tabs {
-    justify-content: space-between;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.1rem;
   }
 
   .badge {
@@ -215,17 +168,33 @@
 
   .tabs {
     width: 100%;
-    flex-wrap: wrap;
-    align-items: stretch;
+    flex-wrap: nowrap;
+    gap: 0.5rem;
   }
 
   .tab {
-    flex: 1 1 100%;
-    padding-block: 0.65rem;
+    flex: 0 0 auto;
+    padding-block: 0.6rem;
   }
 
-  .carousel :global(.swiper-button-prev),
-  .carousel :global(.swiper-button-next) {
+  .carouselTrack {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(75vw, 1fr);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: clamp(16px, 5vw, 22px);
+    padding-bottom: clamp(1.5rem, 6vw, 2.25rem);
+    margin-inline: calc(-1 * clamp(1rem, 6vw, 1.5rem));
+    padding-inline: clamp(1rem, 6vw, 1.5rem);
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .carouselItem {
+    scroll-snap-align: start;
+  }
+
+  .carouselTrack::-webkit-scrollbar {
     display: none;
   }
 }

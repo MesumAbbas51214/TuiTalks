@@ -1,8 +1,4 @@
 import { useId, useMemo, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, FreeMode } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
 import type { Interview } from "../types/content";
 import { INTERVIEWS } from "../content/interviews";
 import { FEATURED_IDS, TRENDING_IDS, NEW_IDS } from "../content/featured";
@@ -96,26 +92,13 @@ export function AuthorsChoiceSection({
             id={activePanelId}
             aria-labelledby={`${tabPrefix}-${tab}`}
           >
-            <Swiper
-              modules={[Navigation, FreeMode]}
-              navigation
-              freeMode={{ enabled: true, momentum: true }}
-              grabCursor
-              slidesPerView={1.05}
-              spaceBetween={16}
-              breakpoints={{
-                480: { slidesPerView: 1.4, spaceBetween: 18 },
-                768: { slidesPerView: 2, spaceBetween: 20 },
-                1100: { slidesPerView: 2.6, spaceBetween: 24 },
-                1440: { slidesPerView: 3.4, spaceBetween: 28 },
-              }}
-            >
+            <div className={styles.carouselTrack}>
               {data.map(item => (
-                <SwiperSlide key={`${tab}-${item.id}`}>
+                <div key={`${tab}-${item.id}`} className={styles.carouselItem}>
                   <FeaturedCard item={item} badge={active.badge} onOpen={onOpen} />
-                </SwiperSlide>
+                </div>
               ))}
-            </Swiper>
+            </div>
           </div>
         </div>
       </div>
