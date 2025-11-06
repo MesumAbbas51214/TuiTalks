@@ -216,10 +216,11 @@
   .tabs {
     width: 100%;
     flex-wrap: wrap;
+    align-items: stretch;
   }
 
   .tab {
-    flex: 1 1 calc(50% - 8px);
+    flex: 1 1 100%;
     padding-block: 0.65rem;
   }
 
@@ -229,8 +230,3 @@
   }
 }
 
-@media (max-width: 480px) {
-  .tab {
-    flex: 1 1 100%;
-  }
-}
