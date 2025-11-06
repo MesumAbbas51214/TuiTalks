@@ -1,33 +1,39 @@
-* { box-sizing: border-box; }
 html, body, #root { min-height: 100%; }
-body {
-  margin: 0;
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-  color: #111827;
-  background: #ffffff;
-}
-html { scroll-behavior: smooth; }
-
 
 :root {
---border: rgba(0,0,0,.12);
---shadow: 0 1px 2px rgba(0,0,0,.06), 0 6px 12px rgba(0,0,0,.08);
---radius: 16px;
---container: 72rem; /* 1152px */
---header-h: 84px; /* header height */
+  --border: rgba(35, 26, 22, 0.35);
+  --shadow: 0 8px 28px rgba(35, 26, 22, 0.16);
+  --radius: var(--radius-paper);
+  --container: 72rem; /* 1152px */
+  --header-h: 92px; /* header height */
 }
 
-
 /* Layout helpers */
-.container-edge { max-width: var(--container); margin-inline: auto; padding-inline: 1rem; }
-.container-wide { max-width: 92rem; margin-inline: auto; padding-inline: 1rem; }
+.container-edge {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2.25rem);
+}
+
+.container-wide {
+  max-width: 90rem;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5vw, 3rem);
+}
+
+.container-ultra {
+  max-width: 110rem;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 5vw, 3.5rem);
+}
+
 .page {
   min-height: 100dvh;
   min-height: 100svh;
   min-height: 100lvh;
   display: flex;
   flex-direction: column;
-  background: #ffffff;
+  background: transparent;
   scroll-padding-top: var(--header-h);
   overflow-x: hidden;
 }
@@ -36,12 +42,56 @@ html { scroll-behavior: smooth; }
   min-height: 100dvh;
   min-height: 100svh;
   min-height: 100lvh;
-  padding: calc(var(--header-h) + 24px) clamp(1rem, 4vw, 2.5rem) clamp(32px, 6vw, 64px);
+  padding: calc(var(--header-h) + 32px) clamp(1.2rem, 4vw, 3rem) clamp(48px, 7vw, 96px);
+  background: rgba(244, 234, 208, 0.38);
+  position: relative;
 }
-.section--flush { padding-top: 0; padding-bottom: 0; }
-.section--canvas { min-height: 100dvh; display: grid; align-content: start; }
-.section--center { align-content: center; }
 
+.section::before {
+  content: "";
+  position: absolute;
+  inset: clamp(1.5rem, 4vw, 2.6rem);
+  border: 1px solid rgba(75, 54, 35, 0.2);
+  border-radius: calc(var(--radius) + 8px);
+  pointer-events: none;
+  opacity: 0.45;
+}
+
+.section--flush {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.section--flush::before {
+  display: none;
+}
+
+.section--canvas {
+  min-height: 100dvh;
+  display: grid;
+  align-content: start;
+}
+
+.section--center {
+  align-content: center;
+}
+
+.section--vhMinusHeader {
+  min-height: calc(100dvh - var(--header-h));
+  min-height: calc(100svh - var(--header-h));
+  min-height: calc(100lvh - var(--header-h));
+  padding: clamp(52px, 10vw, 110px) clamp(1.2rem, 4vw, 3rem) clamp(64px, 12vw, 140px);
+}
+
+.section--airy {
+  padding-top: calc(var(--header-h) + 64px);
+  padding-bottom: 72px;
+}
+
+.section--airyXL {
+  padding-top: calc(var(--header-h) + 90px);
+  padding-bottom: 96px;
+}
 
 /* Hero sizing */
 .hero--contained {
@@ -49,63 +99,58 @@ html { scroll-behavior: smooth; }
   min-height: calc(100svh - var(--header-h));
   min-height: calc(100lvh - var(--header-h));
 }
+
 .hero--full {
   min-height: 100dvh;
   min-height: 100svh;
   min-height: 100lvh;
 }
 
-
 /* Card helper */
-.card { background:#fff; border:1px solid var(--border); border-radius: var(--radius); box-shadow: var(--shadow); padding: 1rem; }
-.text-muted { color: #6b7280; }
+.card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(237, 221, 189, 0.9));
+  border: 1px solid rgba(75, 54, 35, 0.25);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+}
 
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px dashed rgba(75, 54, 35, 0.25);
+  pointer-events: none;
+}
+
+.text-muted {
+  color: rgba(61, 48, 40, 0.7);
+}
 
 /* Swiper should fill parent height */
-.swiper, .swiper-wrapper, .swiper-slide { height: 100%; }
-.swiper-slide { background: transparent; }
-
-
-/* Nice hover */
-.hover-pop { transition: transform .18s ease, box-shadow .18s ease; }
-.hover-pop:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(0,0,0,.16); }
-
-
-/* Optional pulse focus */
-@keyframes pulseRing { 0%{ box-shadow: 0 0 0 0 rgba(37,99,235,.35);} 100%{ box-shadow: 0 0 0 12px rgba(37,99,235,0);} }
-._pulse { animation: pulseRing 1.2s ease-out; outline: 2px solid #2563eb; }
-
-/* Full viewport minus fixed header (no overlap) */
-.section--vhMinusHeader {
-  min-height: calc(100dvh - var(--header-h));
-  min-height: calc(100svh - var(--header-h));
-  min-height: calc(100lvh - var(--header-h));
-  padding: clamp(48px, 10vw, 96px) clamp(1rem, 3vw, 2.75rem) clamp(64px, 12vw, 128px);
+.swiper,
+.swiper-wrapper,
+.swiper-slide {
+  height: 100%;
 }
 
-
-/* Add air inside sections (works great with vhMinusHeader) */
-.section--airy {
-  padding-top: calc(var(--header-h) + 56px);
-  padding-bottom: 56px;
+.swiper-slide {
+  background: transparent;
 }
 
-/* Wider container on big screens + comfier side padding */
-.container-wide {
-  max-width: 96rem;            /* was 92rem */
-  margin-inline: auto;
-  padding-inline: clamp(1rem, 3vw, 2rem);
+/* Soft focus helper */
+@keyframes pulseRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(90, 45, 41, 0.35);
+  }
+
+  100% {
+    box-shadow: 0 0 0 12px rgba(90, 45, 41, 0);
+  }
 }
 
-/* ultra-wide container for big gallery feel */
-.container-ultra {
-  max-width: 110rem;                    /* wider than before */
-  margin-inline: auto;
-  padding-inline: clamp(1rem, 3vw, 2.5rem);
-}
-
-/* extra-airy preset (use with vhMinusHeader) */
-.section--airyXL {
-  padding-top: calc(var(--header-h) + 72px);
-  padding-bottom: 72px;
+._pulse {
+  animation: pulseRing 1.2s ease-out;
+  outline: 2px solid var(--color-accent);
 }

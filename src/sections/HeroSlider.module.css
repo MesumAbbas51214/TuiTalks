@@ -1,7 +1,6 @@
 .root {
   position: relative;
   width: 100%;
-  /* Give the slider its own height so it never collapses */
   min-height: min(92vh, 820px);
   min-height: min(92svh, 820px);
   min-height: min(92lvh, 820px);
@@ -14,10 +13,8 @@
 .slider {
   width: 100%;
   height: 100%;
-  /* Inherit the min-height from .root so Swiper always has room */
   min-height: inherit;
 }
-
 
 .full {
   border: none;
@@ -26,10 +23,10 @@
 }
 
 .contained {
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  background: #0f172a;
-  box-shadow: var(--shadow);
+  border: 1px solid rgba(90, 45, 41, 0.35);
+  border-radius: calc(var(--radius) + 6px);
+  background: rgba(255, 252, 238, 0.9);
+  box-shadow: var(--shadow-soft);
 }
 
 .slideBtn {
@@ -48,13 +45,13 @@
 }
 
 .slideBtn:focus-visible {
-  outline: 2px solid #2563eb;
-  outline-offset: 2px;
+  outline: 2px dashed var(--color-accent);
+  outline-offset: 6px;
 }
 
 .slideBtn[aria-current="true"] .panel {
-  border-color: rgba(37, 99, 235, 0.35);
-  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2), var(--shadow);
+  border-color: var(--color-accent);
+  box-shadow: var(--shadow-strong);
 }
 
 .bg {
@@ -66,6 +63,7 @@
   display: block;
   transform: scale(1.05);
   transition: transform 0.6s ease;
+  filter: sepia(0.35) contrast(1.08);
 }
 
 .slideBtn:hover .bg,
@@ -76,44 +74,55 @@
 .grad {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.4), transparent);
+  background: linear-gradient(to top, rgba(20, 14, 10, 0.82), rgba(20, 14, 10, 0.4), transparent);
 }
 
 .panel {
   position: relative;
   z-index: 1;
   max-width: min(32rem, 72vw);
-  background: rgba(255, 255, 255, 0.9);
-  border: 1px solid rgba(15, 23, 42, 0.12);
-  border-radius: 18px;
-  box-shadow: var(--shadow);
-  backdrop-filter: blur(14px);
-  padding: clamp(0.75rem, 2vw, 1.25rem) clamp(1rem, 2.6vw, 1.65rem);
+  background: linear-gradient(180deg, rgba(255, 252, 238, 0.95), rgba(240, 223, 190, 0.92));
+  border: 1px solid rgba(90, 45, 41, 0.35);
+  border-radius: calc(var(--radius) + 2px);
+  box-shadow: 0 12px 36px rgba(47, 31, 24, 0.24);
+  padding: clamp(0.85rem, 2vw, 1.35rem) clamp(1.1rem, 2.6vw, 1.75rem);
   margin-left: clamp(1rem, 4vw, 3rem);
   margin-bottom: clamp(1.1rem, 3.4vw, 2.4rem);
 }
 
+.panel::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px dashed rgba(90, 45, 41, 0.3);
+  pointer-events: none;
+}
+
 .badge {
-  font-size: 0.7rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
+  font-family: var(--font-smallcaps);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: #374151;
+  color: var(--color-accent-dark);
 }
 
 .title {
-  font-size: clamp(1.75rem, 4.2vw, 2.55rem);
-  font-weight: 900;
+  font-family: var(--font-heading);
+  font-size: clamp(1.9rem, 4.2vw, 2.65rem);
+  font-weight: 400;
   margin: 0.35rem 0 0;
-  color: #0f172a;
+  color: var(--color-ink);
   line-height: 1.05;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 
 .desc {
-  color: #475569;
+  color: var(--color-ink-soft);
   margin-top: 0.4rem;
-  font-size: clamp(0.9rem, 2.1vw, 1rem);
-  line-height: 1.5;
+  font-size: clamp(0.95rem, 2.1vw, 1.05rem);
+  line-height: 1.6;
 }
 
 .cta {
@@ -121,13 +130,16 @@
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  border: 1px solid #e5e7eb;
+  border: 1px solid rgba(90, 45, 41, 0.35);
   border-radius: 999px;
   padding: 0.55rem 1.1rem;
-  font-weight: 700;
-  background: #ffffff;
-  color: #1f2937;
-  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.12);
+  font-family: var(--font-smallcaps);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  background: var(--color-accent);
+  color: var(--color-parchment);
+  box-shadow: 0 6px 16px rgba(47, 31, 24, 0.24);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
 }
 
 .cta::after {
@@ -139,6 +151,12 @@
 .slideBtn:hover .cta::after,
 .slideBtn:focus-visible .cta::after {
   transform: translateX(4px);
+}
+
+.slideBtn:hover .cta,
+.slideBtn:focus-visible .cta {
+  background: var(--color-accent-dark);
+  box-shadow: var(--shadow-strong);
 }
 
 .srOnly {
@@ -154,9 +172,9 @@
 
 @media (max-width: 768px) {
   .panel {
-    border-radius: 16px;
-    padding: clamp(0.9rem, 4vw, 1.25rem) clamp(0.9rem, 6vw, 1.4rem);
-    background: rgba(255, 255, 255, 0.88);
+    border-radius: calc(var(--radius) + 2px);
+    padding: clamp(0.9rem, 4vw, 1.3rem) clamp(0.9rem, 6vw, 1.4rem);
+    background: linear-gradient(180deg, rgba(255, 252, 238, 0.96), rgba(240, 223, 190, 0.92));
     margin: 0;
   }
 
@@ -165,7 +183,7 @@
   }
 
   .cta {
-    padding-inline: 0.9rem;
+    padding-inline: 0.95rem;
   }
 }
 
@@ -185,12 +203,12 @@
   .panel {
     width: 100%;
     max-width: 100%;
-    background: rgba(255, 255, 255, 0.94);
+    background: linear-gradient(180deg, rgba(255, 252, 238, 0.96), rgba(240, 223, 190, 0.92));
     margin: 0;
   }
 
   .title {
-    font-size: clamp(1.65rem, 7vw, 2.2rem);
+    font-size: clamp(1.85rem, 7vw, 2.3rem);
   }
 
   .desc {

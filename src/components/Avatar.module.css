@@ -1,4 +1,37 @@
-.wrap { display:inline-flex; align-items:center; gap:8px; }
-.img { width:28px; height:28px; border-radius:999px; object-fit:cover; border:1px solid #e5e7eb; }
-.badge { width:28px; height:28px; border-radius:999px; display:grid; place-items:center; font-size:.8rem; font-weight:700; color:#111; background:#e5e7eb; border:1px solid #d1d5db; }
-.name { font-size:.9rem; color:#374151; }
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.img {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  object-fit: cover;
+  border: 1px solid rgba(90, 45, 41, 0.35);
+  filter: sepia(0.25);
+}
+
+.badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  background: rgba(255, 250, 234, 0.9);
+  border: 1px solid rgba(90, 45, 41, 0.3);
+  font-family: var(--font-smallcaps);
+  letter-spacing: 0.18em;
+}
+
+.name {
+  font-size: 0.95rem;
+  font-family: var(--font-smallcaps);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}

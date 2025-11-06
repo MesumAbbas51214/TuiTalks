@@ -1,45 +1,106 @@
 .card {
   position: relative;
-  border-radius: 18px;
+  border-radius: calc(var(--radius) + 4px);
   overflow: hidden;
-  background: #fff;
-  border: 1px solid rgba(0,0,0,.08);
-  box-shadow: 0 8px 22px rgba(0,0,0,.12);
+  background: linear-gradient(180deg, rgba(255, 252, 238, 0.96), rgba(240, 223, 190, 0.9));
+  border: 1px solid rgba(90, 45, 41, 0.35);
+  box-shadow: 0 12px 32px rgba(47, 31, 24, 0.22);
   height: 100%;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 1px dashed rgba(90, 45, 41, 0.28);
+  pointer-events: none;
 }
 
 .media {
   position: relative;
   aspect-ratio: 4/3;
-  background: #f3f4f6;
+  background: rgba(45, 30, 21, 0.85);
 }
-.img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
-.card:hover .img { transform: scale(1.06); }
 
-.grad { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,.15), transparent); }
+.img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+  filter: sepia(0.3) contrast(1.1);
+}
+
+.card:hover .img {
+  transform: scale(1.08);
+}
+
+.grad {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(18, 12, 9, 0.7), rgba(18, 12, 9, 0.2), transparent);
+}
 
 .badge {
-  position: absolute; top: 10px; left: 10px;
-  background: rgba(255,255,255,.9);
-  border: 1px solid rgba(0,0,0,.12);
-  padding: .28rem .6rem; border-radius: 999px;
-  font-size: .72rem; font-weight: 800;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 250, 234, 0.9);
+  border: 1px solid rgba(90, 45, 41, 0.3);
+  padding: 0.32rem 0.65rem;
+  border-radius: 999px;
+  font-family: var(--font-smallcaps);
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
 .caption {
-  position: absolute; left: 12px; right: 12px; bottom: 12px;
-  color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,.5);
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 14px;
+  color: var(--color-parchment);
+  text-shadow: 0 6px 18px rgba(10, 7, 5, 0.85);
 }
-.person { text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; opacity: .95; }
-.title  { margin: .18rem 0 0; font-size: 1.05rem; font-weight: 900; }
 
-.body { padding: .7rem .8rem .85rem; display: grid; gap: .5rem; }
+.person {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.75rem;
+  font-family: var(--font-smallcaps);
+}
+
+.title {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+}
+
+.body {
+  padding: 0.9rem 1rem 1.2rem;
+  display: grid;
+  gap: 0.6rem;
+  color: var(--color-ink);
+}
+
 .meta {
-  display: flex; align-items: center; justify-content: space-between;
-  color: #6b7280; font-size: .85rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-ink-soft);
+  font-size: 0.86rem;
+  font-family: var(--font-smallcaps);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }
 
 .open {
-  position: absolute; inset: 0;
-  border: 0; background: none; cursor: pointer;
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
 }

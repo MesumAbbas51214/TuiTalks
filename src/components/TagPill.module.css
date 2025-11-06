@@ -1,5 +1,18 @@
-.pill { display:inline-flex; align-items:center; gap:6px;
-     padding:.25rem .55rem; border:1px solid #e5e7eb;
-      border-radius: 999px; font-size:.8rem; background:#fff;
-       color:#374151; }
-.hash { opacity:.6; }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.3rem 0.6rem;
+  border: 1px dashed rgba(90, 45, 41, 0.4);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-family: var(--font-smallcaps);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: rgba(255, 248, 226, 0.9);
+  color: var(--color-accent-dark);
+}
+
+.hash {
+  opacity: 0.6;
+}
