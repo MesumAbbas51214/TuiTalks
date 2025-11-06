@@ -1,68 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700&family=UnifrakturMaguntia&display=swap");
+
+/* Theme tokens */
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  --color-parchment: #fdf8e2;
+  --color-parchment-soft: #f4ead0;
+  --color-parchment-dark: #ead9b8;
+  --color-ink: #231a16;
+  --color-ink-soft: #3d3028;
+  --color-accent: #5a2d29;
+  --color-accent-dark: #3e1e1b;
+  --color-border: #c2a878;
+  --color-border-dark: #9a7c4b;
+  --shadow-soft: 0 12px 32px rgba(47, 31, 24, 0.18);
+  --shadow-strong: 0 16px 48px rgba(47, 31, 24, 0.26);
+  --radius-paper: 18px;
+  --font-body: "EB Garamond", "Georgia", "Times New Roman", serif;
+  --font-heading: "UnifrakturMaguntia", "IM Fell English SC", "Georgia", serif;
+  --font-smallcaps: "EB Garamond", "Georgia", serif;
+  --transition-base: 0.24s ease-in-out;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-a:hover {
-  color: #535bf2;
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-ink);
+  background-color: var(--color-parchment);
+  background-image:
+    radial-gradient(rgba(90, 45, 41, 0.08) 1px, transparent 1px),
+    radial-gradient(rgba(58, 37, 31, 0.04) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(90, 45, 41, 0.06), rgba(255, 255, 255, 0) 220px);
+  background-size: 220px 220px, 140px 140px, auto;
+  background-position: 0 0, 60px 40px, 0 0;
+  display: flex;
+  flex-direction: column;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+#root {
+  flex: 1 1 auto;
+  width: 100%;
+}
+
+a {
+  color: var(--color-accent);
+  font-weight: 500;
+  text-decoration: none;
+  text-underline-offset: 3px;
+  transition: color var(--transition-base), text-decoration-color var(--transition-base);
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-accent-dark);
+  text-decoration: underline;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+  padding: 0.55rem 1.3rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(234, 217, 184, 0.9));
+  color: var(--color-ink);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background var(--transition-base), color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+  box-shadow: 0 4px 12px rgba(47, 31, 24, 0.14);
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+button:hover,
+button:focus-visible {
+  background: linear-gradient(180deg, rgba(154, 124, 75, 0.24), rgba(90, 45, 41, 0.18));
+  color: var(--color-parchment);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-soft);
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px dashed var(--color-accent);
+  outline-offset: 4px;
+}
+
+hr {
+  border: 0;
+  border-top: 3px double var(--color-border-dark);
+  margin: 2.5rem auto;
+  max-width: 12rem;
+}
+
+::selection {
+  background: rgba(90, 45, 41, 0.22);
+  color: var(--color-ink);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+figure img {
+  filter: sepia(0.15) contrast(1.05) saturate(0.8);
+}
+
+.dropcap::first-letter {
+  float: left;
+  font-family: var(--font-heading);
+  font-size: clamp(2.8rem, 5vw, 3.6rem);
+  line-height: 0.85;
+  margin: 0.15rem 0.4rem 0 0;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.newspaper-rule {
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding-block: 0.5rem;
+  margin-block: 2rem;
+}
+
+.columns-desktop {
+  column-gap: 2.4rem;
+}
+
+@media (min-width: 1024px) {
+  .columns-desktop.two {
+    columns: 2 22rem;
   }
 }

@@ -1,3 +1,47 @@
+.controls {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 24px;
+  grid-template-columns: minmax(0, 1.35fr) repeat(2, minmax(0, 220px));
+  align-items: stretch;
+}
+
+.input,
+.select {
+  width: 100%;
+  border: 1px solid rgba(90, 45, 41, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 252, 238, 0.9);
+  color: var(--color-ink);
+  font: inherit;
+  padding: 0.8rem 1.15rem;
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  appearance: none;
+}
+
+.input::placeholder {
+  color: rgba(61, 48, 40, 0.65);
+}
+
+.input:focus-visible,
+.select:focus-visible {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(90, 45, 41, 0.18);
+}
+
+.select {
+  font-family: var(--font-smallcaps);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  background-image: linear-gradient(45deg, transparent 50%, rgba(90, 45, 41, 0.6) 50%),
+    linear-gradient(135deg, rgba(90, 45, 41, 0.6) 50%, transparent 50%);
+  background-position: calc(100% - 18px) calc(1rem + 4px), calc(100% - 12px) calc(1rem + 4px);
+  background-size: 6px 6px;
+  background-repeat: no-repeat;
+  padding-right: 2.5rem;
+}
+
 .headerRow {
   display: flex;
   align-items: flex-end;
@@ -7,41 +51,78 @@
 }
 
 .title {
-  font-size: clamp(2rem, 3.6vw, 2.8rem);
-  font-weight: 900;
+  font-family: var(--font-heading);
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
   margin: 0;
-  letter-spacing: -0.01em;
 }
+
 .subtitle {
-  color: #6b7280;
-  margin: .6rem 0 0;
+  color: var(--color-ink-soft);
+  margin: 0.6rem 0 0;
   max-width: 60ch;
+  font-size: 1.05rem;
+  line-height: 1.65;
+  background: rgba(255, 255, 255, 0.6);
+  padding: 0.75rem 1rem;
+  border-left: 3px solid var(--color-accent);
+  box-shadow: inset 0 0 0 1px rgba(90, 45, 41, 0.18);
 }
 
 /* BIG, responsive grid — cards won't get too small */
 .grid {
   margin-top: 28px;
   display: grid;
-  gap: 28px;                                     /* more space between cards */
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
 
-/* Optional: at huge screens, increase gap a touch */
+@media (max-width: 960px) {
+  .controls {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    gap: 24px;
+  }
+}
+
 @media (min-width: 1600px) {
-  .grid { gap: 32px; }
+  .grid {
+    gap: 36px;
+  }
 }
 
-.moreWrap {
+.loadMoreWrap {
   display: flex;
   justify-content: center;
   margin-top: 32px;
 }
+
 .btn {
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: .9rem 1.15rem;
-  font-weight: 800;
-  background: #111;
-  color: #fff;
+  border: 1px solid rgba(90, 45, 41, 0.35);
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  font-family: var(--font-smallcaps);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  background: var(--color-accent);
+  color: var(--color-parchment);
   cursor: pointer;
+  box-shadow: 0 10px 28px rgba(90, 45, 41, 0.28);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), background var(--transition-base);
+}
+
+.btn:hover,
+.btn:focus-visible {
+  background: var(--color-accent-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-strong);
 }
