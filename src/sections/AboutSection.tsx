@@ -8,7 +8,7 @@ export function AboutSection() {
         <figure className={styles.mediaBlock} aria-labelledby="about-media-caption">
           <div className={styles.mediaFrame}>
             <img
-              src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=900&q=80"
+              src="https://plus.unsplash.com/premium_photo-1661756608986-dd68a605b46f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074"
               alt="Portrait of Melis recording a podcast"
               className={styles.photo}
             />
