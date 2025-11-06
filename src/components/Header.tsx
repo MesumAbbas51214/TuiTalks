@@ -4,7 +4,7 @@ import styles from "./Header.module.css";
 const NAV_ITEMS: Array<[label: string, target: string]> = [
   ["Home", "hero"],
   ["Interviews", "interviews"],
-  ["Editorial Suite", "authors"],
+  ["Author's Choice", "authors"],
   ["About", "about"],
   ["Contact", "contact"],
 ];
