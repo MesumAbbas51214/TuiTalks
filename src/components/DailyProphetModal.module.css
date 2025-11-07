@@ -8,13 +8,15 @@
   display: grid;
   place-items: center;
   z-index: 1000;
-  padding: 0;
+  --modal-pad: clamp(16px, 5vw, 56px);
+  padding: var(--modal-pad);
 }
 .window  {
-  width: 100vw;
-  height: 100dvh;
+  width: min(1120px, 100%);
+  max-height: calc(100dvh - 2 * var(--modal-pad, 0px));
+  height: auto;
   overflow: auto;
-  border-radius: 0;
+  border-radius: 12px;
   box-shadow: 0 22px 55px rgba(15,12,8,.45);
   position: relative;
   scrollbar-width: thin;
