@@ -18,23 +18,25 @@ export function InterviewsCanvas({ onOpen }: { onOpen?: (i: Interview) => void }
 
   return (
     <div className={styles.wrap}>
-      <header className={styles.head}>
-        <h2 className={styles.title}>Interviews</h2>
-        <p className={styles.subtitle}>
-          Meet the makers, dreamers, and campus voices shaping the future of TUIs. Dive into in-depth
-          conversations that bring their stories and inspirations to life.
-        </p>
-      </header>
+      <div className={styles.inner}>
+        <header className={styles.headerRow}>
+          <div className={styles.headerCopy}>
+            <h2 className={styles.title}>Interviews</h2>
+            <p className={styles.subtitle}>
+              Meet the makers, dreamers, and campus voices shaping the future of TUIs. Dive into in-depth
+              conversations that bring their stories and inspirations to life.
+            </p>
+          </div>
 
-      <div className={styles.controls}>
-        <span className={styles.kicker}>{FEATURED_LABEL}</span>
-        <span className={styles.badge}>{FEATURED_BADGE}</span>
-      </div>
+          <div className={styles.badgeStack}>
+            <span className={styles.kicker}>{FEATURED_LABEL}</span>
+            <span className={styles.badge}>{FEATURED_BADGE}</span>
+          </div>
+        </header>
 
-      <div className={styles.carousel} role="list">
-        <div className={styles.carouselTrack}>
+        <div className={styles.grid} role="list">
           {data.map(item => (
-            <div key={item.id} className={styles.carouselItem}>
+            <div key={item.id} className={styles.gridItem} role="listitem">
               <FeaturedCard item={item} badge={FEATURED_BADGE} onOpen={onOpen} />
             </div>
           ))}
