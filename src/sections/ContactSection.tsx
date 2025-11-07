@@ -50,100 +50,131 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className={styles.wrap}>
-      <div className={styles.container}>
-        <div className={styles.grid}>
-          {/* LEFT: Info */}
-          <div className={styles.infoCard}>
-            <h2 className={styles.title}>Let’s talk</h2>
-            <p className={styles.subtitle}>
-              Tell me about your story idea, collaboration, or feedback. I read every message. ✉️
-            </p>
+    <section
+      id="contact"
+      className={`${styles.wrap} section section--vhMinusHeader section--flush`}
+      aria-labelledby="contact-title"
+    >
+      <div className="container-wide">
+        <div className={styles.frame}>
+          <div className={styles.inner}>
+            <header className={styles.headerRow}>
+              <div className={styles.headerCopy}>
+                <span className={styles.kicker}>Stay in touch</span>
+                <h2 id="contact-title" className={styles.title}>
+                  Let’s talk
+                </h2>
+                <p className={styles.subtitle}>
+                  Tell me about your story idea, collaboration, or feedback. I read every message. ✉️
+                </p>
+              </div>
 
-            <ul className={styles.channels}>
-              <li>
-                <a href="mailto:editor@tuitalks.example" className={styles.chip} aria-label="Email">
-                  <span>📧</span> editor@tuitalks.example
-                </a>
-              </li>
-              <li>
-                <a href="https://instagram.com/" target="_blank" className={styles.chip} rel="noreferrer" aria-label="Instagram">
-                  <span>📸</span> @tuitalks
-                </a>
-              </li>
-              <li className={styles.chip} aria-label="Location">
-                <span>📍</span> TU Ilmenau · Campus
-              </li>
-            </ul>
+              <aside className={styles.headerNote}>
+                <p>
+                  <strong>Office hours:</strong> Mon–Fri, 10:00–17:00 CET
+                </p>
+                <p>I’ll try to get back within 24–48h.</p>
+              </aside>
+            </header>
 
-            <div className={styles.sideNote}>
-              <strong>Office hours:</strong> Mon–Fri, 10:00–17:00 CET  
-              <br />
-              I’ll try to get back within 24–48h.
+            <div className={styles.grid}>
+              {/* LEFT: Info */}
+              <div className={`${styles.card} ${styles.infoCard}`}>
+                <h3 className={styles.infoTitle}>Ways to reach me</h3>
+
+                <ul className={styles.channels}>
+                  <li>
+                    <a href="mailto:editor@tuitalks.example" className={styles.chip} aria-label="Email">
+                      <span aria-hidden="true">📧</span>
+                      <span>editor@tuitalks.example</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://instagram.com/"
+                      target="_blank"
+                      className={styles.chip}
+                      rel="noreferrer"
+                      aria-label="Instagram"
+                    >
+                      <span aria-hidden="true">📸</span>
+                      <span>@tuitalks</span>
+                    </a>
+                  </li>
+                  <li>
+                    <span className={`${styles.chip} ${styles.chipStatic}`} aria-label="Location">
+                      <span aria-hidden="true">📍</span>
+                      <span>TU Ilmenau · Campus</span>
+                    </span>
+                  </li>
+                </ul>
+
+                <p className={styles.sideNote}>Prefer in-person? Stop by for a hallway chat or bring your notes to the studio.</p>
+              </div>
+
+              {/* RIGHT: Form */}
+              <form className={`${styles.card} ${styles.formCard}`} onSubmit={onSubmit} noValidate>
+                <div className={styles.fields}>
+                  <div className={`${styles.field} ${data.name ? styles.filled : ""} ${errors.name ? styles.err : ""}`}>
+                    <input
+                      id="name"
+                      value={data.name}
+                      onChange={(e) => onChange("name", e.target.value)}
+                      autoComplete="name"
+                      aria-invalid={!!errors.name}
+                    />
+                    <label htmlFor="name">Your name</label>
+                    {errors.name && <span className={styles.error}>{errors.name}</span>}
+                  </div>
+
+                  <div className={`${styles.field} ${data.email ? styles.filled : ""} ${errors.email ? styles.err : ""}`}>
+                    <input
+                      id="email"
+                      type="email"
+                      value={data.email}
+                      onChange={(e) => onChange("email", e.target.value)}
+                      autoComplete="email"
+                      aria-invalid={!!errors.email}
+                    />
+                    <label htmlFor="email">Email</label>
+                    {errors.email && <span className={styles.error}>{errors.email}</span>}
+                  </div>
+
+                  <div className={`${styles.field} ${data.subject ? styles.filled : ""} ${errors.subject ? styles.err : ""}`}>
+                    <input
+                      id="subject"
+                      value={data.subject}
+                      onChange={(e) => onChange("subject", e.target.value)}
+                      aria-invalid={!!errors.subject}
+                    />
+                    <label htmlFor="subject">Subject</label>
+                    {errors.subject && <span className={styles.error}>{errors.subject}</span>}
+                  </div>
+
+                  <div className={`${styles.field} ${styles.textarea} ${data.message ? styles.filled : ""} ${errors.message ? styles.err : ""}`}>
+                    <textarea
+                      id="message"
+                      value={data.message}
+                      onChange={(e) => onChange("message", e.target.value)}
+                      rows={6}
+                      aria-invalid={!!errors.message}
+                    />
+                    <label htmlFor="message">Message</label>
+                    {errors.message && <span className={styles.error}>{errors.message}</span>}
+                  </div>
+                </div>
+
+                <div className={styles.actions}>
+                  <button className={styles.button} disabled={!valid || sending} aria-busy={sending}>
+                    {sending ? "Sending…" : "Send message"}
+                  </button>
+                  <span className={`${styles.toast} ${sent ? styles.show : ""}`} role="status" aria-live="polite">
+                    ✅ Message sent! I’ll reply soon.
+                  </span>
+                </div>
+              </form>
             </div>
           </div>
-
-          {/* RIGHT: Form */}
-          <form className={styles.formCard} onSubmit={onSubmit} noValidate>
-            <div className={styles.fields}>
-              <div className={`${styles.field} ${data.name ? styles.filled : ""} ${errors.name ? styles.err : ""}`}>
-                <input
-                  id="name"
-                  value={data.name}
-                  onChange={(e) => onChange("name", e.target.value)}
-                  autoComplete="name"
-                  aria-invalid={!!errors.name}
-                />
-                <label htmlFor="name">Your name</label>
-                {errors.name && <span className={styles.error}>{errors.name}</span>}
-              </div>
-
-              <div className={`${styles.field} ${data.email ? styles.filled : ""} ${errors.email ? styles.err : ""}`}>
-                <input
-                  id="email"
-                  type="email"
-                  value={data.email}
-                  onChange={(e) => onChange("email", e.target.value)}
-                  autoComplete="email"
-                  aria-invalid={!!errors.email}
-                />
-                <label htmlFor="email">Email</label>
-                {errors.email && <span className={styles.error}>{errors.email}</span>}
-              </div>
-
-              <div className={`${styles.field} ${data.subject ? styles.filled : ""} ${errors.subject ? styles.err : ""}`}>
-                <input
-                  id="subject"
-                  value={data.subject}
-                  onChange={(e) => onChange("subject", e.target.value)}
-                  aria-invalid={!!errors.subject}
-                />
-                <label htmlFor="subject">Subject</label>
-                {errors.subject && <span className={styles.error}>{errors.subject}</span>}
-              </div>
-
-              <div className={`${styles.field} ${styles.textarea} ${data.message ? styles.filled : ""} ${errors.message ? styles.err : ""}`}>
-                <textarea
-                  id="message"
-                  value={data.message}
-                  onChange={(e) => onChange("message", e.target.value)}
-                  rows={6}
-                  aria-invalid={!!errors.message}
-                />
-                <label htmlFor="message">Message</label>
-                {errors.message && <span className={styles.error}>{errors.message}</span>}
-              </div>
-            </div>
-
-            <div className={styles.actions}>
-              <button className={styles.button} disabled={!valid || sending} aria-busy={sending}>
-                {sending ? "Sending…" : "Send message"}
-              </button>
-              <span className={`${styles.toast} ${sent ? styles.show : ""}`} role="status" aria-live="polite">
-                ✅ Message sent! I’ll reply soon.
-              </span>
-            </div>
-          </form>
         </div>
       </div>
     </section>
