@@ -1,5 +1,7 @@
 import { Section } from "./Section";
 import styles from "./AboutSection.module.css";
+import mesumPhoto from "../assets/mesum_edit.jpg";
+
 
 export function AboutSection() {
   return (
@@ -7,11 +9,12 @@ export function AboutSection() {
       <div className={styles.inner}>
         <figure className={styles.mediaBlock} aria-labelledby="about-media-caption">
           <div className={styles.mediaFrame}>
-            <img
-              src="https://plus.unsplash.com/premium_photo-1661756608986-dd68a605b46f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1074"
-              alt="Portrait of Melis recording a podcast"
-              className={styles.photo}
-            />
+           
+<img
+  src={mesumPhoto}
+  alt="Portrait of Melis recording a podcast"
+  className={styles.photo}
+/>
             <div className={styles.mediaGlow} aria-hidden="true" />
           </div>
           <figcaption id="about-media-caption" className={styles.mediaCaption}>
