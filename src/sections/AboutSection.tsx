@@ -26,7 +26,7 @@ export function AboutSection() {
         <article className={styles.storyBlock} aria-labelledby="about-heading">
           <span className={styles.kicker}>About TUITALKS</span>
           <h2 id="about-heading" className={styles.title}>
-            Campus voices, crafted with care
+            Bridging Ideas and Hearts at TU Ilmenau – Our Story
           </h2>
           <p className={styles.subtitle}>
             TUITALKS began as a hallway idea and grew into a studio where every student story is recorded with
@@ -47,7 +47,7 @@ export function AboutSection() {
           </div>
 
           <div className={styles.signature}>
-            <span className={styles.signatureName}>Melis</span>
+            <span className={styles.signatureName}>Mesum</span>
             <span className={styles.signatureRole}>Founder, TUITALKS</span>
           </div>
         </article>
