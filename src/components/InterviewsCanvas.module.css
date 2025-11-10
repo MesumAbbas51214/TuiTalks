@@ -53,14 +53,15 @@
   align-items: center;
   padding: 0.35rem 0.8rem;
   border-radius: 999px;
-  border: 1px dashed rgba(90, 45, 41, 0.4);
-  background: rgba(250, 235, 205, 0.55);
+  border: 1px dashed rgba(255, 255, 255, 0.55);
+  background: rgba(90, 45, 41, 0.68);
   font-family: var(--font-smallcaps);
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--color-accent-dark);
+  color: var(--color-parchment);
+  text-shadow: 0 2px 6px rgba(35, 26, 22, 0.35);
 }
 
 .badge {

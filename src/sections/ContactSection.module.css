@@ -36,6 +36,11 @@
   gap: clamp(16px, 3vw, 24px);
 }
 
+.headerCopy {
+  display: grid;
+  gap: 0.75rem;
+}
+
 @media (min-width: 920px) {
   .headerRow {
     flex-direction: row;
@@ -153,7 +158,7 @@
 .chip {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 0.65rem;
   padding: 0.75rem 1rem;
   border-radius: 999px;
@@ -322,12 +327,52 @@
 }
 
 @media (max-width: 640px) {
+  .headerRow {
+    align-items: center;
+    text-align: center;
+  }
+
+  .headerCopy {
+    text-align: center;
+  }
+
+  .headerNote {
+    text-align: center;
+    justify-items: center;
+  }
+
   .wrap {
     padding: clamp(64px, 18vw, 96px) 0;
   }
 
   .channels {
     grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .fields {
+    gap: 12px;
+  }
+
+  .field {
+    padding: 12px 10px 8px;
+    border-radius: 12px;
+  }
+
+  .field input,
+  .field textarea {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    padding: 8px 0 2px;
+  }
+
+  .field:focus-within label,
+  .filled label {
+    font-size: 0.68rem;
+  }
+
+  .textarea {
+    padding-top: 16px;
   }
 
   .actions {
@@ -337,6 +382,18 @@
 
   .toast {
     width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .chip {
+    padding: 0.75rem 1.15rem;
+    font-size: 0.82rem;
+    letter-spacing: 0.2em;
+  }
+
+  .sideNote {
     text-align: center;
   }
 }
