@@ -33,9 +33,7 @@ export function AboutSection() {
             <p>Hello, you.</p>
             <p>I'm glad you're here.</p>
             <p>
-              Migurl Alvarez once said, <em>"You'll know when you get there. For now, just keep typing."</em> I
-              didn't know a silly conversation with a friend on a sunny, rainy day at the Mensa would do more than
-              just keep me here. But it did. And somehow, so did you. All because I wanted to write.
+              Migurl Alvarez once said, <em>"You'll know when you get there. For now, just keep typing."</em> I didn’t know a silly conversation with a friend on a sunny, rainy day at the Mensa would one day lead me here. But it did. And somehow, so did you. All because I wanted to write.
             </p>
             <p>
               Growing up — through my teens, and later to kind of an adult aircraft at my university in Pakistan
