@@ -18,7 +18,7 @@ export function AboutSection() {
             <div className={styles.mediaGlow} aria-hidden="true" />
           </div>
           <figcaption id="about-media-caption" className={styles.mediaCaption}>
-            <span className={styles.mediaName}>Melis</span>
+            <span className={styles.mediaName}>Mesum</span>
             <span className={styles.mediaRole}>Founder · Host</span>
           </figcaption>
         </figure>
@@ -28,22 +28,33 @@ export function AboutSection() {
           <h2 id="about-heading" className={styles.title}>
             Bridging Ideas and Hearts at TU Ilmenau – Our Story
           </h2>
-          <p className={styles.subtitle}>
-            TUITALKS began as a hallway idea and grew into a studio where every student story is recorded with
-            intention, empathy, and delight.
-          </p>
 
           <div className={styles.storyBody}>
+            <p>Hello, you.</p>
+            <p>I'm glad you're here.</p>
             <p>
-              When the campus quiets down, our microphones switch on. Each session is a chance to spotlight the
-              curiosity, courage, and creativity that make TU Ilmenau so electric. We turn thoughtful
-              conversations into audio experiences that feel like gathering around a living room table.
+              Migurl Alvarez once said, <em>"You'll know when you get there. For now, just keep typing."</em> I
+              didn't know a silly conversation with a friend on a sunny, rainy day at the Mensa would do more than
+              just keep me here. But it did. And somehow, so did you. All because I wanted to write.
             </p>
             <p>
-              From the first hello to the final edit, we design collaborations that are relaxed yet intentional.
-              Expect warm lighting, real talk, and space to explore the ideas that keep you up at night. This is
-              your invitation to bring your story to the studio.
+              Growing up — through my teens, and later to kind of an adult aircraft at my university in Pakistan
+              where I'd spend most of my free time — I always wanted to write. But somewhere along the way, I lost
+              it.
             </p>
+            <p>Maybe it was the first heartbreak.</p>
+            <p>Maybe it was choosing engineering over art.</p>
+            <p>
+              Maybe it was the never-ending assignments, or the race to chase things society said I should want.
+            </p>
+            <p>It got buried under everything else.</p>
+            <p>So this is my way back.</p>
+            <p>This is for the words. For the voice that got quiet.</p>
+            <p>
+              It's a space to talk about life, books, heartbreak, healing, and sometimes about the less poetic
+              things too — like technology, making money, startups, and entrepreneurship.
+            </p>
+            <p>And mostly, it's a space to talk about you.</p>
           </div>
 
           <div className={styles.signature}>
