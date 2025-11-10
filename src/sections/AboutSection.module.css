@@ -110,7 +110,7 @@
 .title {
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(2.4rem, 5.2vw, 3.25rem);
+  font-size: clamp(1.4rem, 4.2vw, 2.25rem);
   line-height: 1.05;
   letter-spacing: 0.12em;
   text-transform: uppercase;
