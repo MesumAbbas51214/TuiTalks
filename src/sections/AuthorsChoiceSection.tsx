@@ -26,7 +26,7 @@ export function AuthorsChoiceSection({ onOpen }: { onOpen?: (i: Interview) => vo
           <header className={styles.headerRow}>
             <div>
               <h2 id="authors-title" className={styles.title}>
-                Author's Choice
+               Spotlight
               </h2>
               <p className={styles.subtitle}>
                 Hand-picked reads from the editorial desk. Short, sharp interviews you can finish between classes.
