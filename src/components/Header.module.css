@@ -115,6 +115,7 @@
   top: calc(var(--header-h) - 6px);
   right: clamp(12px, 5vw, 24px);
   z-index: 60;
+  pointer-events: auto;
   background: linear-gradient(180deg, rgba(251, 239, 209, 0.98), rgba(239, 220, 187, 0.95));
   border: 2px solid var(--color-border-dark);
   border-radius: calc(var(--radius) + 4px);
