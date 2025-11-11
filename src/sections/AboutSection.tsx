@@ -33,7 +33,9 @@ export function AboutSection() {
             <p>Hello, you.</p>
             <p>I'm glad you're here.</p>
             <p>
-              Migurl Alvarez once said, <em>"You'll know when you get there. For now, just keep typing."</em> I didn’t know a silly conversation with a friend on a sunny, rainy day at the Mensa would one day lead me here. But it did. And somehow, so did you. All because I wanted to write.
+              Migurl Alvarez once said, <em>"You'll know when you get there. For now, just keep typing."</em> 
+              I didn’t know a silly conversation with a friend on a sunny, rainy day at the Mensa would one day lead me here.
+               But it did. And somehow, you came following. All because I wanted to write.
             </p>
             <p>
               Growing up — through my teens, and later under that old dummy aircraft at my university in Pakistan where I’d spend most of my free time — I always wanted to write.
@@ -51,7 +53,7 @@ But somewhere along the way, I lost it.s
               It's a space to talk about life, books, heartbreak, healing, and sometimes about the less poetic
               things too — like technology, making money, starting businesse, and FINANCIAL FREEDOM?
             </p>
-            <p>And mostly, it's a space to talk about you.</p>
+            <p>But mostly, it's a space to talk about you.</p>
           </div>
 
           <div className={styles.signature}>
