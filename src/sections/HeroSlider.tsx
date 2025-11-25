@@ -12,8 +12,7 @@ const SLIDES = [
     id: "sameer",
     image: sameerImage,
     title: "GOD, Mother and GLORY, IN THAT ORDER",
-    tagline: "Slytherin // Unapologetic Ambition",
-    label: "Project // Duality",
+   
   },
 ];
 

@@ -37,7 +37,7 @@ export function DailyProphetModal({
           {/* Masthead */}
           <div className={styles.mast}>
             <div className={styles.rule} />
-            <div className={styles.brand}>THE DAILY PROPHET</div>
+            <div className={styles.brand}>TUI TALKS</div>
             <div className={styles.rule} />
           </div>
 
