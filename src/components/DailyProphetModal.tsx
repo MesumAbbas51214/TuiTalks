@@ -16,6 +16,46 @@ export function DailyProphetModal({
   useBodyLock(open);
   const closeRef = useRef<HTMLButtonElement | null>(null);
 
+  // Always resolve article + derived content to keep hook order stable.
+  const article = getProphetArticle(interview?.id ?? "sample");
+  const sidebarItems = article.sidebar?.items ?? [];
+
+  const supportingStories = useMemo(
+    () => [
+      {
+        title: sidebarItems[0]?.title ?? "Wizard Magician Breaks Statute of Secrecy on Christmas Eve",
+        text:
+          sidebarItems[0]?.text ??
+          "Christmas Eve is a big day for the wizarding world—for both Wizard, Witch and Muggle alike.",
+        img:
+          sidebarItems[0]?.img ??
+          "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1000&auto=format&fit=crop",
+      },
+      {
+        title: "Heir Of Slytherin To Start At Hogwarts This Year",
+        text:
+          "In a recent discovery, a modern-day Heir of Slytherin has been identified. The once magical Slytherin has been in hiding from the wizarding world for the last three generations…",
+        img: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1200&auto=format&fit=crop",
+      },
+      {
+        title: "Godric Gryffindors Wand Resurfaces At Hogwarts",
+        text:
+          "Earlier today Kaitlin Black, a 4th year from Ravenclaw, discovered a wand that is now thought to be the Godric Gryffindors Wand. While the magical item is currently being housed by The Ministry of Magic and undergoing tests…",
+        img:
+          sidebarItems[1]?.img ??
+          "https://images.unsplash.com/photo-1473186578172-c141e6798cf4?q=80&w=1200&auto=format&fit=crop",
+      },
+    ],
+    [sidebarItems],
+  );
+
+  const marquee = {
+    title: "World News",
+    blurb:
+      article.body[1] ??
+      "In a series of unprecedented events, one right after another, the Department of Mysteries and The Department of Magical Creatures have undergone a joint collaboration to understand what the muggle world has identified as COVID-19.",
+  };
+
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();

@@ -27,15 +27,17 @@ export function HeroSlider({
     full ? "hero--full" : "hero--contained"
   }`;
 
+  const canLoop = SLIDES.length > 1;
+
   return (
     <div className={wrapperClass}>
       <Swiper
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 5200, disableOnInteraction: false }}
+        autoplay={canLoop ? { delay: 5200, disableOnInteraction: false } : false}
         effect="fade"
-        loop
+        loop={canLoop}
         role="group"
         aria-roledescription="carousel"
         aria-label="Hero spotlight"
