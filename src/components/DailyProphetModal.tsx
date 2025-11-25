@@ -16,6 +16,9 @@ export function DailyProphetModal({
   useBodyLock(open);
   const closeRef = useRef<HTMLButtonElement | null>(null);
 
+  // Always resolve article + derived content to keep hook order stable.
+  const article = getProphetArticle(interview?.id ?? "sample");
+
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -26,13 +29,10 @@ export function DailyProphetModal({
 
   if (!open || !interview) return null;
 
-  // Pull article by interview.id; fallback to a sample.
-  const article = getProphetArticle(interview.id);
-
   return (
     <div className={styles.overlay} onClick={onClose} role="dialog" aria-modal="true">
       <div className={`${styles.window} ${styles.paper}`} onClick={(e) => e.stopPropagation()}>
-        <button ref={closeRef} className={styles.close} onClick={onClose}>× Close</button>
+        <button ref={closeRef} className={styles.close} onClick={onClose}>X Close</button>
         <div className={styles.inner}>
           {/* Masthead */}
           <div className={styles.mast}>
@@ -62,7 +62,7 @@ export function DailyProphetModal({
               <div className={`${styles.article} ${styles.dropcap}`}>
                 {article.body.map((para, i) => <p key={i}>{para}</p>)}
                 {/* Signature using the interview data */}
-                <p><em>By {interview.author.name} · TUITALKS</em></p>
+                <p><em>By {interview.author.name} - TUITALKS</em></p>
               </div>
             </div>
 
