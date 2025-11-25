@@ -1,5 +1,3 @@
-import { useId, useState } from "react";
-import { INTERVIEWS } from "../content/interviews";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 import "swiper/css";
@@ -7,23 +5,28 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import styles from "./HeroSlider.module.css";
+import sameerImage from "../assets/sameer.jpg";
 
+const SLIDES = [
+  {
+    id: "sameer",
+    image: sameerImage,
+    title: "GOD, Mother and GLORY, IN THAT ORDER",
+    tagline: "Slytherin // Unapologetic Ambition",
+    label: "Project // Duality",
+  },
+];
 
 export function HeroSlider({
-  onPick,
   variant = "full",
 }: {
-  onPick: (id: string) => void;
+  onPick?: (id: string) => void;
   variant?: "contained" | "full";
 }) {
   const full = variant === "full";
   const wrapperClass = `${styles.root} ${full ? styles.full : styles.contained} ${
     full ? "hero--full" : "hero--contained"
   }`;
-  const [activeIndex, setActiveIndex] = useState(0);
-  const describedByPrefix = useId();
-
-  const totalSlides = INTERVIEWS.length;
 
   return (
     <div className={wrapperClass}>
@@ -31,60 +34,29 @@ export function HeroSlider({
         modules={[Navigation, Pagination, Autoplay, EffectFade]}
         navigation
         pagination={{ clickable: true }}
-        autoplay={{ delay: 4200, disableOnInteraction: false }}
+        autoplay={{ delay: 5200, disableOnInteraction: false }}
         effect="fade"
         loop
         role="group"
         aria-roledescription="carousel"
-        aria-label="Featured campus interviews"
+        aria-label="Hero spotlight"
         aria-live="polite"
         className={styles.slider}
-        onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
-        onSwiper={(swiper) => setActiveIndex(swiper.realIndex)}
       >
-        {INTERVIEWS.map((item, index) => {
-          const panelId = `${describedByPrefix}-${item.id}`;
-          const srId = `${panelId}-sr`;
-          const slideNumber = index + 1;
-          const isActive = activeIndex === index;
-
-          return (
-            <SwiperSlide
-              key={item.id}
-              role="group"
-              aria-roledescription="slide"
-              aria-label={`Slide ${slideNumber} of ${totalSlides}`}
-            >
-              <button
-                type="button"
-                className={styles.slideBtn}
-                onClick={() => onPick(item.id)}
-                aria-label={`Open interview ${slideNumber} of ${totalSlides}: ${item.person}`}
-                aria-describedby={`${panelId} ${srId}`}
-                aria-current={isActive ? "true" : undefined}
-              >
-                <img src={item.image} alt={item.person} className={styles.bg} loading="lazy" />
-                <div className={styles.grad} />
-                <div
-                  className={styles.panel}
-                  id={panelId}
-                  aria-hidden={isActive ? undefined : true}
-                  aria-live={isActive ? "polite" : undefined}
-                >
-                  <div className={styles.badge}>Featured Interview</div>
-                  <div className={styles.title}>{item.person}</div>
-                  <div className={styles.desc}>
-                    {item.title} — {item.excerpt}
-                  </div>
-                  <span className={styles.cta}>Read interview</span>
-                </div>
-                <span id={srId} className={styles.srOnly}>
-                  Slide {slideNumber} of {totalSlides}. Tap to open interview details.
-                </span>
-              </button>
-            </SwiperSlide>
-          );
-        })}
+        {SLIDES.map((slide) => (
+          <SwiperSlide key={slide.id} role="group" aria-roledescription="slide">
+            <div className={styles.slide}>
+              <img src={slide.image} alt="Sameer adjusting his tie" className={styles.bg} loading="eager" />
+              <div className={styles.grad} />
+              <div className={styles.tint} />
+              <div className={styles.copy}>
+                <span className={styles.kicker}>{slide.label}</span>
+                <h1 className={styles.title}>{slide.title}</h1>
+                <p className={styles.tagline}>{slide.tagline}</p>
+              </div>
+            </div>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );
