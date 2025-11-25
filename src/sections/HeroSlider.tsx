@@ -49,9 +49,9 @@ export function HeroSlider({
               <div className={styles.grad} />
               <div className={styles.tint} />
               <div className={styles.copy}>
-                <span className={styles.kicker}>{slide.label}</span>
+             
                 <h1 className={styles.title}>{slide.title}</h1>
-                <p className={styles.tagline}>{slide.tagline}</p>
+               
               </div>
             </div>
           </SwiperSlide>
