@@ -263,35 +263,112 @@
   position: sticky;
   bottom: 0;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: center;
   gap: 10px;
-  padding: 10px 0 0;
+  padding: 16px 12px 10px;
   margin-top: 20px;
   background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.06) 40%, rgba(0,0,0,0.08) 100%);
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(12px);
+}
+
+.trackInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  font-family: "Crimson Text", serif;
+}
+
+.trackLabel {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: rgba(31,31,31,0.65);
+}
+
+.trackTitle {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #1f1f1f;
 }
 
 .audioControl {
-  border: 1px solid rgba(31,31,31,.3);
+  border: 1px solid rgba(31,31,31,.28);
   border-radius: 999px;
-  padding: 0.5rem 1.1rem;
-  background: rgba(255,255,255,0.35);
-  color: #1f1f1f;
-  font-family: "Crimson Text", serif;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  padding: 0.65rem 1.45rem;
+  background: rgba(255,255,255,0.12);
+  color: #111;
+  font-family: "Cinzel", serif;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, opacity 0.2s ease;
-  opacity: 0.82;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.35);
+  transition: transform 0.2s ease, box-shadow 0.25s ease, background 0.25s ease, opacity 0.2s ease;
+  opacity: 0.94;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  backdrop-filter: blur(14px) saturate(1.05);
+}
+
+.controlText {
+  font-size: 0.95rem;
+}
+
+.controlIcon {
+  width: 16px;
+  height: 16px;
+  position: relative;
+}
+
+.controlIcon::before,
+.controlIcon::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.controlIcon::before {
+  border-width: 8px 0 8px 12px;
+  border-color: transparent transparent transparent #111;
+  transform: translateX(1px);
+}
+
+.controlIcon::after {
+  opacity: 0;
+  width: 14px;
+  height: 14px;
+  border: none;
+  background: linear-gradient(90deg, #111 0 45%, transparent 45% 55%, #111 55% 100%);
+  clip-path: polygon(0 0, 40% 0, 40% 100%, 0 100%, 0 0, 60% 0, 60% 100%, 100% 100%, 100% 0, 60% 0, 60% 0, 0 0);
 }
 
 .audioControl:hover,
 .audioControl:focus-visible {
-  transform: translateY(-1px);
+  transform: translateY(-2px) scale(1.01);
   opacity: 1;
-  background: rgba(255,255,255,0.58);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.22);
+  background: rgba(255,255,255,0.22);
+  box-shadow: 0 18px 36px rgba(0,0,0,0.22), inset 0 1px 0 rgba(255,255,255,0.5);
   outline: none;
+}
+
+.audioControl.playing {
+  background: rgba(255,255,255,0.28);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.6);
+}
+
+.audioControl.playing .controlIcon::before {
+  opacity: 0;
+  transform: translateX(-4px) scale(0.6);
+}
+
+.audioControl.playing .controlIcon::after {
+  opacity: 1;
 }
