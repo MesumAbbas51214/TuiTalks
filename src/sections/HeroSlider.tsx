@@ -11,7 +11,7 @@ const SLIDES = [
   {
     id: "sameer",
     image: sameerImage,
-    title: "GOD, Mother and GLORY, IN THAT ORDER",
+    title: "GOD, Mother and GLORY. IN THAT ORDER",
    
   },
 ];

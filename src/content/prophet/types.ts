@@ -4,7 +4,7 @@ export type ProphetArticle = {
   cost: string;                // e.g. "5 KUNTS"
   headline: string;
   dek?: string;                // subheadline
-  hero?: { src: string; alt: string };
+  hero?: { src?: string; alt?: string };
   body: string[];              // paragraphs
   sidebar?: { title: string; items: { img?: string; title: string; text?: string }[] };
 };

@@ -14,14 +14,22 @@
   --shadow-soft: 0 12px 32px rgba(47, 31, 24, 0.18);
   --shadow-strong: 0 16px 48px rgba(47, 31, 24, 0.26);
   --radius-paper: 18px;
-  --font-body: "Roboto", "Times New Roman", serif;
-  --font-heading: "Roboto", "Times New Roman", serif;
-  --font-smallcaps: "Roboto", "Times New Roman", serif;
+  --font-body: "Times New Roman";
+  --font-heading:  "Times New Roman";
+  --font-smallcaps:  "Times New Roman";
   --transition-base: 0.24s ease-in-out;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: "HarryPotter";
+  src: url("./assets/harry-potter.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
 *,

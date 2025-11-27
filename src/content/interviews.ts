@@ -1,12 +1,12 @@
 import type { Interview } from "../types/content";
-
+import sameerImage from "../assets/sameer1.jpg";
 export const INTERVIEWS: Interview[] = [
   {
     id: "john-henderson",
     title: "Navigating Creative Careers",
-    person: "John Henderson",
+    person: "Sameer Kazmi",
     image:
-      "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1600&auto=format&fit=crop",
+      sameerImage,
     excerpt: "A candid chat about storytelling, campus theatre and building confidence on stage.",
     dateISO: "2025-02-14",
     category: "Creative Arts",
