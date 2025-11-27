@@ -20,6 +20,14 @@ export function DailyProphetModal({
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
+  const fallbackTrack = {
+    url: "https://cdn.pixabay.com/download/audio/2022/08/09/audio_4a761693b0.mp3?filename=ambient-piano-atmosphere-11745.mp3",
+    title: "Chill Piano Session (YouTube mix)",
+  };
+
+  const resolvedTrack = trackUrl ?? fallbackTrack.url;
+  const resolvedTitle = trackUrl ? "Recommended track" : fallbackTrack.title;
+
   // Always resolve article + derived content to keep hook order stable.
   const article = getProphetArticle(interview?.id ?? "sample");
 
@@ -45,7 +53,7 @@ export function DailyProphetModal({
       audioRef.current.currentTime = 0;
       setIsPlaying(false);
     }
-  }, [trackUrl]);
+  }, [resolvedTrack]);
 
   const toggleAudio = () => {
     const el = audioRef.current;
@@ -131,21 +139,27 @@ export function DailyProphetModal({
             </div>
           )}
 
-          {trackUrl && (
+          {(trackUrl || fallbackTrack) && (
             <div className={styles.audioBar}>
               <audio
                 ref={audioRef}
-                src={trackUrl}
+                src={resolvedTrack}
                 preload="none"
                 onEnded={() => setIsPlaying(false)}
               />
+              <div className={styles.trackInfo}>
+                <span className={styles.trackLabel}>Random pick from YouTube</span>
+                <span className={styles.trackTitle}>{resolvedTitle}</span>
+              </div>
               <button
                 type="button"
-                className={styles.audioControl}
+                className={`${styles.audioControl} ${isPlaying ? styles.playing : ""}`}
                 onClick={toggleAudio}
                 aria-pressed={isPlaying}
+                aria-label={isPlaying ? "Pause track" : "Play track"}
               >
-                {isPlaying ? "Pause" : "Play"} recommended track
+                <span className={styles.controlIcon} aria-hidden="true" />
+                <span className={styles.controlText}>{isPlaying ? "Pause" : "Play"}</span>
               </button>
             </div>
           )}
