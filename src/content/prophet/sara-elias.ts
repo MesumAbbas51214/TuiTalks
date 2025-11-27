@@ -14,6 +14,13 @@ export const SARA_ELIAS_ARTICLE: ProphetArticle = {
     "I will start the recording now, I told him.Placed my phone in the middle of the table. Two chairs across each other. Group Room 3 of the campus library.And I felt it — the tension. Crawling up into my body like a guest I didn’t invite.You’re ready, Mesum, I told myself. Deep breath.Exhale it out.Take control now, I mumbled under my breath.Then I looked up and asked the first question.And just like that — I saw the stress leap across the table into him.His body shifted. Arms dropped from the desk to his knees. Back stiffened. He looked at me like I’d asked something heavier than I did.Relax, I said. It’s not an interrogation. I just want to talk.And in that tiny pause, my brain flicked a question back at me:Why’s he nervous? Shouldn’t I be?Humans are weird.I’m the one hosting the interview, the one who’s been thinking about this for weeks — but he’s the one being seen. He’s the one on record. Being listened to, maybe later being read by people he doesn’t even know. People tense up when they’re about to share parts of themselves — even when they’re just talking to a friend.",
     "Elias is lobbying for a community build day where alumni can sponsor bench installations and sign-language-friendly info kiosks. She hopes the concept will ripple out to partner campuses who are tackling similar accessibility gaps.",
   ],
+  afterword: {
+    title: "After the black line",
+    body: [
+      "Picture the spread on Dailymotion: the columns breathe, the sidebar’s black line pins the parchment in place, and then everything pauses. That same line becomes a divider, a cue that the tone can shift. Underneath it, the narration can stretch out, get more personal, invite sketches and notes that don’t quite fit the prim columns above.",
+      "This is where the real tinkering happens. We can drop in follow-ups from the interview, progress logs from the startup build, or sketches from campus conversations. The black stroke gives readers permission to scroll past the formal story and watch the work-in-progress unfold — a living development diary stitched right under the feature.",
+    ],
+  },
   sidebar: {
     title: "Hot News ❤️‍🔥" ,
     items: [

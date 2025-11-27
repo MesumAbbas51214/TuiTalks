@@ -84,6 +84,15 @@ export function DailyProphetModal({
               </aside>
             )}
           </div>
+
+          {article.afterword && (
+            <div className={styles.afterword}>
+              {article.afterword.title && <h3 className={styles.afterwordTitle}>{article.afterword.title}</h3>}
+              <div className={styles.afterwordBody}>
+                {article.afterword.body.map((para, i) => <p key={i}>{para}</p>)}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
