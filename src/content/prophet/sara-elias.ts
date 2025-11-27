@@ -1,4 +1,5 @@
 import type { ProphetArticle } from "./types";
+import cannabis from "../../assets/cannabis_integration.jpg";
 
 export const SARA_ELIAS_ARTICLE: ProphetArticle = {
   episode: "#Episode 01",
@@ -18,7 +19,7 @@ export const SARA_ELIAS_ARTICLE: ProphetArticle = {
     title: "Hot News",
     items: [
       {
-        img: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=600&auto=format&fit=crop",
+        img: cannabis,
         title: "Volunteer walk-throughs",
         text: "Join the next sensory mapping sprint on March 12. Meet at The Map Room, North Annex.",
       },
