@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Interview } from "../types/content";
 import styles from "./DailyProphetModal.module.css";
 import { useBodyLock } from "../hooks/useBodyLock";
@@ -8,13 +8,17 @@ export function DailyProphetModal({
   open,
   interview,
   onClose,
+  trackUrl,
 }: {
   open: boolean;
   interview: Interview | null;
   onClose: () => void;
+  trackUrl?: string;
 }) {
   useBodyLock(open);
   const closeRef = useRef<HTMLButtonElement | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   // Always resolve article + derived content to keep hook order stable.
   const article = getProphetArticle(interview?.id ?? "sample");
@@ -26,6 +30,34 @@ export function DailyProphetModal({
     setTimeout(() => closeRef.current?.focus(), 0);
     return () => window.removeEventListener("keydown", onKey);
   }, [open, onClose]);
+
+  useEffect(() => {
+    if (!open && audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      setIsPlaying(false);
+    }
+  }, [open]);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+      setIsPlaying(false);
+    }
+  }, [trackUrl]);
+
+  const toggleAudio = () => {
+    const el = audioRef.current;
+    if (!el) return;
+    if (el.paused) {
+      el.play();
+      setIsPlaying(true);
+    } else {
+      el.pause();
+      setIsPlaying(false);
+    }
+  };
 
   if (!open || !interview) return null;
 
@@ -96,6 +128,25 @@ export function DailyProphetModal({
               <div className={styles.afterwordBody}>
                 {article.afterword.body.map((para, i) => <p key={i}>{para}</p>)}
               </div>
+            </div>
+          )}
+
+          {trackUrl && (
+            <div className={styles.audioBar}>
+              <audio
+                ref={audioRef}
+                src={trackUrl}
+                preload="none"
+                onEnded={() => setIsPlaying(false)}
+              />
+              <button
+                type="button"
+                className={styles.audioControl}
+                onClick={toggleAudio}
+                aria-pressed={isPlaying}
+              >
+                {isPlaying ? "Pause" : "Play"} recommended track
+              </button>
             </div>
           )}
         </div>
