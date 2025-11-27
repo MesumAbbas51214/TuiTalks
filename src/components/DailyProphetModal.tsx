@@ -83,7 +83,7 @@ export function DailyProphetModal({
                 ))}
                 <img
                   className={styles.sidebarGif}
-                  src="https://i.gifer.com/IYYR.gif"
+                  src="https://i.gifer.com/19LW.gif"
                   alt="Animated wizardly parchment unfurling in green smoke"
                 />
               </aside>

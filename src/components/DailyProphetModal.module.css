@@ -155,9 +155,10 @@
 }
 .sidebarGif {
   display: block;
-  width: 100%;
-  height: auto;
-  margin-top: 8px;
+  width: 350px;
+  height: 250px;
+  margin: 8px auto;
+  margin-top: 100px;
 }
 .sideCard {
   border: 2px solid #1f1f1f; background: #fff7e1; border-radius: 6px;
