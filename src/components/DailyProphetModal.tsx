@@ -71,7 +71,12 @@ export function DailyProphetModal({
                 <div className={styles.sidebarTitle}>{article.sidebar.title}</div>
                 {article.sidebar.items.map((it, idx) => (
                   <div key={idx} className={styles.sideCard}>
-                    {it.img && <img className={styles.sideImg} src={it.img} alt="" />}
+                    {it.img && (
+                      <div className={styles.sideImgWrap}>
+                        <img className={styles.sideImg} src={it.img} alt="" />
+                        <span className={styles.smoke} aria-hidden="true" />
+                      </div>
+                    )}
                     <strong>{it.title}</strong>
                     {it.text && <p style={{ margin: 0 }}>{it.text}</p>}
                   </div>
