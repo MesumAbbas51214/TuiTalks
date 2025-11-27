@@ -40,27 +40,47 @@ export function DailyProphetModal({
   }, [open, onClose]);
 
   useEffect(() => {
-    if (!open && audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
-      setIsPlaying(false);
-    }
-  }, [open]);
+    const el = audioRef.current;
+    if (!el) return;
 
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
+    const handleEnded = () => setIsPlaying(false);
+    el.addEventListener("ended", handleEnded);
+
+    const startPlayback = async () => {
+      try {
+        await el.play();
+        setIsPlaying(true);
+      } catch {
+        setIsPlaying(false);
+      }
+    };
+
+    if (open) {
+      el.currentTime = 0;
+      el.load();
+      void startPlayback();
+    } else {
+      el.pause();
+      el.currentTime = 0;
       setIsPlaying(false);
     }
-  }, [resolvedTrack]);
+
+    return () => {
+      el.removeEventListener("ended", handleEnded);
+      el.pause();
+      el.currentTime = 0;
+      setIsPlaying(false);
+    };
+  }, [open, resolvedTrack]);
 
   const toggleAudio = () => {
     const el = audioRef.current;
     if (!el) return;
     if (el.paused) {
-      el.play();
-      setIsPlaying(true);
+      el
+        .play()
+        .then(() => setIsPlaying(true))
+        .catch(() => setIsPlaying(false));
     } else {
       el.pause();
       setIsPlaying(false);
@@ -144,8 +164,7 @@ export function DailyProphetModal({
               <audio
                 ref={audioRef}
                 src={resolvedTrack}
-                preload="none"
-                onEnded={() => setIsPlaying(false)}
+                preload="auto"
               />
               <div className={styles.trackInfo}>
                 <span className={styles.trackLabel}>Random pick from YouTube</span>
