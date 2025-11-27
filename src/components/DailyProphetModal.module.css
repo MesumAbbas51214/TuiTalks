@@ -93,7 +93,11 @@
 .dek { font-family: "Crimson Text", serif; font-size: 1.1rem; color:#222; margin-bottom: 16px; }
 
 /* Main content layout: article + sidebar */
-.layout { display:grid; grid-template-columns: 1.3fr .7fr; gap: 28px; }
+.layout {
+  display:grid;
+  grid-template-columns: 1.3fr .7fr;
+  gap: 28px;
+}
 @media (max-width: 980px){ .layout{ grid-template-columns: 1fr; } }
 
 /* Hero image framed */
@@ -115,7 +119,12 @@
 }
 
 /* Sidebar */
-.sidebar { break-inside: avoid; }
+.sidebar {
+  break-inside: avoid;
+  border-left: 2px solid #1f1f1f;
+  padding-left: clamp(12px, 1.8vw, 18px);
+  margin-left: clamp(6px, 1vw, 12px);
+}
 .sidebarTitle {
   font-family: "Crimson Text", serif; font-style: italic; font-weight: 700;
   font-size: clamp(1.2rem, 2vw, 1.5rem); color:#111; margin: 10px 0 12px;
@@ -125,6 +134,14 @@
   padding: 10px; display:grid; gap: 8px; margin-bottom: 14px;
 }
 .sideImg { width: 100%; height: auto; border: 1px solid #111; }
+
+@media (max-width: 980px) {
+  .sidebar {
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+}
 
 /* Close button */
 .close {
