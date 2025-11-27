@@ -71,3 +71,13 @@ export default defineConfig([
   },
 ])
 ```
+
+## Deploying to Netlify
+
+1. Push your latest changes to GitHub so Netlify can pull from the default branch.
+2. In Netlify, create a new site from Git and pick this repository.
+3. Use the following build settings:
+   - **Base directory:** leave empty
+   - **Build command:** `npm run build`
+   - **Publish directory:** `dist`
+4. Trigger a deploy. Netlify will use `netlify.toml` to apply the SPA redirect and Node.js version automatically.

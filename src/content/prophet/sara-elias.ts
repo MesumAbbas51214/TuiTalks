@@ -2,12 +2,11 @@ import type { ProphetArticle } from "./types";
 import cannabis from "../../assets/cannabis_integration.jpg";
 
 export const SARA_ELIAS_ARTICLE: ProphetArticle = {
-  episode: "#Episode 01",
-   interviewee: "Sameer Kazmi",
-  date: "Wednesday, 26 NOVEMBER, 2025",
- 
+  issue: "EPISODE #01",
+  dateText: "WEDNESDAY, 26 NOVEMBER, 2025",
+  cost: "TUI TALKS",
+
   headline: "Small Talk is not real Conversation:",
-  dek: "",
 
   body: [
     "Why don’t you write a book? he asked me —  sitting at Mensa on a rainy day when the sun kept slipping through in the last breath of summer.  “You could be a writer. *With a master's degree.*”  And now… here we are.  Life takes sudden turns we never plan for.  We’re surrounded by people — classmates, colleagues, friends —  but how many do we actually *know*?  We ask:  “How was your weekend?”  “What did you have for lunch?”  But we rarely ask:  “What’s been heavy on your heart lately?”  “What excites you so much you lose track of time?”  Sometimes a stranger appears and suddenly — without warning —  you find pieces of yourself in their story.  Campus life is strange like that.  There are so many familiar faces —  surely we’ve stood in line at Netto together,  sat at opposite ends of the same library table,  shared a nod on the bus.  And over time, we draw silent sketches of each other:  a glance here, an outfit there,  a vibe we *think* we understand.  But we don’t.  Until we talk.  And suddenly —  we realize we share the same questions.  “How do I finish this degree?”  “When will I get that job?”  “Will I ever feel like I belong here?”  Our paths *look* the same.  But they’re not.  That’s the beauty of it.  On a planet orbiting a star 1.3 million times bigger than itself,  in a galaxy with 100 billion stars,  among 2 trillion other galaxies we’ve only *begun* to map...  We still walk the same hallways.  Sit on the same benches.  Order the same Mensa coffee.  But one person’s walking to forget.  Another’s walking to *prove* something.  Some of us are chasing dreams.  Some are just surviving the week.  It looks the same.  But it’s not.  That’s why we talk.  And not just because there’s space and we need to fill it —  but to listen.  To catch the tremble in someone’s laugh.  To hear the part they didn’t say out loud.  To sit beside their silence and still feel close.  We talk to feel less alone in this spinning chaos —  To say, “Hey, I’ve been there.”  Or better yet —  *“Tell me more.”*  And maybe that’s why…  **Small talk was never really small.**",
