@@ -12,6 +12,7 @@ export const INTERVIEWS: Interview[] = [
     category: "Creative Arts",
     tags: ["theatre", "confidence", "mentorship"],
     author: { name: "Marla Singh" },
+    recommendedTrack: "https://cdn.pixabay.com/download/audio/2021/09/02/audio_d49e0155f5.mp3?filename=acoustic-guitar-1106.mp3",
   },
   {
     id: "sara-elias",
@@ -24,5 +25,6 @@ export const INTERVIEWS: Interview[] = [
     category: "Innovation",
     tags: ["design", "community", "accessibility"],
     author: { name: "Campus Desk" },
+    recommendedTrack: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_1c6380c04a.mp3?filename=soft-piano-ambient-11141.mp3",
   },
 ];

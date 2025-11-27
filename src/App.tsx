@@ -47,7 +47,12 @@ export default function App(){
       <div style={{ height: 24 }} />
 
       {/* Daily Prophet Modal */}
-      <DailyProphetModal open={open} interview={current} onClose={() => setOpen(false)} />
+      <DailyProphetModal
+        open={open}
+        interview={current}
+        onClose={() => setOpen(false)}
+        trackUrl={current?.recommendedTrack}
+      />
     </div>
   );
 }
