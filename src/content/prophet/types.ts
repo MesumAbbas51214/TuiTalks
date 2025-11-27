@@ -7,4 +7,5 @@ export type ProphetArticle = {
   hero?: { src?: string; alt?: string };
   body: string[];              // paragraphs
   sidebar?: { title: string; items: { img?: string; title: string; text?: string }[] };
+  afterword?: { title?: string; body: string[] };
 };
