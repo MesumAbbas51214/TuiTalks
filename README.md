@@ -81,7 +81,7 @@ You can deploy either with the included GitHub Action or directly from Netlify.
 1. Add the following repository secrets in GitHub:
    - `NETLIFY_AUTH_TOKEN`: Personal access token from Netlify.
    - `NETLIFY_SITE_ID`: Site ID from the site settings in Netlify.
-2. Push to `main` (or run the workflow manually). The `Deploy to Netlify` workflow will install dependencies, build the project, and publish `dist` with `netlify deploy --prod`.
+2. Push to `main` (or run the workflow manually). The `Deploy to Netlify` workflow installs dependencies, runs `npm run lint`, builds the project, and publishes `dist` with `netlify deploy --prod`.
 
 ### Deploy from the Netlify UI
 
