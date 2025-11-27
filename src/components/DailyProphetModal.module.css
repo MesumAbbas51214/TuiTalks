@@ -153,6 +153,12 @@
   font-family: "Crimson Text", serif; font-style: italic; font-weight: 700;
   font-size: clamp(1.2rem, 2vw, 1.5rem); color:#111; margin: 10px 0 12px;
 }
+.sidebarGif {
+  display: block;
+  width: 86%;
+  height: auto;
+  margin: 10px auto 0;
+}
 .sideCard {
   border: 2px solid #1f1f1f; background: #fff7e1; border-radius: 6px;
   padding: 10px; display:grid; gap: 8px; margin-bottom: 14px;
