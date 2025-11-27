@@ -74,6 +74,17 @@ export default defineConfig([
 
 ## Deploying to Netlify
 
+You can deploy either with the included GitHub Action or directly from Netlify.
+
+### GitHub Actions (recommended)
+
+1. Add the following repository secrets in GitHub:
+   - `NETLIFY_AUTH_TOKEN`: Personal access token from Netlify.
+   - `NETLIFY_SITE_ID`: Site ID from the site settings in Netlify.
+2. Push to `main` (or run the workflow manually). The `Deploy to Netlify` workflow will install dependencies, build the project, and publish `dist` with `netlify deploy --prod`.
+
+### Deploy from the Netlify UI
+
 1. Push your latest changes to GitHub so Netlify can pull from the default branch.
 2. In Netlify, create a new site from Git and pick this repository.
 3. Use the following build settings:
