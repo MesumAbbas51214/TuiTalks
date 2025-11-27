@@ -15,16 +15,16 @@ export const SARA_ELIAS_ARTICLE: ProphetArticle = {
     "Elias is lobbying for a community build day where alumni can sponsor bench installations and sign-language-friendly info kiosks. She hopes the concept will ripple out to partner campuses who are tackling similar accessibility gaps.",
   ],
   sidebar: {
-    title: "Hot News",
+    title: "Hot News ❤️‍🔥" ,
     items: [
       {
         img: cannabis,
-        title: "Volunteer walk-throughs",
-        text: "Join the next sensory mapping sprint on March 12. Meet at The Map Room, North Annex.",
+        title: "Integration, not escape:",
+        text: "weed shouldn’t be a daily hiding spot, but a conscious, limited part of life — a tool you choose, not a crutch you need.",
       },
       {
-        title: "Resource Drop",
-        text: "Download the Inclusive Wayfinding checklist from the student portal this Wednesday.",
+        title: "When asked about integration of weed in people's life",
+        text: "Samir argues not for quitting weed forever, but for integrating it into life without letting it become an escape route. For him, the real problem isn’t the joint — it’s when you need it just to feel okay, instead of facing what life is trying to teach you.",
       },
     ],
   },
