@@ -43,9 +43,9 @@ export function DailyProphetModal({
 
           {/* Issue strip */}
           <div className={styles.issueRow}>
-            <span>{article.issue}</span>
-            <span>{article.cost}</span>
-            <span>{article.dateText}</span>
+            <span>{article.episode}</span>
+            <span>{article.interviewee}</span>
+            <span>{article.date}</span>
           </div>
 
           {/* Headline & dek */}
