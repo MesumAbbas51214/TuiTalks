@@ -25,6 +25,6 @@ export const INTERVIEWS: Interview[] = [
     category: "Innovation",
     tags: ["design", "community", "accessibility"],
     author: { name: "Campus Desk" },
-    recommendedTrack: "https://cdn.pixabay.com/download/audio/2022/03/15/audio_1c6380c04a.mp3?filename=soft-piano-ambient-11141.mp3",
+    recommendedTrack: "https://www.youtube.com/watch?v=mIYzp5rcTvU&list=RDmIYzp5rcTvU&start_radio=1&t=49s",
   },
 ];
