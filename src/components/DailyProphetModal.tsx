@@ -43,9 +43,9 @@ export function DailyProphetModal({
 
           {/* Issue strip */}
           <div className={styles.issueRow}>
-            <span>{article.episode}</span>
-            <span>{article.interviewee}</span>
-            <span>{article.date}</span>
+            <span>{article.issue}</span>
+            <span>{article.cost}</span>
+            <span>{article.dateText}</span>
           </div>
 
           {/* Headline & dek */}
@@ -56,7 +56,7 @@ export function DailyProphetModal({
           <div className={styles.layout}>
             <div>
               {article.hero && (
-                <img className={styles.hero} src={article.hero.src} alt={article.hero.alt} />
+                <img className={styles.hero} src={article.hero.src} alt={article.hero.alt ?? ""} />
               )}
 
               <div className={`${styles.article} ${styles.dropcap}`}>
