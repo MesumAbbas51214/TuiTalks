@@ -8,4 +8,5 @@ export type Interview = {
   category: string;
   tags: string[];
   author: { name: string; avatar?: string };
+  recommendedTrack?: string;
 };
