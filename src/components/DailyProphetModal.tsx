@@ -81,6 +81,11 @@ export function DailyProphetModal({
                     {it.text && <p style={{ margin: 0 }}>{it.text}</p>}
                   </div>
                 ))}
+                <img
+                  className={styles.sidebarGif}
+                  src="https://i.gifer.com/IYYR.gif"
+                  alt="Animated wizardly parchment unfurling in green smoke"
+                />
               </aside>
             )}
           </div>
