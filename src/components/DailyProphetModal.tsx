@@ -140,17 +140,13 @@ export function DailyProphetModal({
     const el = audioRef.current;
     if (!el) return;
 
-    const handlePlay = () => setIsPlaying(true);
-    const handlePause = () => setIsPlaying(false);
     const handleEnded = () => setIsPlaying(false);
-
-    el.addEventListener("play", handlePlay);
-    el.addEventListener("pause", handlePause);
     el.addEventListener("ended", handleEnded);
 
     const startPlayback = async () => {
       try {
         await el.play();
+        setIsPlaying(true);
       } catch {
         setIsPlaying(false);
       }
@@ -167,8 +163,6 @@ export function DailyProphetModal({
     }
 
     return () => {
-      el.removeEventListener("play", handlePlay);
-      el.removeEventListener("pause", handlePause);
       el.removeEventListener("ended", handleEnded);
       el.pause();
       el.currentTime = 0;
@@ -180,9 +174,6 @@ export function DailyProphetModal({
     const el = audioRef.current;
     if (!el) return;
     if (el.paused) {
-      if (el.ended) {
-        el.currentTime = 0;
-      }
       el
         .play()
         .then(() => setIsPlaying(true))
