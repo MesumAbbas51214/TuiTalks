@@ -92,3 +92,14 @@ You can deploy either with the included GitHub Action or directly from Netlify.
    - **Build command:** `npm run build`
    - **Publish directory:** `dist`
 4. Trigger a deploy. Netlify will use `netlify.toml` to apply the SPA redirect and Node.js version automatically.
+
+### Deploy directly from your local checkout
+
+If you need to push the latest GitHub code without waiting for CI, you can deploy straight from your machine using the Netlify CLI:
+
+1. Authenticate once with `npx netlify-cli login`.
+2. Set the required environment variables in your shell so the CLI knows which site to target:
+   - `NETLIFY_AUTH_TOKEN` – your personal access token from Netlify.
+   - `NETLIFY_SITE_ID` – the Site ID from the Netlify dashboard.
+3. From the project root, run `npm run deploy:netlify`. The script builds the app and publishes `dist` to the configured Netlify site with the `--prod` flag.
+4. Confirm the deployment in the Netlify dashboard. Because the build happens locally, this is the quickest way to release the exact code in your checkout.

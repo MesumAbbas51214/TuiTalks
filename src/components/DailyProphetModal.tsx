@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import type { Interview } from "../types/content";
 import styles from "./DailyProphetModal.module.css";
-import afterwordStyles from "./DailyProphetAfterword.module.css";
 import { useBodyLock } from "../hooks/useBodyLock";
 import { getProphetArticle } from "../content/prophet";
 
