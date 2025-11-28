@@ -5,8 +5,7 @@ import { useBodyLock } from "../hooks/useBodyLock";
 import { getProphetArticle } from "../content/prophet";
 
 const FALLBACK_VIDEO_ID = "dQw4w9WgXcQ"; // Playable YouTube fallback
-const TRUST_PROCESS_GIF = "https://i.gifer.com/S0XR.gif";
-const CONCLUSION_GIF = "https://i.gifer.com/QeEF.gif";
+const TRUST_PROCESS_GIF = "https://i.gifer.com/QeEF.gif";
 
 export function DailyProphetModal({
   open,
@@ -39,8 +38,6 @@ export function DailyProphetModal({
   // Always resolve article + derived content to keep hook order stable.
   const article = getProphetArticle(interview?.id ?? "sample");
   const afterwordBody = article.afterword?.body ?? [];
-  const trustProcessBody = afterwordBody[0];
-  const conclusionBody = afterwordBody[1] ?? afterwordBody[0];
 
   useEffect(() => {
     if (!open) return;
@@ -130,41 +127,19 @@ export function DailyProphetModal({
 
           {article.afterword && (
             <div className={styles.afterword}>
-              <div className={styles.afterwordSection}>
-                <h3 className={styles.afterwordTitle}>Trust the process</h3>
-                <div className={styles.afterwordGrid}>
-                  {trustProcessBody && (
-                    <div className={styles.afterwordText}>
-                      <p>{trustProcessBody}</p>
-                    </div>
-                  )}
-                  <div className={styles.afterwordGifWrap}>
-                    <img
-                      className={styles.afterwordGif}
-                      src={TRUST_PROCESS_GIF}
-                      alt="Animated parchment flipping through as a divider"
-                    />
-                  </div>
+              {article.afterword.title && <h3 className={styles.afterwordTitle}>{article.afterword.title}</h3>}
+              <div className={styles.afterwordBody}>
+                <div className={styles.afterwordGifWrap}>
+                  <img
+                    className={styles.afterwordGif}
+                    src={TRUST_PROCESS_GIF}
+                    alt="Animated parchment divider with floating illustrations"
+                  />
                 </div>
-              </div>
-
-              <div className={styles.afterwordDivider} aria-hidden="true" />
-
-              <div className={styles.afterwordSection}>
-                <h3 className={styles.afterwordTitle}>Conclusion</h3>
-                <div className={`${styles.afterwordGrid} ${styles.afterwordGridAlt}`}>
-                  <div className={styles.afterwordGifWrap}>
-                    <img
-                      className={styles.afterwordGif}
-                      src={CONCLUSION_GIF}
-                      alt="Animated parchment unfurling in green smoke"
-                    />
-                  </div>
-                  {conclusionBody && (
-                    <div className={styles.afterwordText}>
-                      <p>{conclusionBody}</p>
-                    </div>
-                  )}
+                <div className={styles.afterwordText}>
+                  {afterwordBody.map((para, i) => (
+                    <p key={`afterword-${i}`}>{para}</p>
+                  ))}
                 </div>
               </div>
             </div>
