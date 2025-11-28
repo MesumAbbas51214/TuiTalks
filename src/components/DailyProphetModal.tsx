@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import type { Interview } from "../types/content";
 import styles from "./DailyProphetModal.module.css";
+import afterwordStyles from "./DailyProphetAfterword.module.css";
 import { useBodyLock } from "../hooks/useBodyLock";
 import { getProphetArticle } from "../content/prophet";
 
 const FALLBACK_VIDEO_ID = "dQw4w9WgXcQ"; // Playable YouTube fallback
+const TRUST_PROCESS_GIF = "https://i.gifer.com/S0XR.gif";
 
 export function DailyProphetModal({
   open,
@@ -36,6 +38,12 @@ export function DailyProphetModal({
 
   // Always resolve article + derived content to keep hook order stable.
   const article = getProphetArticle(interview?.id ?? "sample");
+  const afterwordBody = article.afterword?.body ?? [];
+  const afterwordMidpoint = Math.ceil(afterwordBody.length / 2);
+  const afterwordColumns = [
+    afterwordBody.slice(0, afterwordMidpoint),
+    afterwordBody.slice(afterwordMidpoint),
+  ];
 
   useEffect(() => {
     if (!open) return;
@@ -124,10 +132,28 @@ export function DailyProphetModal({
           </div>
 
           {article.afterword && (
-            <div className={styles.afterword}>
-              {article.afterword.title && <h3 className={styles.afterwordTitle}>{article.afterword.title}</h3>}
-              <div className={styles.afterwordBody}>
-                {article.afterword.body.map((para, i) => <p key={i}>{para}</p>)}
+            <div className={afterwordStyles.afterword}>
+              {article.afterword.title && (
+                <h3 className={afterwordStyles.afterwordTitle}>{article.afterword.title}</h3>
+              )}
+              <div className={afterwordStyles.afterwordBody}>
+                <div className={afterwordStyles.afterwordColumn}>
+                  {afterwordColumns[0].map((para, i) => (
+                    <p key={`left-${i}`}>{para}</p>
+                  ))}
+                </div>
+                <div className={afterwordStyles.afterwordGifWrap}>
+                  <img
+                    className={afterwordStyles.afterwordGif}
+                    src={TRUST_PROCESS_GIF}
+                    alt="Animated parchment divider with floating illustrations"
+                  />
+                </div>
+                <div className={afterwordStyles.afterwordColumn}>
+                  {afterwordColumns[1].map((para, i) => (
+                    <p key={`right-${i}`}>{para}</p>
+                  ))}
+                </div>
               </div>
             </div>
           )}

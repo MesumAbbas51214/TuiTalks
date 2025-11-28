@@ -1,0 +1,68 @@
+.afterword {
+  border-top: 2px solid #1f1f1f;
+  margin-top: clamp(18px, 2.8vw, 30px);
+  padding-top: clamp(18px, 2.5vw, 26px);
+}
+
+.afterwordTitle {
+  font-family: "Cinzel", serif;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+
+.afterwordBody {
+  font-family: "Crimson Text", serif;
+  color: #111;
+  line-height: 1.78;
+  font-size: 1.08rem;
+  max-width: 1180px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  column-gap: clamp(18px, 2.6vw, 34px);
+  align-items: flex-start;
+}
+
+.afterwordColumn {
+  display: grid;
+  gap: 1.05rem;
+  align-content: start;
+}
+
+.afterwordGifWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: clamp(6px, 1.1vw, 10px);
+}
+
+.afterwordGif {
+  width: clamp(210px, 26vw, 320px);
+  height: auto;
+  border: 2px solid #1f1f1f;
+  border-radius: 10px;
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.14);
+  background: #f8f1df;
+}
+
+.afterwordBody p { margin: 0; }
+
+@media (max-width: 860px) {
+  .afterwordBody {
+    grid-template-columns: 1fr;
+    row-gap: 16px;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .afterwordColumn {
+    text-align: left;
+    justify-items: start;
+    width: 100%;
+  }
+
+  .afterwordGif {
+    width: clamp(220px, 60vw, 320px);
+  }
+}
