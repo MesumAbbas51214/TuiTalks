@@ -122,26 +122,20 @@
   line-height: 1.75;
   font-size: 1.04rem;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(200px, 0.85fr) minmax(0, 1fr);
-  column-gap: clamp(18px, 3vw, 34px);
-  align-items: center;
-}
-
-.afterwordColumn {
-  display: grid;
-  gap: 1rem;
-  align-content: start;
+  grid-template-columns: minmax(220px, 0.95fr) minmax(0, 1.05fr);
+  column-gap: clamp(18px, 3vw, 36px);
+  align-items: stretch;
 }
 
 .afterwordGifWrap {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
 }
 
 .afterwordGif {
   width: 100%;
-  height: auto;
+  height: 100%;
   max-height: 360px;
   max-width: 420px;
   object-fit: cover;
@@ -151,56 +145,27 @@
   background: #f8f1df;
 }
 
-.afterwordFeature {
-  font-family: "Crimson Text", serif;
-  color: #111;
-  line-height: 1.75;
-  font-size: 1.04rem;
-  display: grid;
-  grid-template-columns: minmax(220px, 0.95fr) minmax(0, 1.05fr);
-  column-gap: clamp(18px, 3vw, 36px);
-  align-items: stretch;
-  margin-top: clamp(8px, 1.4vw, 16px);
-}
-
-.afterwordFeatureGifWrap {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-}
-
-.afterwordFeatureGif {
-  max-width: 520px;
-}
-
-.afterwordFeatureText {
+.afterwordText {
   display: grid;
   gap: 1rem;
   align-content: start;
 }
 
-.afterwordColumn p,
-.afterwordFeatureText p { margin: 0; }
+.afterwordBody p { margin: 0; }
 
 @media (max-width: 860px) {
   .afterwordTri {
-    grid-template-columns: 1fr;
-    row-gap: 16px;
-  }
-
-  .afterwordFeature {
     grid-template-columns: 1fr;
     row-gap: 18px;
     justify-items: center;
     text-align: left;
   }
 
-  .afterwordGif,
-  .afterwordFeatureGif {
+  .afterwordGif {
     max-width: min(520px, 90vw);
   }
 
-  .afterwordFeatureText {
+  .afterwordText {
     width: 100%;
   }
 }

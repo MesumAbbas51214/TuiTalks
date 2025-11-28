@@ -38,13 +38,6 @@ export function DailyProphetModal({
   // Always resolve article + derived content to keep hook order stable.
   const article = getProphetArticle(interview?.id ?? "sample");
   const afterwordBody = article.afterword?.body ?? [];
-  const afterwordColumns = afterwordBody.reduce<[string[], string[]]>(
-    (cols, para, idx) => {
-      cols[idx % 2].push(para);
-      return cols;
-    },
-    [[], []],
-  );
 
   useEffect(() => {
     if (!open) return;
@@ -135,12 +128,7 @@ export function DailyProphetModal({
           {article.afterword && (
             <div className={styles.afterword}>
               {article.afterword.title && <h3 className={styles.afterwordTitle}>{article.afterword.title}</h3>}
-              <div className={styles.afterwordTri}>
-                <div className={styles.afterwordColumn}>
-                  {afterwordColumns[0].map((para, i) => (
-                    <p key={`left-${i}`}>{para}</p>
-                  ))}
-                </div>
+              <div className={styles.afterwordBody}>
                 <div className={styles.afterwordGifWrap}>
                   <img
                     className={styles.afterwordGif}
@@ -148,9 +136,9 @@ export function DailyProphetModal({
                     alt="Animated parchment divider with floating illustrations"
                   />
                 </div>
-                <div className={styles.afterwordColumn}>
-                  {afterwordColumns[1].map((para, i) => (
-                    <p key={`right-${i}`}>{para}</p>
+                <div className={styles.afterwordText}>
+                  {afterwordBody.map((para, i) => (
+                    <p key={`afterword-${i}`}>{para}</p>
                   ))}
                 </div>
               </div>
