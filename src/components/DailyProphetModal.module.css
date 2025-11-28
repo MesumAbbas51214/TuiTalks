@@ -104,6 +104,8 @@
   border-top: 2px solid #1f1f1f;
   margin-top: clamp(18px, 2.5vw, 26px);
   padding-top: clamp(16px, 2vw, 22px);
+  display: grid;
+  gap: clamp(16px, 2vw, 22px);
 }
 
 .afterwordTitle {
@@ -114,16 +116,15 @@
   margin: 0 0 12px;
 }
 
-.afterwordBody {
+.afterwordTri {
   font-family: "Crimson Text", serif;
   color: #111;
   line-height: 1.75;
   font-size: 1.04rem;
-  max-width: 1100px;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  column-gap: clamp(16px, 2.4vw, 30px);
-  align-items: flex-start;
+  grid-template-columns: minmax(0, 1fr) minmax(200px, 0.85fr) minmax(0, 1fr);
+  column-gap: clamp(18px, 3vw, 34px);
+  align-items: center;
 }
 
 .afterwordColumn {
@@ -139,27 +140,67 @@
 }
 
 .afterwordGif {
-  width: clamp(160px, 22vw, 240px);
+  width: 100%;
   height: auto;
+  max-height: 360px;
+  max-width: 420px;
+  object-fit: cover;
   border: 2px solid #1f1f1f;
   border-radius: 8px;
   box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.14);
   background: #f8f1df;
 }
 
-.afterwordBody p { margin: 0; }
+.afterwordFeature {
+  font-family: "Crimson Text", serif;
+  color: #111;
+  line-height: 1.75;
+  font-size: 1.04rem;
+  display: grid;
+  grid-template-columns: minmax(220px, 0.95fr) minmax(0, 1.05fr);
+  column-gap: clamp(18px, 3vw, 36px);
+  align-items: stretch;
+  margin-top: clamp(8px, 1.4vw, 16px);
+}
+
+.afterwordFeatureGifWrap {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.afterwordFeatureGif {
+  max-width: 520px;
+}
+
+.afterwordFeatureText {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.afterwordColumn p,
+.afterwordFeatureText p { margin: 0; }
 
 @media (max-width: 860px) {
-  .afterwordBody {
+  .afterwordTri {
     grid-template-columns: 1fr;
-    row-gap: 14px;
-    justify-items: center;
-    text-align: center;
+    row-gap: 16px;
   }
 
-  .afterwordColumn {
+  .afterwordFeature {
+    grid-template-columns: 1fr;
+    row-gap: 18px;
+    justify-items: center;
     text-align: left;
-    justify-items: start;
+  }
+
+  .afterwordGif,
+  .afterwordFeatureGif {
+    max-width: min(520px, 90vw);
+  }
+
+  .afterwordFeatureText {
     width: 100%;
   }
 }
