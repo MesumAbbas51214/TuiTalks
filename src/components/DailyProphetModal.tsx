@@ -142,6 +142,21 @@ export function DailyProphetModal({
                   ))}
                 </div>
               </div>
+
+              <div className={styles.afterwordFeature}>
+                <div className={styles.afterwordFeatureGifWrap}>
+                  <img
+                    className={`${styles.afterwordGif} ${styles.afterwordFeatureGif}`}
+                    src={TRUST_PROCESS_GIF}
+                    alt="Animated parchment divider with floating illustrations"
+                  />
+                </div>
+                <div className={styles.afterwordFeatureText}>
+                  {afterwordBody.map((para, i) => (
+                    <p key={`afterword-${i}`}>{para}</p>
+                  ))}
+                </div>
+              </div>
             </div>
           )}
 
