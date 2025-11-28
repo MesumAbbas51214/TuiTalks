@@ -132,24 +132,22 @@ export function DailyProphetModal({
           </div>
 
           {article.afterword && (
-            <div className={afterwordStyles.afterword}>
-              {article.afterword.title && (
-                <h3 className={afterwordStyles.afterwordTitle}>{article.afterword.title}</h3>
-              )}
-              <div className={afterwordStyles.afterwordBody}>
-                <div className={afterwordStyles.afterwordColumn}>
+            <div className={styles.afterword}>
+              {article.afterword.title && <h3 className={styles.afterwordTitle}>{article.afterword.title}</h3>}
+              <div className={styles.afterwordBody}>
+                <div className={styles.afterwordColumn}>
                   {afterwordColumns[0].map((para, i) => (
                     <p key={`left-${i}`}>{para}</p>
                   ))}
                 </div>
-                <div className={afterwordStyles.afterwordGifWrap}>
+                <div className={styles.afterwordGifWrap}>
                   <img
-                    className={afterwordStyles.afterwordGif}
+                    className={styles.afterwordGif}
                     src={TRUST_PROCESS_GIF}
                     alt="Animated parchment divider with floating illustrations"
                   />
                 </div>
-                <div className={afterwordStyles.afterwordColumn}>
+                <div className={styles.afterwordColumn}>
                   {afterwordColumns[1].map((para, i) => (
                     <p key={`right-${i}`}>{para}</p>
                   ))}
