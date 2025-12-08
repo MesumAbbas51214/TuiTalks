@@ -18,6 +18,9 @@ export const SARA_ELIAS_ARTICLE: ProphetArticle = {
     body: [
       "Picture the spread on Dailymotion: the columns breathe, the sidebar’s black line pins the parchment in place, and then everything pauses. That same line becomes a divider, a cue that the tone can shift. Underneath it, the narration can stretch out, get more personal, invite sketches and notes that don’t quite fit the prim columns above.",
       "This is where the real tinkering happens. We can drop in follow-ups from the interview, progress logs from the startup build, or sketches from campus conversations. The black stroke gives readers permission to scroll past the formal story and watch the work-in-progress unfold — a living development diary stitched right under the feature.",
+      "—",
+      "Whats Next",
+      "Up next, we’re drafting a behind-the-scenes look at how these conversations turn into prototypes, from napkin sketches to late-night commits that only make sense after caffeine.",
     ],
   },
   sidebar: {
