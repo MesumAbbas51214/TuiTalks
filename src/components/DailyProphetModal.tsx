@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { Interview } from "../types/content";
 import styles from "./DailyProphetModal.module.css";
+import afterwordGifStyles from "./AfterwordGif.module.css";
 import { useBodyLock } from "../hooks/useBodyLock";
 import { getProphetArticle } from "../content/prophet";
 
@@ -139,9 +140,9 @@ export function DailyProphetModal({
                     <p key={`left-${i}`}>{para}</p>
                   ))}
                 </div>
-                <div className={styles.afterwordGifWrap}>
+                <div className={afterwordGifStyles.afterwordGifWrap}>
                   <img
-                    className={styles.afterwordGif}
+                    className={afterwordGifStyles.afterwordGif}
                     src={TRUST_PROCESS_GIF}
                     alt="Animated parchment divider with floating illustrations"
                   />

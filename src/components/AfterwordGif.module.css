@@ -1,0 +1,16 @@
+.afterwordGifWrap {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  padding-block: clamp(12px, 3vw, 20px);
+}
+
+.afterwordGif {
+  width: clamp(160px, 18vw, 240px);
+  height: clamp(500px, 82vw, 980px);
+  object-fit: cover;
+  border: 2px solid #1f1f1f;
+  border-radius: 10px;
+  box-shadow: 8px 10px 0 rgba(0, 0, 0, 0.16);
+  background: #f8f1df;
+}
