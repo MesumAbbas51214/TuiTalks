@@ -1,5 +1,6 @@
 import type { ProphetArticle } from "./types";
 import cannabis from "../../assets/cannabis_integration.jpg";
+import sameer from "../../assets/sameer1.jpg";
 
 export const JOHN_HENDERSON_ARTICLE: ProphetArticle = {
   episode: "EPISODE #01",
@@ -18,6 +19,17 @@ export const JOHN_HENDERSON_ARTICLE: ProphetArticle = {
     body: [
        "There’s a kind of silence you only hear when you stop fighting the moment.Not the silence of giving up — the silence of accepting. Like stepping into an old temple you didn’t build, but somehowrecognize. The air is heavy. The walls are carved with stories of people who came before you. And you realize: they didn’t know the ending either. They just kept walking. Torch in hand. One step. Then another. Because life has a strange way of humbling you right after it crowns you.He told me about the high — being a student, then landing the full-time job, the feeling of “I made it.” The kind of high where you start believing this version of your life is permanent. And then the drop came. Job gone. Stability gone. The neat little narrative shattered. And suddenly, he was back at the beginning — not as punishment, but as placement. Like life saying: You’re not done becoming who you’re supposed to be." ,
        "And that’s where trust gets tested.Because the mind wants guarantees. It wants signs, timestamps, a map. But life doesn’t speak in spreadsheets. It speaks in seasons. In doors that close so you stop walking into the wrong room. In losses that hurt because they detach you from an identity you were holding too tightly.I believe we’re not randomly dropped into our lives. I believe we arrive here through choices — some loud, some quiet, some made for us, and some made by our habits. If someone is poor and someone is rich, it’s not because the universe is playing favorites. Most of the time it’s because one person repeated the hard things longer. Took the hits. Stayed in motion. The other stayed still — or stayed distracted — or never learned how to believe in themselves long enough to build.That sounds harsh. But it’s also a spell of its own: if your actions brought you here, your actions can take you somewhere else.And still… I also believe this: everything happens for a reason.Not the cute kind. The real kind. The kind you only understand later, when you look back and realize that the worst detour was the road that trained you. That the loss wasn’t a curse — it was a correction. That the low wasn’t the universe punishing you — it was the universe preparing you.Sameer’s low didn’t erase him. It revealed him.So maybe trusting the process is this: moving forward even when the meaning hasn’t arrived yet. Lighting the next inch of the path with whatever you have — discipline, faith, a friend’s voice, a half-finished plan. And believing that the fog isn’t there to stop you.It’s there to teach you how to walk without seeing.And if you’re in that fog right now… listen closely.Your life isn’t falling apart.It’s being rewritten — into something truer than what you would’ve chosen if you had stayed comfortable."
+    ],
+  },
+  extendedBody: {
+    title: "New Body",
+    image: {
+      src: sameer,
+      alt: "Notebook and recorder set up mid-interview",
+    },
+    body: [
+      "Every interview now carries this twin-column coda beneath the trust line, pairing a visual memento on the left with evolving notes on the right.",
+      "Use it to keep the narrative alive across episodes — jotting follow-ups, stitching in audience letters, or previewing the next conversation so the theme stays consistent everywhere.",
     ],
   },
   sidebar: {
