@@ -44,6 +44,7 @@ export function DailyProphetModal({
     afterwordBody.slice(0, afterwordMidpoint),
     afterwordBody.slice(afterwordMidpoint),
   ];
+  const extendedBody = article.extendedBody;
 
   useEffect(() => {
     if (!open) return;
@@ -150,6 +151,26 @@ export function DailyProphetModal({
                 <div className={styles.afterwordColumn}>
                   {afterwordColumns[1].map((para, i) => (
                     <p key={`right-${i}`}>{para}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {extendedBody && (
+            <div className={styles.extendedBody}>
+              <div className={styles.extendedHeader}>
+                <div className={styles.rule} aria-hidden="true" />
+                <h3 className={styles.extendedTitle}>{extendedBody.title}</h3>
+                <div className={styles.rule} aria-hidden="true" />
+              </div>
+              <div className={styles.extendedLayout}>
+                <div className={styles.extendedImageFrame}>
+                  <img className={styles.extendedImage} src={extendedBody.image.src} alt={extendedBody.image.alt ?? ""} />
+                </div>
+                <div className={styles.extendedText}>
+                  {extendedBody.body.map((para, i) => (
+                    <p key={`extended-${i}`}>{para}</p>
                   ))}
                 </div>
               </div>

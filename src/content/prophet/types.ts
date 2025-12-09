@@ -6,7 +6,12 @@ export type ProphetArticle = {
   dek?: string;                // subheadline
   hero?: { src?: string; alt?: string };
   body: string[];              // paragraphs
-  body2?: string[];   
+  body2?: string[];
   sidebar?: { title: string; items: { img?: string; title: string; text?: string }[] };
   afterword?: { title?: string; body: string[] };
+  extendedBody?: {
+    title: string;
+    image: { src: string; alt?: string };
+    body: string[];
+  };
 };
