@@ -1,5 +1,6 @@
 import type { ProphetArticle } from "./types";
 import cannabis from "../../assets/cannabis_integration.jpg";
+import sameer from "../../assets/sameer1.jpg";
 
 export const SARA_ELIAS_ARTICLE: ProphetArticle = {
   episode: "EPISODE #01",
@@ -18,6 +19,17 @@ export const SARA_ELIAS_ARTICLE: ProphetArticle = {
     body: [
       "Picture the spread on Dailymotion: the columns breathe, the sidebar’s black line pins the parchment in place, and then everything pauses. That same line becomes a divider, a cue that the tone can shift. Underneath it, the narration can stretch out, get more personal, invite sketches and notes that don’t quite fit the prim columns above.",
       "This is where the real tinkering happens. We can drop in follow-ups from the interview, progress logs from the startup build, or sketches from campus conversations. The black stroke gives readers permission to scroll past the formal story and watch the work-in-progress unfold — a living development diary stitched right under the feature.",
+    ],
+  },
+  extendedBody: {
+    title: "New Body",
+    image: {
+      src: sameer,
+      alt: "Sameer laughing during a campus interview",
+    },
+    body: [
+      "Right beneath that divider, the story can loosen its tie. Here’s the table where we actually recorded, notebooks splayed open with arrows pointing toward ideas that haven’t landed yet. The photo is a reminder that none of this is theoretical — it’s two people figuring things out in real time.",
+      "Use this space to keep tabs on the build: new playtests from the startup, reflections from late-night debugging, or letters from readers who found courage in the fog. Every entry keeps the process transparent so readers can see the craft, not just the polished release.",
     ],
   },
   sidebar: {
