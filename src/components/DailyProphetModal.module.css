@@ -192,19 +192,6 @@
   gap: clamp(16px, 3vw, 32px);
   margin-top: clamp(14px, 2vw, 18px);
   align-items: start;
-  position: relative;
-}
-
-.extendedLayout::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  border-left: 2px solid #1f1f1f;
-  opacity: 0.9;
-  pointer-events: none;
 }
 
 .extendedImageFrame {
@@ -233,11 +220,6 @@
 @media (max-width: 860px) {
   .extendedLayout {
     grid-template-columns: 1fr;
-    padding-left: 0;
-  }
-
-  .extendedLayout::before {
-    content: none;
   }
 }
 
