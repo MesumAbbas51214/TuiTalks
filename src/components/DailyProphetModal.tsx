@@ -4,6 +4,7 @@ import styles from "./DailyProphetModal.module.css";
 import afterwordGifStyles from "./AfterwordGif.module.css";
 import { useBodyLock } from "../hooks/useBodyLock";
 import { getProphetArticle } from "../content/prophet";
+import { formatRichText } from "../utils/richText";
 
 const FALLBACK_VIDEO_ID = "dQw4w9WgXcQ"; // Playable YouTube fallback
 const TRUST_PROCESS_GIF = "https://i.gifer.com/3B3T.gif";
@@ -45,6 +46,10 @@ export function DailyProphetModal({
     afterwordBody.slice(afterwordMidpoint),
   ];
   const extendedBody = article.extendedBody;
+
+  const renderRichParagraph = (text: string, key: string | number) => (
+    <p key={key} dangerouslySetInnerHTML={{ __html: formatRichText(text) }} />
+  );
 
   useEffect(() => {
     if (!open) return;
@@ -102,7 +107,7 @@ export function DailyProphetModal({
               )}
 
               <div className={`${styles.article} ${styles.dropcap}`}>
-                {article.body.map((para, i) => <p key={i}>{para}</p>)}
+                {article.body.map((para, i) => renderRichParagraph(para, i))}
                 {/* Signature using the interview data */}
                 <p><em>By {interview.author.name} - TUITALKS</em></p>
               </div>
@@ -120,7 +125,9 @@ export function DailyProphetModal({
                       </div>
                     )}
                     <strong>{it.title}</strong>
-                    {it.text && <p style={{ margin: 0 }}>{it.text}</p>}
+                    {it.text && (
+                      <p style={{ margin: 0 }} dangerouslySetInnerHTML={{ __html: formatRichText(it.text) }} />
+                    )}
                   </div>
                 ))}
                 <img
@@ -137,9 +144,7 @@ export function DailyProphetModal({
               {article.afterword.title && <h3 className={styles.afterwordTitle}>{article.afterword.title}</h3>}
               <div className={styles.afterwordBody}>
                 <div className={styles.afterwordColumn}>
-                  {afterwordColumns[0].map((para, i) => (
-                    <p key={`left-${i}`}>{para}</p>
-                  ))}
+                  {afterwordColumns[0].map((para, i) => renderRichParagraph(para, `left-${i}`))}
                 </div>
                 <div className={afterwordGifStyles.afterwordGifWrap}>
                   <img
@@ -149,9 +154,7 @@ export function DailyProphetModal({
                   />
                 </div>
                 <div className={styles.afterwordColumn}>
-                  {afterwordColumns[1].map((para, i) => (
-                    <p key={`right-${i}`}>{para}</p>
-                  ))}
+                  {afterwordColumns[1].map((para, i) => renderRichParagraph(para, `right-${i}`))}
                 </div>
               </div>
             </div>
@@ -170,7 +173,7 @@ export function DailyProphetModal({
                 </div>
                 <div className={styles.extendedText}>
                   {extendedBody.body.map((para, i) => (
-                    <p key={`extended-${i}`}>{para}</p>
+                    renderRichParagraph(para, `extended-${i}`)
                   ))}
                 </div>
               </div>
