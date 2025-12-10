@@ -10,10 +10,69 @@ export const SAMPLE_ARTICLE: ProphetArticle = {
   headline: "Small Talk is not real Conversation:",
 
   body: [
-    "Why don’t you write a book? he asked me —  sitting at Mensa on a rainy day when the sun kept slipping through in the last breath of summer.  “You could be a writer. *With a master's degree.*”  And now… here we are.  Life takes sudden turns we never plan for.  We’re surrounded by people — classmates, colleagues, friends —  but how many do we actually *know*?  We ask:  “How was your weekend?”  “What did you have for lunch?”  But we rarely ask:  “What’s been heavy on your heart lately?”  “What excites you so much you lose track of time?”  Sometimes a stranger appears and suddenly — without warning —  you find pieces of yourself in their story.  Campus life is strange like that.  There are so many familiar faces —  surely we’ve stood in line at Netto together,  sat at opposite ends of the same library table,  shared a nod on the bus.  And over time, we draw silent sketches of each other:  a glance here, an outfit there,  a vibe we *think* we understand.  But we don’t.  Until we talk.  And suddenly —  we realize we share the same questions.  “How do I finish this degree?”  “When will I get that job?”  “Will I ever feel like I belong here?”  Our paths *look* the same.  But they’re not.  That’s the beauty of it.  On a planet orbiting a star 1.3 million times bigger than itself,  in a galaxy with 100 billion stars,  among 2 trillion other galaxies we’ve only *begun* to map...  We still walk the same hallways.  Sit on the same benches.  Order the same Mensa coffee.  But one person’s walking to forget.  Another’s walking to *prove* something.  Some of us are chasing dreams.  Some are just surviving the week.  It looks the same.  But it’s not.  That’s why we talk.  And not just because there’s space and we need to fill it —  but to listen.  To catch the tremble in someone’s laugh.  To hear the part they didn’t say out loud.  To sit beside their silence and still feel close.  We talk to feel less alone in this spinning chaos —  To say, “Hey, I’ve been there.”  Or better yet —  *“Tell me more.”*  And maybe that’s why…  **Small talk was never really small.**",
-    "Do you have a passion? Do you pursue it? I used to think writing was mine. But I didn’t realize then that having a passion doesn’t just mean thinking about what you’d like to do in your free time.It means building your life around it. I believe that when you follow your passion — truly — life starts to make a little more sense. Decisions get clearer. The grind feels lighter. You stop surviving and start living. His passion is games. Not just playing them — but creating them. Taking an idea from his mind, shaping it, designing it, and turning it into something you can feel, control, explore. He grew up in Karachi — the third-largest city in the world — a place where life often feels more about making it through the day than dreaming big. Where choosing survival over creativity is the norm. But he didn’t want to be just another product of the system. He held onto his passion like a compass. And that compass brought him to Germany. Here, he studied, worked in the industry for two years — soaking in everything he could. And now? Now he’s building something of his own. A startup. A dream he’s shaping line by line, frame by frame, into a world we can one day play through.",
-    "I will start the recording now, I told him.Placed my phone in the middle of the table. Two chairs across each other. Group Room 3 of the campus library.And I felt it — the tension. Crawling up into my body like a guest I didn’t invite.You’re ready, Mesum, I told myself. Deep breath.Exhale it out.Take control now, I mumbled under my breath.Then I looked up and asked the first question.And just like that — I saw the stress leap across the table into him.His body shifted. Arms dropped from the desk to his knees. Back stiffened. He looked at me like I’d asked something heavier than I did.Relax, I said. It’s not an interrogation. I just want to talk.And in that tiny pause, my brain flicked a question back at me:Why’s he nervous? Shouldn’t I be?Humans are weird.I’m the one hosting the interview, the one who’s been thinking about this for weeks — but he’s the one being seen. He’s the one on record. Being listened to, maybe later being read by people he doesn’t even know. People tense up when they’re about to share parts of themselves — even when they’re just talking to a friend.",
-    "Elias is lobbying for a community build day where alumni can sponsor bench installations and sign-language-friendly info kiosks. She hopes the concept will ripple out to partner campuses who are tackling similar accessibility gaps.",
+    `Opening the Door:
+He asked me once—on a rainy afternoon in the Mensa, sunlight flickering in like it couldn’t decide whether to stay—“Why don’t you write a book?”
+He said it casually, like a passing comment.
+But some questions don’t pass. They settle.
+At the time, I laughed it off. A writer? Me?
+But here we are—life nudging me onto paths I didn’t even mark on the map.
+Campus is full of people like that. We sit beside each other in lectures, swipe our cards at the same Mensa counter, nod politely on the bus. Familiar strangers.
+We exchange the surface-level lines we’ve been trained to use:
+“How was your weekend?”
+“What did you have for lunch?”
+But the real questions—
+What’s heavy in your heart?
+What dream keeps you awake?—
+those stay quiet.
+Too intimate for hallways. Too honest for convenience.
+And yet, sometimes, someone unexpected appears…and you recognize a part of yourself in their story before you even know their name.`,
+    `The Fiction of Familiarity
+On a campus of thousands, you start drawing silent portraits of people.
+A quick glance.
+A vibe.
+A guess.
+But we don’t know anyone until they let us.
+And most of us are waiting for someone to ask the kind of question that makes the mask slip—just a little.
+Sameer was one of those people to me.
+We’d crossed paths before—probably stood in line at Netto together, sat across from each other in the library without knowing it.
+But it wasn’t until the interview that the sketch became a face, became a person, became a story.
+
+3. The Interview
+I placed my phone in the middle of the table.
+Group Room 3.
+Two chairs, a recorder, and the kind of silence that feels like a third participant.
+“I’ll start now,” I told him.
+My voice steadier than my heartbeat.
+I expected myself to be nervous—but I watched the tension jump into him instead.
+Arms shifting, back straightening, eyes searching.
+He wasn’t scared of the question.
+He was scared of being seen.
+Humans are strange that way.
+Sometimes the spotlight burns more than it illuminates.
+“Relax,” I said. “It’s not an interrogation. Just a conversation.”
+But that’s the thing:
+Real conversation always asks for more than answers.
+It asks for honesty.
+
+Life’s Detours
+As the recorder hummed, Sameer began to talk.
+Not in polished monologue—in pieces.
+The kind of pieces you only share when you’ve stopped pretending everything is fine.
+He grew up in Karachi—a city that teaches you survival before it teaches you dreams.
+And yet he held onto one anyway: building worlds through games.
+Creating places people could step into, explore, escape, understand.
+Germany wasn’t an accident.
+It was a compass he followed long before he knew the coordinates.
+He built his way into a job.
+Then into a career.
+Then—suddenly—out of both.
+The high dissolved.
+The certainty collapsed.
+The “I’ve made it” became “Where do I begin again?”
+Losing something you thought was permanent is its own kind of earthquake.
+But losing it early in life is also a gift—a brutal one, a quiet one, but a gift nonetheless.
+It puts you back where you actually belong:
+at the start of the road you were meant to take, not the one you happened to land on.`,
   ],
   afterword: {
     title: "After the black line",
