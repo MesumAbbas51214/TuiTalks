@@ -114,17 +114,37 @@
   margin: 0 0 12px;
 }
 
-.afterwordBody {
+.afterwordLayout {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(18px, 3vw, 34px);
+  align-items: start;
+  padding-inline: clamp(14px, 3vw, 38px);
   font-family: "Crimson Text", serif;
   color: #111;
+}
+
+.afterwordVisual {
+  display: grid;
+  gap: 8px;
+  justify-items: center;
+  margin: 0;
+  text-align: center;
+}
+
+.afterwordCaption {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #2a2217;
+  max-width: 220px;
+}
+
+.afterwordColumns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(18px, 2.5vw, 28px);
   line-height: 1.75;
   font-size: 1.04rem;
-  max-width: 1100px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  column-gap: clamp(22px, 3vw, 42px);
-  align-items: flex-start;
-  padding-inline: clamp(14px, 3vw, 38px);
 }
 
 .afterwordColumn {
@@ -133,34 +153,16 @@
   align-content: start;
 }
 
-.afterwordGifWrap {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.afterwordGif {
-  width: clamp(220px, 28vw, 340px);
-  height: auto;
-  border: 2px solid #1f1f1f;
-  border-radius: 8px;
-  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.14);
-  background: #f8f1df;
-}
-
-.afterwordBody p { margin: 0; }
+.afterwordColumns p { margin: 0; }
 
 @media (max-width: 860px) {
-  .afterwordBody {
+  .afterwordLayout {
     grid-template-columns: 1fr;
-    row-gap: 14px;
     justify-items: center;
-    text-align: center;
   }
 
-  .afterwordColumn {
-    text-align: left;
-    justify-items: start;
+  .afterwordColumns {
+    grid-template-columns: 1fr;
     width: 100%;
   }
 }
@@ -211,15 +213,26 @@
 .extendedText {
   font-family: "Crimson Text", serif;
   color: #111;
-  line-height: 1.75;
+  line-height: 1.8;
   font-size: 1.02rem;
-  display: grid;
-  gap: 1rem;
+  columns: 2 320px;
+  column-gap: clamp(18px, 2.5vw, 28px);
+}
+
+.extendedText p {
+  break-inside: avoid;
+  margin: 0 0 1rem;
 }
 
 @media (max-width: 860px) {
   .extendedLayout {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .extendedText {
+    columns: 1;
   }
 }
 
