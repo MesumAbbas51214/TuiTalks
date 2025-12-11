@@ -140,18 +140,8 @@ export function DailyProphetModal({
           </div>
 
           {article.afterword && (
-            <div className={`${styles.afterword} ${styles.featureBlock}`}>
-              <div className={styles.sectionHeader}>
-                <span className={styles.ribbon}>Prophet Dispatch</span>
-                {article.afterword.title && (
-                  <div className={styles.sectionTitleRow}>
-                    <div className={styles.rule} aria-hidden="true" />
-                    <h3 className={styles.afterwordTitle}>{article.afterword.title}</h3>
-                    <div className={styles.rule} aria-hidden="true" />
-                  </div>
-                )}
-                <span className={styles.sectionStamp}>Filed under reflections</span>
-              </div>
+            <div className={styles.afterword}>
+              {article.afterword.title && <h3 className={styles.afterwordTitle}>{article.afterword.title}</h3>}
               <div className={styles.afterwordBody}>
                 <div className={styles.afterwordColumn}>
                   {afterwordColumns[0].map((para, i) => renderRichParagraph(para, `left-${i}`))}
@@ -171,15 +161,11 @@ export function DailyProphetModal({
           )}
 
           {extendedBody && (
-            <div className={`${styles.extendedBody} ${styles.featureBlock} ${styles.horizon}`}>
-              <div className={styles.sectionHeader}>
-                <span className={styles.ribbon}>Hogwarts Gazetteer</span>
-                <div className={styles.sectionTitleRow}>
-                  <div className={styles.rule} aria-hidden="true" />
-                  <h3 className={styles.extendedTitle}>{extendedBody.title}</h3>
-                  <div className={styles.rule} aria-hidden="true" />
-                </div>
-                <span className={styles.sectionStamp}>Maps beyond the headline</span>
+            <div className={styles.extendedBody}>
+              <div className={styles.extendedHeader}>
+                <div className={styles.rule} aria-hidden="true" />
+                <h3 className={styles.extendedTitle}>{extendedBody.title}</h3>
+                <div className={styles.rule} aria-hidden="true" />
               </div>
               <div className={styles.extendedLayout}>
                 <div className={styles.extendedImageFrame}>
