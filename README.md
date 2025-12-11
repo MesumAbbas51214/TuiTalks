@@ -76,6 +76,15 @@ export default defineConfig([
 
 You can deploy either with the included GitHub Action or directly from Netlify.
 
+## Keeping VS Code and GitHub in sync
+
+Use the `work` branch in VS Code to stay aligned with GitHub:
+
+1. From the command palette, run **Git: Pull** to fetch the latest commits from `origin/work`.
+2. Make your edits locally and use **Source Control** to stage and commit your changes.
+3. Run **Git: Push** (or `git push origin work`) to publish the updates to GitHub.
+4. Open a pull request from `work` to `main` to share the changes for review.
+
 ### GitHub Actions (recommended)
 
 1. Add the following repository secrets in GitHub:
