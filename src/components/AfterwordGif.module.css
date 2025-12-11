@@ -6,8 +6,8 @@
 }
 
 .afterwordGif {
-  width: clamp(160px, 18vw, 240px);
-  height: clamp(420px, 70vw, 840px);
+  width: clamp(460px, 18vw, 240px);
+  height: clamp(60px, 70vw, 840px);
   object-fit: cover;
   border: 2px solid #1f1f1f;
   border-radius: 10px;
