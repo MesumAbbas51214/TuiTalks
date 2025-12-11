@@ -22,7 +22,7 @@ export const SARA_ELIAS_ARTICLE: ProphetArticle = {
     ],
   },
   extendedBody: {
-    title: "The Horizon",
+    title: "New Body",
     image: {
       src: sameer,
       alt: "Sameer laughing during a campus interview",

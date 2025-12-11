@@ -82,7 +82,7 @@ at the start of the road you were meant to take, not the one you happened to lan
     ],
   },
   extendedBody: {
-    title: "The Horizon",
+    title: "New Body",
     image: {
       src: sameer,
       alt: "Interview snapshot with notebooks spread across the table",
