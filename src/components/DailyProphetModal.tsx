@@ -46,7 +46,6 @@ export function DailyProphetModal({
     afterwordBody.slice(afterwordMidpoint),
   ];
   const extendedBody = article.extendedBody;
-  const favoriteBook = article.favoriteBook;
 
   const renderRichParagraph = (text: string, key: string | number) => (
     <p key={key} dangerouslySetInnerHTML={{ __html: formatRichText(text) }} />
@@ -181,28 +180,6 @@ export function DailyProphetModal({
                 <div className={styles.extendedText}>
                   {extendedBody.body.map((para, i) => (
                     renderRichParagraph(para, `extended-${i}`)
-                  ))}
-                </div>
-              </div>
-            </div>
-          )}
-
-          {favoriteBook && (
-            <div className={styles.favoriteBook}>
-              <div className={styles.favoriteHeader}>
-                <div className={styles.rule} aria-hidden="true" />
-                <h3 className={styles.favoriteTitle}>{favoriteBook.title}</h3>
-                <div className={styles.rule} aria-hidden="true" />
-              </div>
-              <div className={styles.favoriteLayout}>
-                <div className={styles.favoriteMedia}>
-                  <div className={styles.favoriteFrame}>
-                    <img className={styles.favoriteGif} src={favoriteBook.gif.src} alt={favoriteBook.gif.alt ?? ""} />
-                  </div>
-                </div>
-                <div className={styles.favoriteText}>
-                  {favoriteBook.body.map((para, i) => (
-                    renderRichParagraph(para, `favorite-${i}`)
                   ))}
                 </div>
               </div>

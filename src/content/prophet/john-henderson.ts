@@ -32,17 +32,6 @@ export const JOHN_HENDERSON_ARTICLE: ProphetArticle = {
         "And the truth is always a little messy.It has accents. Breaks. Long pauses. A strange laugh at the wrong time. It has the weight of a job lost right after you thought life was finally stable. It has the quiet fear of starting again, when you’ve already told everyone you were “doing great.” It has the mental noise that follows you to your pillow — even after a long day of pretending you’re fine.Sameer talked about the low like someone who has stared at it long enough to stop flinching.We didn’t romanticize it. We didn’t turn it into a motivational poster. We just named it: the fall, the rebuild, the strange faith required to keep going when the world is no longer clapping for you.And somewhere in the middle of that, cannabis entered the room — not as a headline, but as a mirror.Not “weed is bad” or “weed is good.”But the question underneath: What are we using it for?An escape route? Or a ritual? A hiding place? Or an integration?Sameer’s point stayed with me: the real danger isn’t the joint — it’s the moment you need it just to feel okay. Because when something becomes your daily exit door, life stops teaching you. Pain stops speaking. Growth gets postponed. And you can’t build a life while constantly stepping outside of it.Maybe that’s why this episode had to end here — at the place where honesty becomes a decision.Because conversation, real conversation, is not entertainment.It’s a return.It’s two people sitting across a table saying, in a hundred small ways: I’m here. I’m listening. I won’t reduce you to a headline.And as we packed up — phone off, chairs moving, the library going back to being just a library — I kept thinking:We’re all walking around with whole universes inside us.And most days, we offer each other a teaspoon.So if there’s one thing I want you to take from this, it’s simple:Start with small talk, if that’s all you have.But don’t live there.Ask one real question. Hold the silence. Let the answer breathe.Because the moment someone feels safe enough to tell you the truth…that’s not small talk anymore.That’s the beginning of something that can actually change a life.",
     ],
   },
-  favoriteBook: {
-    title: "Favourite book",
-    gif: {
-      src: "https://i.gifer.com/82WK.gif",
-      alt: "Looping animation of pages turning inside a warm-lit book",
-    },
-    body: [
-      "After we packed up, I asked Sameer about the stories that steadied him when life felt heavy. He pulled out a worn copy of his favourite novel — the one he rereads whenever he needs a reminder that rebuilding is possible.",
-      "He said the book isn’t just a plot to escape into; it’s a map back to himself. Every chapter is a checkpoint: a reason to slow down, breathe, and remember that the journey matters more than the finish line.",
-    ],
-  },
   sidebar: {
     title: "Hot News ❤️‍🔥" ,
     items: [
