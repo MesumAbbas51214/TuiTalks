@@ -16,6 +16,8 @@ export function AuthorsChoiceSection({ onOpen }: { onOpen?: (i: Interview) => vo
   const [limit, setLimit] = useState(8);
 
   const curated = useMemo(() => pickByIds(AUTHORS_CHOICE_IDS), []);
+  // Hide spotlight when we only have one interview to feature.
+  if (curated.length < 2) return null;
   const items = curated.slice(0, limit);
   const canMore = limit < curated.length;
 

@@ -3,7 +3,7 @@ import cannabis from "../../assets/cannabis_integration.jpg";
 import sameer from "../../assets/sameer1.jpg";
 const horizon_GIF = "https://i.gifer.com/F0k.gif";
 
-export const JOHN_HENDERSON_ARTICLE: ProphetArticle = {
+export const SAMEER_ARTICLE: ProphetArticle = {
   episode: "EPISODE #01",
   date: "WEDNESDAY, 26 NOVEMBER, 2025",
   interviewee: "Sameer Kazmi",
