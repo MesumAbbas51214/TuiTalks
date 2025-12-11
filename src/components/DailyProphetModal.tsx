@@ -142,19 +142,25 @@ export function DailyProphetModal({
           {article.afterword && (
             <div className={styles.afterword}>
               {article.afterword.title && <h3 className={styles.afterwordTitle}>{article.afterword.title}</h3>}
-              <div className={styles.afterwordBody}>
-                <div className={styles.afterwordColumn}>
-                  {afterwordColumns[0].map((para, i) => renderRichParagraph(para, `left-${i}`))}
-                </div>
-                <div className={afterwordGifStyles.afterwordGifWrap}>
-                  <img
-                    className={afterwordGifStyles.afterwordGif}
-                    src={TRUST_PROCESS_GIF}
-                    alt="Animated parchment divider with floating illustrations"
-                  />
-                </div>
-                <div className={styles.afterwordColumn}>
-                  {afterwordColumns[1].map((para, i) => renderRichParagraph(para, `right-${i}`))}
+              <div className={styles.afterwordLayout}>
+                <figure className={styles.afterwordVisual} aria-label="Trust the process illustration">
+                  <div className={afterwordGifStyles.afterwordGifWrap}>
+                    <img
+                      className={afterwordGifStyles.afterwordGif}
+                      src={TRUST_PROCESS_GIF}
+                      alt="Animated parchment divider with floating illustrations"
+                    />
+                  </div>
+                  <figcaption className={styles.afterwordCaption}>A quiet reminder to keep moving.</figcaption>
+                </figure>
+
+                <div className={styles.afterwordColumns}>
+                  <div className={styles.afterwordColumn}>
+                    {afterwordColumns[0].map((para, i) => renderRichParagraph(para, `left-${i}`))}
+                  </div>
+                  <div className={styles.afterwordColumn}>
+                    {afterwordColumns[1].map((para, i) => renderRichParagraph(para, `right-${i}`))}
+                  </div>
                 </div>
               </div>
             </div>
