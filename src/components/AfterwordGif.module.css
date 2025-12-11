@@ -7,6 +7,7 @@
   border-radius: 12px;
   box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.15);
   background: linear-gradient(145deg, #f8f1df, #efe2c5);
+  overflow: hidden;
 }
 
 .afterwordGif {
@@ -15,4 +16,6 @@
   object-fit: cover;
   border-radius: 8px;
   display: block;
+  transform: scaleY(1.06);
+  transform-origin: center;
 }
