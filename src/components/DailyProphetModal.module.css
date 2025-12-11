@@ -145,6 +145,7 @@
   gap: clamp(18px, 2.5vw, 28px);
   line-height: 1.75;
   font-size: 1.04rem;
+  text-align: justify;
 }
 
 .afterwordColumn {
@@ -217,6 +218,7 @@
   font-size: 1.02rem;
   columns: 2 320px;
   column-gap: clamp(18px, 2.5vw, 28px);
+  text-align: justify;
 }
 
 .extendedText p {
@@ -247,6 +249,7 @@
   font-family: "Crimson Text", serif; color:#111; line-height: 1.75;
   columns: 2 320px; column-gap: 30px; font-size: 1.05rem;
   margin-top: 14px;
+  text-align: justify;
 }
 .article p { margin: 0 0 1rem; }
 .dropcap p:first-child::first-letter {
