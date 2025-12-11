@@ -140,35 +140,50 @@ export function DailyProphetModal({
           </div>
 
           {article.afterword && (
-            <div className={styles.afterword}>
-              {article.afterword.title && <h3 className={styles.afterwordTitle}>{article.afterword.title}</h3>}
-              <div className={styles.afterwordBody}>
+            <div className={`${styles.afterword} ${styles.enhancedPanel}`}>
+              <div className={styles.afterwordHeader}>
+                <span className={styles.afterwordBadge}>Reflection</span>
+                {article.afterword.title && <h3 className={styles.afterwordTitle}>{article.afterword.title}</h3>}
+                <p className={styles.afterwordHint}>Unfiltered notes that live beyond the headline.</p>
+              </div>
+              <div className={`${styles.afterwordBody} ${styles.afterwordGrid}`}>
                 <div className={styles.afterwordColumn}>
-                  {afterwordColumns[0].map((para, i) => renderRichParagraph(para, `left-${i}`))}
+                  <div className={styles.afterwordCard}>
+                    {afterwordColumns[0].map((para, i) => renderRichParagraph(para, `left-${i}`))}
+                  </div>
                 </div>
                 <div className={afterwordGifStyles.afterwordGifWrap}>
+                  <div className={styles.afterwordDivider} aria-hidden="true" />
                   <img
                     className={afterwordGifStyles.afterwordGif}
                     src={TRUST_PROCESS_GIF}
                     alt="Animated parchment divider with floating illustrations"
                   />
+                  <div className={styles.afterwordDivider} aria-hidden="true" />
                 </div>
                 <div className={styles.afterwordColumn}>
-                  {afterwordColumns[1].map((para, i) => renderRichParagraph(para, `right-${i}`))}
+                  <div className={styles.afterwordCard}>
+                    {afterwordColumns[1].map((para, i) => renderRichParagraph(para, `right-${i}`))}
+                  </div>
                 </div>
               </div>
             </div>
           )}
 
           {extendedBody && (
-            <div className={styles.extendedBody}>
-              <div className={styles.extendedHeader}>
-                <div className={styles.rule} aria-hidden="true" />
-                <h3 className={styles.extendedTitle}>{extendedBody.title}</h3>
-                <div className={styles.rule} aria-hidden="true" />
+            <div className={`${styles.extendedBody} ${styles.enhancedPanel}`}>
+              <div className={styles.extendedMeta}>
+                <span className={styles.extendedBadge}>Behind the page</span>
+                <div className={styles.extendedHeader}>
+                  <div className={styles.rule} aria-hidden="true" />
+                  <h3 className={styles.extendedTitle}>{extendedBody.title}</h3>
+                  <div className={styles.rule} aria-hidden="true" />
+                </div>
+                <p className={styles.extendedDek}>A softer corner for the moments that didn’t fit in the main spread.</p>
               </div>
               <div className={styles.extendedLayout}>
                 <div className={styles.extendedImageFrame}>
+                  <div className={styles.extendedImageGlow} />
                   <img className={styles.extendedImage} src={extendedBody.image.src} alt={extendedBody.image.alt ?? ""} />
                 </div>
                 <div className={styles.extendedText}>
