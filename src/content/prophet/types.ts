@@ -14,9 +14,4 @@ export type ProphetArticle = {
     image: { src: string; alt?: string };
     body: string[];
   };
-  favoriteBook?: {
-    title: string;
-    gif: { src: string; alt?: string };
-    body: string[];
-  };
 };
