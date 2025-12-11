@@ -238,9 +238,8 @@
 
 .favoriteBook {
   border-top: 2px solid #1f1f1f;
-  margin: clamp(14px, 2vw, 18px) auto 0;
-  padding-top: clamp(10px, 1.8vw, 16px);
-  max-width: min(840px, 100%);
+  margin-top: clamp(18px, 2.5vw, 26px);
+  padding-top: clamp(16px, 2vw, 22px);
 }
 
 .favoriteHeader {
@@ -256,29 +255,22 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin: 0;
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
 }
 
 .favoriteLayout {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: clamp(12px, 2vw, 20px);
-  margin-top: clamp(10px, 1.8vw, 14px);
-  align-items: center;
-  justify-content: center;
-}
-
-.favoriteMedia {
-  justify-self: center;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(16px, 3vw, 32px);
+  margin-top: clamp(14px, 2vw, 18px);
+  align-items: start;
 }
 
 .favoriteFrame {
   border: 3px solid #1f1f1f;
   border-radius: 12px;
   background: #f4ebd6;
-  padding: clamp(8px, 1.6vw, 12px);
-  box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.12);
-  width: min(220px, 100%);
+  padding: clamp(10px, 2vw, 16px);
+  box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.12);
 }
 
 .favoriteGif {
@@ -293,8 +285,9 @@
   font-family: "Crimson Text", serif;
   color: #111;
   line-height: 1.8;
-  font-size: 0.98rem;
-  max-width: 560px;
+  font-size: 1.02rem;
+  columns: 2 320px;
+  column-gap: clamp(18px, 2.5vw, 28px);
 }
 
 .favoriteText p {
@@ -304,13 +297,13 @@
 
 @media (max-width: 860px) {
   .favoriteLayout {
-    grid-template-columns: auto;
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 720px) {
   .favoriteText {
-    max-width: 100%;
+    columns: 1;
   }
 }
 
