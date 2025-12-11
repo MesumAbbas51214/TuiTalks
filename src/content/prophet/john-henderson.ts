@@ -22,7 +22,7 @@ export const JOHN_HENDERSON_ARTICLE: ProphetArticle = {
     ],
   },
   extendedBody: {
-    title: "New Body",
+    title: "The Horizon",
     image: {
       src: sameer,
       alt: "Notebook and recorder set up mid-interview",
