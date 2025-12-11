@@ -8,6 +8,7 @@ import { DailyProphetModal } from "./components/DailyProphetModal";
 import { AuthorsChoiceSection } from "./sections/AuthorsChoiceSection";
 import { AboutSection } from "./sections/AboutSection";
 import { ContactSection } from "./sections/ContactSection";
+import { FavoriteBookSection } from "./sections/FavoriteBookSection";
 
 
 export default function App(){
@@ -37,6 +38,9 @@ export default function App(){
 
       {/* AUTHORS / CAMPUS PULSE */}
       <AuthorsChoiceSection onOpen={(i) => { setCurrent(i); setOpen(true); }} />
+
+      {/* FAVORITE BOOK MOMENT */}
+      <FavoriteBookSection />
 
       {/* ABOUT */}
       <AboutSection />
