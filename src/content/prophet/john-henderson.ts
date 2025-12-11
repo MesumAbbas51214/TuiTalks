@@ -1,6 +1,7 @@
 import type { ProphetArticle } from "./types";
 import cannabis from "../../assets/cannabis_integration.jpg";
 import sameer from "../../assets/sameer1.jpg";
+const horizon_GIF = "https://i.gifer.com/F0k.gif";
 
 export const JOHN_HENDERSON_ARTICLE: ProphetArticle = {
   episode: "EPISODE #01",
@@ -24,7 +25,7 @@ export const JOHN_HENDERSON_ARTICLE: ProphetArticle = {
   extendedBody: {
     title: "The Horizon",
     image: {
-      src: sameer,
+      src: horizon_GIF,
       alt: "Notebook and recorder set up mid-interview",
     },
     body: [
