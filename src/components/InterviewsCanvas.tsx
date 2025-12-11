@@ -23,8 +23,8 @@ export function InterviewsCanvas({ onOpen }: { onOpen?: (i: Interview) => void }
           <div className={styles.headerCopy}>
             <h2 className={styles.title}>Conversations</h2>
             <p className={styles.subtitle}>
-              Meet the makers, dreamers, and campus voices shaping the future of TUIs. Dive into in-depth
-              conversations that bring their stories and inspirations to life.
+              Behind every project, every idea, every late-night spark, there’s a story waiting to be heard…
+              and an inspiration waiting to be passed on.
             </p>
           </div>
 
