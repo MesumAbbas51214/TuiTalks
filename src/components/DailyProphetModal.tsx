@@ -7,7 +7,7 @@ import { getProphetArticle } from "../content/prophet";
 import { formatRichText } from "../utils/richText";
 
 const FALLBACK_VIDEO_ID = "dQw4w9WgXcQ"; // Playable YouTube fallback
-const TRUST_PROCESS_GIF = "https://i.gifer.com/3B3T.gif";
+const TRUST_PROCESS_GIF = "https://i.gifer.com/7AcQ.gif";
 
 export function DailyProphetModal({
   open,
