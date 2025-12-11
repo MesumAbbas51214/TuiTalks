@@ -1,6 +1,5 @@
 import type { ProphetArticle } from "./types";
 import cannabis from "../../assets/cannabis_integration.jpg";
-import sameer from "../../assets/sameer1.jpg";
 const horizon_GIF = "https://i.gifer.com/F0k.gif";
 
 export const SAMEER_ARTICLE: ProphetArticle = {
